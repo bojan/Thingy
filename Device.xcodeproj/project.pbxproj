@@ -21,6 +21,7 @@
 		32D5B94D1DE3593800C6ED8C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Device.swift */; };
 		32D5B94E1DE3593800C6ED8C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Device.swift */; };
 		32D5B94F1DE3593800C6ED8C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Device.swift */; };
+		32D5B9511DE35AFA00C6ED8C /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9501DE35AFA00C6ED8C /* DeviceTests.swift */; };
 		AD88C194CCEBFDA00C7C44EA /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD88C2DFE43E151C6FB20A10 /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD88C5F6C3AA1CADD3C7480E /* Device.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		32D5B9431DE355C200C6ED8C /* PadProductLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PadProductLine.swift; sourceTree = "<group>"; };
 		32D5B9481DE356B000C6ED8C /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		32D5B94C1DE3593800C6ED8C /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		32D5B9501DE35AFA00C6ED8C /* DeviceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTests.swift; sourceTree = "<group>"; };
 		AD88C459867230ACFFEF7EDB /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		AD88C57407E90816F1ECEF58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AD88C5F6C3AA1CADD3C7480E /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				32D88E9E1DE3375600E47A72 /* Supporting Files */,
+				32D5B9501DE35AFA00C6ED8C /* DeviceTests.swift */,
 			);
 			path = "Unit Tests";
 			sourceTree = "<group>";
@@ -268,6 +271,9 @@
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
+					AD88C67C53FE4E578B02552D = {
+						LastSwiftMigration = 0810;
+					};
 					AD88CC9CCE3163C7DBDA97EE = {
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
@@ -352,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D5B9511DE35AFA00C6ED8C /* DeviceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.DeviceTests;
@@ -623,10 +631,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.DeviceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
