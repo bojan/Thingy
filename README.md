@@ -19,9 +19,34 @@ Device detection and querying library.
 
 ### Swift Packager Manager (SPM)
 
+Create a `Package.swift` file, and add this snippet:
+
+``` swift
+import PackageDescription
+
+let package = Package(
+    name: "HelloWorld",
+    dependencies: [
+        .Package(url: "https://github.com/bojan/Device.git", majorVersion: 1)
+    ]
+)
+```
+
 ### Carthage
 
+Add this to your `Cartfile`:
+
+```
+github "bojan/Device"
+```
+
 ### CocoaPods
+
+Add this to your `Podfile`
+
+```
+pod 'Device'
+```
 
 ### Manually
 
