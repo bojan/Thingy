@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		32D5B93D1DE354E500C6ED8C /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32D5B93E1DE354E500C6ED8C /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32D5B9401DE355B400C6ED8C /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B93F1DE355B400C6ED8C /* Family.swift */; };
+		32D5B9411DE355B400C6ED8C /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B93F1DE355B400C6ED8C /* Family.swift */; };
+		32D5B9421DE355B400C6ED8C /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B93F1DE355B400C6ED8C /* Family.swift */; };
+		32D5B9441DE355C200C6ED8C /* PadProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9431DE355C200C6ED8C /* PadProductLine.swift */; };
+		32D5B9451DE355C200C6ED8C /* PadProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9431DE355C200C6ED8C /* PadProductLine.swift */; };
+		32D5B9461DE355C200C6ED8C /* PadProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9431DE355C200C6ED8C /* PadProductLine.swift */; };
 		AD88C194CCEBFDA00C7C44EA /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD88C2DFE43E151C6FB20A10 /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD88C5F6C3AA1CADD3C7480E /* Device.framework */; };
 /* End PBXBuildFile section */
@@ -26,6 +32,8 @@
 /* Begin PBXFileReference section */
 		32D5B9281DE3534B00C6ED8C /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D5B9351DE3536900C6ED8C /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D5B93F1DE355B400C6ED8C /* Family.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
+		32D5B9431DE355C200C6ED8C /* PadProductLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PadProductLine.swift; sourceTree = "<group>"; };
 		AD88C459867230ACFFEF7EDB /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		AD88C57407E90816F1ECEF58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AD88C5F6C3AA1CADD3C7480E /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32D5B9471DE355C800C6ED8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32D5B93F1DE355B400C6ED8C /* Family.swift */,
+				32D5B9431DE355C200C6ED8C /* PadProductLine.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		32D88E9D1DE3371E00E47A72 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +131,7 @@
 		AD88C8D3197EFA0401C39BF6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				32D5B9471DE355C800C6ED8C /* Model */,
 				32D88E9D1DE3371E00E47A72 /* Supporting Files */,
 			);
 			path = Sources;
@@ -232,13 +250,16 @@
 				TargetAttributes = {
 					32D5B9271DE3534B00C6ED8C = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					32D5B9341DE3536900C6ED8C = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					AD88CC9CCE3163C7DBDA97EE = {
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -299,6 +320,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D5B9411DE355B400C6ED8C /* Family.swift in Sources */,
+				32D5B9451DE355C200C6ED8C /* PadProductLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +329,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D5B9421DE355B400C6ED8C /* Family.swift in Sources */,
+				32D5B9461DE355C200C6ED8C /* PadProductLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +345,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D5B9401DE355B400C6ED8C /* Family.swift in Sources */,
+				32D5B9441DE355C200C6ED8C /* PadProductLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -349,6 +377,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Device;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -359,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -379,6 +409,7 @@
 		32D5B93B1DE3536900C6ED8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -390,6 +421,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Device;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -399,6 +431,7 @@
 		32D5B93C1DE3536900C6ED8C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -419,6 +452,7 @@
 		AD88C01082EF1EE75F31C9E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
@@ -430,6 +464,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Device;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -485,6 +520,7 @@
 		AD88C352FCCA2C20DD77D4A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.DeviceTests;
@@ -551,6 +587,7 @@
 		AD88CA0DED769975DBE9DD62 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
@@ -569,6 +606,7 @@
 		AD88CE3C2205A05E57F5E50A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.DeviceTests;
