@@ -10,7 +10,6 @@
 		AD88C194CCEBFDA00C7C44EA /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Device.h */; };
 		AD88C2DFE43E151C6FB20A10 /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD88C5F6C3AA1CADD3C7480E /* Device.framework */; };
 		AD88C67598DD097FDCBA29C6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD88C57407E90816F1ECEF58 /* Info.plist */; };
-		AD88CBA3B1166CF5663829DD /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD88CA50FF75E311198BF36B /* DeviceTests.swift */; };
 		AD88CD456C76E809F3DED662 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD88CB78B87CDD5F9390F9F3 /* Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		AD88C459867230ACFFEF7EDB /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		AD88C57407E90816F1ECEF58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AD88C5F6C3AA1CADD3C7480E /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD88CA50FF75E311198BF36B /* DeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTests.swift; sourceTree = "<group>"; };
 		AD88CB78B87CDD5F9390F9F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AD88CEBBBC26647E231FF5DD /* DeviceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -52,22 +50,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AD88C0F51310561142F7B7A7 = {
+		32D88E9D1DE3371E00E47A72 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AD88C5746FC3A4D01C1C9136 /* Products */,
-				AD88C8D3197EFA0401C39BF6 /* Device */,
-				AD88C57198FB176D7F8C8E0D /* DeviceTests */,
+				AD88C57407E90816F1ECEF58 /* Info.plist */,
+				AD88C459867230ACFFEF7EDB /* Device.h */,
 			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AD88C57198FB176D7F8C8E0D /* DeviceTests */ = {
+		32D88E9E1DE3375600E47A72 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				AD88CB78B87CDD5F9390F9F3 /* Info.plist */,
-				AD88CA50FF75E311198BF36B /* DeviceTests.swift */,
 			);
-			path = DeviceTests;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD88C0F51310561142F7B7A7 = {
+			isa = PBXGroup;
+			children = (
+				AD88C8D3197EFA0401C39BF6 /* Sources */,
+				AD88C57198FB176D7F8C8E0D /* Unit Tests */,
+				AD88C5746FC3A4D01C1C9136 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD88C57198FB176D7F8C8E0D /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				32D88E9E1DE3375600E47A72 /* Supporting Files */,
+			);
+			path = "Unit Tests";
 			sourceTree = "<group>";
 		};
 		AD88C5746FC3A4D01C1C9136 /* Products */ = {
@@ -79,13 +93,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AD88C8D3197EFA0401C39BF6 /* Device */ = {
+		AD88C8D3197EFA0401C39BF6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AD88C57407E90816F1ECEF58 /* Info.plist */,
-				AD88C459867230ACFFEF7EDB /* Device.h */,
+				32D88E9D1DE3371E00E47A72 /* Supporting Files */,
 			);
-			path = Device;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +157,7 @@
 		AD88CDF9FD3BBF5B2C09AF5D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = "___FULLUSERNAME___";
+				ORGANIZATIONNAME = "Bojan Dimovski";
 			};
 			buildConfigurationList = AD88CB75C26FB3DF1A51E108 /* Build configuration list for PBXProject "Device" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -188,7 +201,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD88CBA3B1166CF5663829DD /* DeviceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +230,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Device/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Device;
@@ -277,7 +289,7 @@
 		AD88C352FCCA2C20DD77D4A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = DeviceTests/Info.plist;
+				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.DeviceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,7 +358,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Device/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Device;
@@ -359,7 +371,7 @@
 		AD88CE3C2205A05E57F5E50A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = DeviceTests/Info.plist;
+				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.DeviceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -377,6 +389,7 @@
 				AD88C352FCCA2C20DD77D4A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD88C620B3BDE5FD2AEDC8A8 /* Build configuration list for PBXNativeTarget "Device" */ = {
 			isa = XCConfigurationList;
@@ -385,6 +398,7 @@
 				AD88CA0DED769975DBE9DD62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD88CB75C26FB3DF1A51E108 /* Build configuration list for PBXProject "Device" */ = {
 			isa = XCConfigurationList;
