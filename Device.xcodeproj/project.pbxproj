@@ -18,6 +18,9 @@
 		32D5B9491DE356B000C6ED8C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9481DE356B000C6ED8C /* Model.swift */; };
 		32D5B94A1DE356B000C6ED8C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9481DE356B000C6ED8C /* Model.swift */; };
 		32D5B94B1DE356B000C6ED8C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9481DE356B000C6ED8C /* Model.swift */; };
+		32D5B94D1DE3593800C6ED8C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Device.swift */; };
+		32D5B94E1DE3593800C6ED8C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Device.swift */; };
+		32D5B94F1DE3593800C6ED8C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Device.swift */; };
 		AD88C194CCEBFDA00C7C44EA /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD88C2DFE43E151C6FB20A10 /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD88C5F6C3AA1CADD3C7480E /* Device.framework */; };
 /* End PBXBuildFile section */
@@ -38,6 +41,7 @@
 		32D5B93F1DE355B400C6ED8C /* Family.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		32D5B9431DE355C200C6ED8C /* PadProductLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PadProductLine.swift; sourceTree = "<group>"; };
 		32D5B9481DE356B000C6ED8C /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		32D5B94C1DE3593800C6ED8C /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		AD88C459867230ACFFEF7EDB /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		AD88C57407E90816F1ECEF58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AD88C5F6C3AA1CADD3C7480E /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +140,7 @@
 		AD88C8D3197EFA0401C39BF6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				32D5B94C1DE3593800C6ED8C /* Device.swift */,
 				32D5B9471DE355C800C6ED8C /* Model */,
 				32D88E9D1DE3371E00E47A72 /* Supporting Files */,
 			);
@@ -328,6 +333,7 @@
 				32D5B94A1DE356B000C6ED8C /* Model.swift in Sources */,
 				32D5B9411DE355B400C6ED8C /* Family.swift in Sources */,
 				32D5B9451DE355C200C6ED8C /* PadProductLine.swift in Sources */,
+				32D5B94E1DE3593800C6ED8C /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +344,7 @@
 				32D5B94B1DE356B000C6ED8C /* Model.swift in Sources */,
 				32D5B9421DE355B400C6ED8C /* Family.swift in Sources */,
 				32D5B9461DE355C200C6ED8C /* PadProductLine.swift in Sources */,
+				32D5B94F1DE3593800C6ED8C /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +362,7 @@
 				32D5B9491DE356B000C6ED8C /* Model.swift in Sources */,
 				32D5B9401DE355B400C6ED8C /* Family.swift in Sources */,
 				32D5B9441DE355C200C6ED8C /* PadProductLine.swift in Sources */,
+				32D5B94D1DE3593800C6ED8C /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
