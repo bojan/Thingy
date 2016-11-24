@@ -12,9 +12,9 @@
 		32D5B9401DE355B400C6ED8C /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B93F1DE355B400C6ED8C /* Family.swift */; };
 		32D5B9411DE355B400C6ED8C /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B93F1DE355B400C6ED8C /* Family.swift */; };
 		32D5B9421DE355B400C6ED8C /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B93F1DE355B400C6ED8C /* Family.swift */; };
-		32D5B9441DE355C200C6ED8C /* PadProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9431DE355C200C6ED8C /* PadProductLine.swift */; };
-		32D5B9451DE355C200C6ED8C /* PadProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9431DE355C200C6ED8C /* PadProductLine.swift */; };
-		32D5B9461DE355C200C6ED8C /* PadProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9431DE355C200C6ED8C /* PadProductLine.swift */; };
+		32D5B9441DE355C200C6ED8C /* ProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9431DE355C200C6ED8C /* ProductLine.swift */; };
+		32D5B9451DE355C200C6ED8C /* ProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9431DE355C200C6ED8C /* ProductLine.swift */; };
+		32D5B9461DE355C200C6ED8C /* ProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9431DE355C200C6ED8C /* ProductLine.swift */; };
 		32D5B9491DE356B000C6ED8C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9481DE356B000C6ED8C /* Model.swift */; };
 		32D5B94A1DE356B000C6ED8C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9481DE356B000C6ED8C /* Model.swift */; };
 		32D5B94B1DE356B000C6ED8C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9481DE356B000C6ED8C /* Model.swift */; };
@@ -40,7 +40,7 @@
 		32D5B9281DE3534B00C6ED8C /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D5B9351DE3536900C6ED8C /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D5B93F1DE355B400C6ED8C /* Family.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
-		32D5B9431DE355C200C6ED8C /* PadProductLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PadProductLine.swift; sourceTree = "<group>"; };
+		32D5B9431DE355C200C6ED8C /* ProductLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductLine.swift; sourceTree = "<group>"; };
 		32D5B9481DE356B000C6ED8C /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		32D5B94C1DE3593800C6ED8C /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		32D5B9501DE35AFA00C6ED8C /* DeviceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTests.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 			children = (
 				32D5B9481DE356B000C6ED8C /* Model.swift */,
 				32D5B93F1DE355B400C6ED8C /* Family.swift */,
-				32D5B9431DE355C200C6ED8C /* PadProductLine.swift */,
+				32D5B9431DE355C200C6ED8C /* ProductLine.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -338,7 +338,7 @@
 			files = (
 				32D5B94A1DE356B000C6ED8C /* Model.swift in Sources */,
 				32D5B9411DE355B400C6ED8C /* Family.swift in Sources */,
-				32D5B9451DE355C200C6ED8C /* PadProductLine.swift in Sources */,
+				32D5B9451DE355C200C6ED8C /* ProductLine.swift in Sources */,
 				32D5B94E1DE3593800C6ED8C /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +349,7 @@
 			files = (
 				32D5B94B1DE356B000C6ED8C /* Model.swift in Sources */,
 				32D5B9421DE355B400C6ED8C /* Family.swift in Sources */,
-				32D5B9461DE355C200C6ED8C /* PadProductLine.swift in Sources */,
+				32D5B9461DE355C200C6ED8C /* ProductLine.swift in Sources */,
 				32D5B94F1DE3593800C6ED8C /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,7 +368,7 @@
 			files = (
 				32D5B9491DE356B000C6ED8C /* Model.swift in Sources */,
 				32D5B9401DE355B400C6ED8C /* Family.swift in Sources */,
-				32D5B9441DE355C200C6ED8C /* PadProductLine.swift in Sources */,
+				32D5B9441DE355C200C6ED8C /* ProductLine.swift in Sources */,
 				32D5B94D1DE3593800C6ED8C /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,6 +651,7 @@
 				32D5B92F1DE3534C00C6ED8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32D5B93A1DE3536900C6ED8C /* Build configuration list for PBXNativeTarget "Device tvOS" */ = {
 			isa = XCConfigurationList;
@@ -659,6 +660,7 @@
 				32D5B93C1DE3536900C6ED8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD88C5FB5FC75605B8C40FDA /* Build configuration list for PBXNativeTarget "Device Tests" */ = {
 			isa = XCConfigurationList;

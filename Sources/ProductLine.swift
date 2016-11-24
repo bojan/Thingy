@@ -1,5 +1,5 @@
 //
-// PadProductLine
+// ProductLine
 // Device
 //
 // Created by Bojan Dimovski on 21.11.16.
@@ -26,15 +26,27 @@
 
 import Foundation
 
-/// A type that describes the specific iPad line.
-///
-/// - regular: A standard iPad product.
-/// - pro: An iPad Pro product.
-/// - mini: An iPad mini product.
-/// - air: An iPad Air product.
-enum PadProductLine {
-	case regular
-	case pro
-	case mini
-	case air
+/// A dummy protocol used to encompass all product lines.
+
+protocol ProductLineDummy {
+}
+
+/// A struct containing all product lines. Currently iPad only.
+
+struct ProductLine {
+
+	/// A type that describes the specific iPad line.
+	///
+	/// - regular: A standard iPad product.
+	/// - pro: An iPad Pro product.
+	/// - mini: An iPad mini product.
+	/// - air: An iPad Air product.
+
+	enum iPad: String, ProductLineDummy {
+		case regular = ""
+		case pro = "Pro"
+		case mini = "mini"
+		case air = "Air"
+	}
+
 }

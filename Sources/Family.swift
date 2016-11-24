@@ -26,18 +26,59 @@
 
 import Foundation
 
-
 /// A type that describes the product family.
 ///
 /// - phone: iPhone product family.
 /// - pod: iPod touch product family.
-/// - pad: iPad product family including the specific product line (e.g. iPad Pro, iPad mini).
+/// - pad: iPad product family.
 /// - tv: Apple TV product family.
 /// - watch: Apple Watch product family.
+/// - unknown: An unknown product family.
+
 enum Family {
 	case phone
 	case pod
-	case pad(PadProductLine)
+	case pad(ProductLine.iPad)
 	case tv
 	case watch
+
+	case unknown
+
+	var marketingName: String {
+		switch self {
+		case .phone:
+			return "iPhone"
+		case .pod:
+			return "iPod"
+		case let .pad(line):
+			var name = "iPad"
+			if line.rawValue.characters.count > 0 {
+				name += " \(line)"
+			}
+			return name
+		case .tv:
+			return "Apple TV"
+		case .watch:
+			return "Watch"
+		default:
+			return ""
+		}
+	}
+
+	var systemPrefix: String {
+		switch self {
+		case .phone:
+			return "iPhone"
+		case .pod:
+			return "iPod"
+		case .pad(_):
+			return "iPad"
+		case .tv:
+			return "AppleTV"
+		case .watch:
+			return "Watch"
+		default:
+			return ""
+		}
+	}
 }
