@@ -82,3 +82,21 @@ enum Family {
 		}
 	}
 }
+
+func ==(lhs: Family, rhs: Family) -> Bool {
+	switch (lhs, rhs) {
+	case (.phone, .phone), (.pod, .pod), (.tv, .tv), (.watch, .watch):
+		return true
+	case (let .pad(leftLine), let .pad(rightLine)):
+		return leftLine == rightLine
+	default:
+		return false
+	}
+}
+
+extension Family: Hashable {
+	var hashValue: Int {
+		return 0
+	}
+
+}
