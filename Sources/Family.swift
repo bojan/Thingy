@@ -35,7 +35,7 @@ import Foundation
 /// - watch: Apple Watch product family.
 /// - unknown: An unknown product family.
 
-enum Family {
+enum Family: ProductEntity {
 	case phone
 	case pod
 	case pad(ProductLine.iPad)
@@ -52,7 +52,7 @@ enum Family {
 			return "iPod"
 		case let .pad(line):
 			var name = "iPad"
-			if line.rawValue.characters.count > 0 {
+			if line.marketingName.characters.count > 0 {
 				name += " \(line)"
 			}
 			return name
@@ -96,7 +96,7 @@ func ==(lhs: Family, rhs: Family) -> Bool {
 
 extension Family: Hashable {
 	var hashValue: Int {
-		return 0
+		return marketingName.hashValue
 	}
 
 }

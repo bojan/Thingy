@@ -26,9 +26,9 @@
 
 import Foundation
 
-/// A dummy protocol used to encompass all product lines.
-
-protocol ProductLineDummy {
+/// A protocol that describes product entities (lines and models).
+protocol ProductEntity {
+	var marketingName: String { get }
 }
 
 /// A struct containing all product lines. Currently iPad only.
@@ -42,11 +42,24 @@ struct ProductLine {
 	/// - mini: An iPad mini product.
 	/// - air: An iPad Air product.
 
-	enum iPad: String, ProductLineDummy {
-		case regular = ""
-		case pro = "Pro"
-		case mini = "mini"
-		case air = "Air"
+	enum iPad: ProductEntity {
+		case regular
+		case pro
+		case mini
+		case air
+
+		var marketingName: String {
+			switch self {
+			case .pro:
+				return "Pro"
+			case .mini:
+				return "mini"
+			case .air:
+				return "Air"
+			default:
+				return ""
+			}
+		}
 	}
 
 }
