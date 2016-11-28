@@ -58,3 +58,9 @@ struct ProductLine {
 	}
 
 }
+
+// MARK: - Hashable and equatable protocols
+
+func ==(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
+	return lhs.marketingName == rhs.marketingName
+}
