@@ -1,9 +1,9 @@
 //
-// Family
+// Protocols.swift
 // Device
 //
-// Created by Bojan Dimovski on 21.11.16.
-// Copyright (c) 2016 Bojan Dimovski.
+// Created by Bojan Dimovski on 28.11.16.
+// Copyright © 2016 Bojan Dimovski. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,37 +26,15 @@
 
 import Foundation
 
-/// A type that describes the product family.
-///
-/// - phone: iPhone product family.
-/// - pod: iPod touch product family.
-/// - pad: iPad product family.
-/// - tv: Apple TV product family.
-/// - watch: Apple Watch product family.
+/// A protocol that describes product entities (lines and models).
 
-enum Family: String {
-	case phone = "iPhone"
-	case pod = "iPod"
-	case pad = "iPad"
-	case tv = "AppleTV"
-	case watch = "Watch"
+protocol MarketingProtocol {
+
+	/// The full marketing name of the entity.
+	var marketingName: String { get }
 }
 
-// MARK: - Marketing protocol
+/// A dummy protocol used to encompass all product line enums.
 
-extension Family: MarketingProtocol {
-	var marketingName: String {
-		switch self {
-		case .phone:
-			return "iPhone"
-		case .pod:
-			return "iPod"
-		case .pad:
-			return "iPad"
-		case .tv:
-			return "Apple TV"
-		case .watch:
-			return "Watch"
-		}
-	}
+protocol ProductLineProtocol {
 }

@@ -57,7 +57,8 @@ import Foundation
 /// - watch: The original Apple Watch.
 /// - watchSeries1: Apple Watch Series 1.
 /// - watchSeries2: Apple Watch Series 2.
-/// - unknown: An unknown device within the associated family.
+/// - unknown: An unknown device of a specific family.
+
 enum Model {
 	case iPhone4S
 	case iPhone5
@@ -91,6 +92,89 @@ enum Model {
 	case watch
 	case watchSeries1
 	case watchSeries2
-
-	case unknown(Family)
 }
+
+// MARK: - Marketing protocol
+
+extension Model: MarketingProtocol {
+
+	var marketingName: String {
+		switch self {
+		case .iPhone4S:
+			return "iPhone 4S"
+		case .iPhone5:
+			return "iPhone 5"
+		case .iPhone5s:
+			return "iPhone 5s"
+		case .iPhone5c:
+			return "iPhone 5c"
+		case .iPhone6:
+			return "iPhone 6"
+		case .iPhone6Plus:
+			return "iPhone 6 Plus"
+		case .iPhone6s:
+			return "iPhone 6s"
+		case .iPhone6sPlus:
+			return "iPhone 6s Plus"
+		case .iPhoneSE:
+			return "iPhone SE"
+		case .iPhone7:
+			return "iPhone 7"
+		case .iPhone7Plus:
+			return "iPhone 7 Plus"
+
+		case .iPad2:
+			return "iPad 2"
+		case .iPad3:
+			return "iPad 3"
+		case .iPad4:
+			return "iPad 4"
+		case .iPadMini:
+			return "iPad mini"
+		case .iPadMini2:
+			return "iPad mini 2"
+		case .iPadMini3:
+			return "iPad mini 3"
+		case .iPadMini4:
+			return "iPad mini 4"
+		case .iPadAir:
+			return "iPad Air"
+		case .iPadAir2:
+			return "iPad Air 2"
+		case .iPadPro12Inch:
+			return "iPad Pro 12.9in"
+		case .iPadPro9Inch:
+			return "iPad Pro 9.7in"
+
+		case .iPodTouch5G:
+			return "iPod touch 5G"
+		case .iPodTouch6G:
+			return "iPod touch 6G"
+
+		case .appleTV4:
+			return "Apple TV 4"
+
+		case .watch:
+			return "Apple Watch"
+		case .watchSeries1:
+			return "Apple Watch Series 1"
+		case .watchSeries2:
+			return "Apple Watch Series 2"
+
+		}
+	}
+}
+
+// MARK: - Hashable and equatable protocols
+
+func ==(lhs: Model, rhs: Model) -> Bool {
+	return lhs.marketingName == rhs.marketingName
+}
+
+extension Model: Hashable {
+	var hashValue: Int {
+		return marketingName.hashValue
+	}
+
+}
+

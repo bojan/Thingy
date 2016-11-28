@@ -1,8 +1,8 @@
 //
-// PadProductLine
+// ParserTests
 // Device
 //
-// Created by Bojan Dimovski on 21.11.16.
+// Created by Bojan Dimovski on 28.11.16.
 // Copyright (c) 2016 Bojan Dimovski.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,17 +24,47 @@
 // THE SOFTWARE.
 
 
-import Foundation
+import XCTest
+@testable import Device
 
-/// A type that describes the specific iPad line.
-///
-/// - regular: A standard iPad product.
-/// - pro: An iPad Pro product.
-/// - mini: An iPad mini product.
-/// - air: An iPad Air product.
-enum PadProductLine {
-	case regular
-	case pro
-	case mini
-	case air
+class ParserTests: XCTestCase {
+
+	func testParsingValidDevice() {
+		let identifier = "iPad6,3"
+
+		let (family, model, productLine) = Parser.shared.parse(identifier: identifier)
+
+		XCTAssertNotNil(family)
+		XCTAssertNotNil(model)
+		XCTAssertNotNil(productLine)
+
+
+		XCTAssert(family == .pad)
+		XCTAssert(model == .iPadPro9Inch)
+
+		if let productLine = productLine as? ProductLine.iPad {
+			XCTAssert(productLine == .pro)
+		}
+	}
+
+	func testParsingInvalidDevice() {
+		let identifier = "6,3"
+
+		let (family, model, productLine) = Parser.shared.parse(identifier: identifier)
+
+		XCTAssertNil(family)
+		XCTAssertNil(model)
+		XCTAssertNil(productLine)
+	}
+
+	func testResolveUnknownDevice() {
+		let identifier = "iPad1,337"
+
+		let (family, model, productLine) = Parser.shared.parse(identifier: identifier)
+
+		XCTAssertNotNil(family)
+		XCTAssertNil(model)
+		XCTAssertNil(productLine)
+	}
+
 }

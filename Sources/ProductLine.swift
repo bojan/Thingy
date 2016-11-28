@@ -1,5 +1,5 @@
 //
-// Family
+// ProductLine
 // Device
 //
 // Created by Bojan Dimovski on 21.11.16.
@@ -26,37 +26,41 @@
 
 import Foundation
 
-/// A type that describes the product family.
-///
-/// - phone: iPhone product family.
-/// - pod: iPod touch product family.
-/// - pad: iPad product family.
-/// - tv: Apple TV product family.
-/// - watch: Apple Watch product family.
+/// A struct containing all product lines. Currently iPad only.
 
-enum Family: String {
-	case phone = "iPhone"
-	case pod = "iPod"
-	case pad = "iPad"
-	case tv = "AppleTV"
-	case watch = "Watch"
-}
+struct ProductLine {
 
-// MARK: - Marketing protocol
+	/// A type that describes the specific iPad line.
+	///
+	/// - regular: A standard iPad product.
+	/// - pro: An iPad Pro product.
+	/// - mini: An iPad mini product.
+	/// - air: An iPad Air product.
 
-extension Family: MarketingProtocol {
-	var marketingName: String {
-		switch self {
-		case .phone:
-			return "iPhone"
-		case .pod:
-			return "iPod"
-		case .pad:
-			return "iPad"
-		case .tv:
-			return "Apple TV"
-		case .watch:
-			return "Watch"
+	enum iPad: ProductLineProtocol, MarketingProtocol {
+		case regular
+		case pro
+		case mini
+		case air
+
+		var marketingName: String {
+			switch self {
+			case .pro:
+				return "Pro"
+			case .mini:
+				return "mini"
+			case .air:
+				return "Air"
+			default:
+				return ""
+			}
 		}
 	}
+
+}
+
+// MARK: - Hashable and equatable protocols
+
+func ==(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
+	return lhs.marketingName == rhs.marketingName
 }
