@@ -8,8 +8,8 @@ Device detection and querying library.
 
 ## Features
 
-- [ ] Device detection
-- [ ] Device family detection
+- [x] Device detection
+- [x] Device family detection
 - [ ] Simulator detection
 - [ ] Simple querying
 
