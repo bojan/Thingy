@@ -59,7 +59,7 @@ import Foundation
 /// - watchSeries2: Apple Watch Series 2.
 /// - unknown: An unknown device of a specific family.
 
-enum Model: ProductEntity {
+enum Model {
 	case iPhone4S
 	case iPhone5
 	case iPhone5s
@@ -92,8 +92,10 @@ enum Model: ProductEntity {
 	case watch
 	case watchSeries1
 	case watchSeries2
+}
 
 	case unknown(Family)
+extension Model: MarketingProtocol {
 
 	var marketingName: String {
 		switch self {

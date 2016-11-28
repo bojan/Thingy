@@ -33,70 +33,28 @@ import Foundation
 /// - pad: iPad product family.
 /// - tv: Apple TV product family.
 /// - watch: Apple Watch product family.
-/// - unknown: An unknown product family.
 
-enum Family: ProductEntity {
-	case phone
-	case pod
-	case pad(ProductLine.iPad)
-	case tv
-	case watch
+enum Family: String {
+	case phone = "iPhone"
+	case pod = "iPod"
+	case pad = "iPad"
+	case tv = "AppleTV"
+	case watch = "Watch"
+}
 
-	case unknown
-
+extension Family: MarketingProtocol {
 	var marketingName: String {
 		switch self {
 		case .phone:
 			return "iPhone"
 		case .pod:
 			return "iPod"
-		case let .pad(line):
-			var name = "iPad"
-			if line.marketingName.characters.count > 0 {
-				name += " \(line)"
-			}
-			return name
+		case .pad:
+			return "iPad"
 		case .tv:
 			return "Apple TV"
 		case .watch:
 			return "Watch"
-		default:
-			return ""
 		}
 	}
-
-	var systemPrefix: String {
-		switch self {
-		case .phone:
-			return "iPhone"
-		case .pod:
-			return "iPod"
-		case .pad(_):
-			return "iPad"
-		case .tv:
-			return "AppleTV"
-		case .watch:
-			return "Watch"
-		default:
-			return ""
-		}
-	}
-}
-
-func ==(lhs: Family, rhs: Family) -> Bool {
-	switch (lhs, rhs) {
-	case (.phone, .phone), (.pod, .pod), (.tv, .tv), (.watch, .watch):
-		return true
-	case (let .pad(leftLine), let .pad(rightLine)):
-		return leftLine == rightLine
-	default:
-		return false
-	}
-}
-
-extension Family: Hashable {
-	var hashValue: Int {
-		return marketingName.hashValue
-	}
-
 }
