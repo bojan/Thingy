@@ -42,6 +42,8 @@ enum Family: String {
 	case watch = "Watch"
 }
 
+// MARK: - Marketing protocol
+
 extension Family: MarketingProtocol {
 	var marketingName: String {
 		switch self {

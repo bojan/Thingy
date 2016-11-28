@@ -94,6 +94,9 @@ enum Model {
 	case watchSeries2
 }
 
+
+// MARK: - Marketing protocol
+
 extension Model: MarketingProtocol {
 
 	var marketingName: String {
@@ -162,6 +165,9 @@ extension Model: MarketingProtocol {
 		}
 	}
 }
+
+
+// MARK: - Hashable and equatable protocols
 
 func ==(lhs: Model, rhs: Model) -> Bool {
 	return lhs.marketingName == rhs.marketingName
