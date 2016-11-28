@@ -29,9 +29,9 @@ import Foundation
 internal typealias ModelMap = [Model: [Double]]
 internal typealias FamilyMap = [Family: ModelMap]
 
-/// An internal structure used for mapping of models, product families and lines. 
-internal struct DeviceMap {
+/// An internal structure used for mapping of models, product families and lines.
 
+internal struct DeviceMap {
 
 	/// Mapping of device families to models and model numbers.
 	static var families: FamilyMap = [
@@ -77,17 +77,17 @@ internal struct DeviceMap {
 
 	/// Mapping of models to their respective product lines.
 	static var productLines: [Model: ProductLineProtocol] = [
-		.iPad2: ProductLine.iPad.regular,
-		.iPad3: ProductLine.iPad.regular,
-		.iPad4: ProductLine.iPad.regular,
-		.iPadAir: ProductLine.iPad.air,
-		.iPadAir2: ProductLine.iPad.air,
-		.iPadPro12Inch: ProductLine.iPad.pro,
-		.iPadPro9Inch: ProductLine.iPad.pro,
-		.iPadMini: ProductLine.iPad.mini,
-		.iPadMini2: ProductLine.iPad.mini,
-		.iPadMini3: ProductLine.iPad.mini,
-		.iPadMini4: ProductLine.iPad.mini,
+			.iPad2: ProductLine.iPad.regular,
+			.iPad3: ProductLine.iPad.regular,
+			.iPad4: ProductLine.iPad.regular,
+			.iPadAir: ProductLine.iPad.air,
+			.iPadAir2: ProductLine.iPad.air,
+			.iPadPro12Inch: ProductLine.iPad.pro,
+			.iPadPro9Inch: ProductLine.iPad.pro,
+			.iPadMini: ProductLine.iPad.mini,
+			.iPadMini2: ProductLine.iPad.mini,
+			.iPadMini3: ProductLine.iPad.mini,
+			.iPadMini4: ProductLine.iPad.mini,
 	]
 
 }

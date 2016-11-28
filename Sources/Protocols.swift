@@ -27,6 +27,7 @@
 import Foundation
 
 /// A protocol that describes product entities (lines and models).
+
 protocol MarketingProtocol {
 
 	/// The full marketing name of the entity.
@@ -34,4 +35,6 @@ protocol MarketingProtocol {
 }
 
 /// A dummy protocol used to encompass all product line enums.
-protocol ProductLineProtocol { }
+
+protocol ProductLineProtocol {
+}

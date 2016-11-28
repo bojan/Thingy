@@ -36,6 +36,7 @@ struct ProductLine {
 	/// - pro: An iPad Pro product.
 	/// - mini: An iPad mini product.
 	/// - air: An iPad Air product.
+
 	enum iPad: ProductLineProtocol, MarketingProtocol {
 		case regular
 		case pro

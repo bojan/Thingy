@@ -94,7 +94,6 @@ enum Model {
 	case watchSeries2
 }
 
-
 // MARK: - Marketing protocol
 
 extension Model: MarketingProtocol {
@@ -161,11 +160,10 @@ extension Model: MarketingProtocol {
 			return "Apple Watch Series 1"
 		case .watchSeries2:
 			return "Apple Watch Series 2"
-			
+
 		}
 	}
 }
-
 
 // MARK: - Hashable and equatable protocols
 
