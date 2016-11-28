@@ -94,7 +94,6 @@ enum Model {
 	case watchSeries2
 }
 
-	case unknown(Family)
 extension Model: MarketingProtocol {
 
 	var marketingName: String {
@@ -159,13 +158,7 @@ extension Model: MarketingProtocol {
 			return "Apple Watch Series 1"
 		case .watchSeries2:
 			return "Apple Watch Series 2"
-
-		case let .unknown(family):
-			var name = "Unknown"
-			if family.marketingName.characters.count > 0 {
-				name += " \(family.marketingName)"
-			}
-			return name
+			
 		}
 	}
 }
