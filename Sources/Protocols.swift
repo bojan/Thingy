@@ -1,9 +1,9 @@
 //
-// ProductLine
+// Protocols.swift
 // Device
 //
-// Created by Bojan Dimovski on 21.11.16.
-// Copyright (c) 2016 Bojan Dimovski.
+// Created by Bojan Dimovski on 28.11.16.
+// Copyright © 2016 Bojan Dimovski. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,35 +26,10 @@
 
 import Foundation
 
-/// A struct containing all product lines. Currently iPad only.
-
-struct ProductLine {
-
-	/// A type that describes the specific iPad line.
-	///
-	/// - regular: A standard iPad product.
-	/// - pro: An iPad Pro product.
-	/// - mini: An iPad mini product.
-	/// - air: An iPad Air product.
-
-	enum iPad: ProductEntity {
-		case regular
-		case pro
-		case mini
-		case air
-
-		var marketingName: String {
-			switch self {
-			case .pro:
-				return "Pro"
-			case .mini:
-				return "mini"
-			case .air:
-				return "Air"
-			default:
-				return ""
-			}
-		}
-	}
-
+/// A protocol that describes product entities (lines and models).
+protocol MarketingProtocol {
+	var marketingName: String { get }
 }
+
+/// A dummy protocol used to encompass all product line enums.
+protocol ProductLineProtocol { }
