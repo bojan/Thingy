@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3289D6E71DEDA53000F711BC /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Device.swift */; };
 		32D5B93D1DE354E500C6ED8C /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32D5B93E1DE354E500C6ED8C /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32D5B9401DE355B400C6ED8C /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B93F1DE355B400C6ED8C /* Family.swift */; };
@@ -428,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3289D6E71DEDA53000F711BC /* Device.swift in Sources */,
 				32FAD8E41DECC1E300AC5433 /* ParserTests.swift in Sources */,
 				32FAD8E51DECC1E300AC5433 /* DeviceTests.swift in Sources */,
 			);
