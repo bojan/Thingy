@@ -20,19 +20,34 @@
                ReferencedContainer = "container:Device.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "328252821DEE32B50026BAD8"
+               BuildableName = "Tests tvOS.xctest"
+               BlueprintName = "Tests tvOS"
+               ReferencedContainer = "container:Device.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "32FAD8E01DECC1E300AC5433"
+               BlueprintIdentifier = "328252821DEE32B50026BAD8"
                BuildableName = "Tests tvOS.xctest"
                BlueprintName = "Tests tvOS"
                ReferencedContainer = "container:Device.xcodeproj">
