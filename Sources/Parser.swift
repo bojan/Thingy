@@ -30,7 +30,7 @@ internal class Parser {
 
 	static let shared = Parser()
 
-	func parse(identifier: String) -> (Family?, Model?, ProductLineProtocol?) {
+	func parse(identifier: String) -> (Family?, Model?, ProductLineEntity?) {
 		let regex = try! NSRegularExpression(pattern: "^(.*)(\\d+),(\\d+)$", options: [.caseInsensitive])
 
 		let modelString = regex.stringByReplacingMatches(in: identifier,
@@ -48,7 +48,7 @@ internal class Parser {
 		return resolveDevice(familyString: familyString, modelNumber: modelNumber)
 	}
 
-	func resolveDevice(familyString: String, modelNumber: Double) -> (Family?, Model?, ProductLineProtocol?) {
+	func resolveDevice(familyString: String, modelNumber: Double) -> (Family?, Model?, ProductLineEntity?) {
 		guard let family = Family(rawValue: familyString),
 			  let familyMap = DeviceMap.families[family]
 				else {

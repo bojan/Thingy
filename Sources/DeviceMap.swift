@@ -76,7 +76,7 @@ internal struct DeviceMap {
 	]
 
 	/// Mapping of models to their respective product lines.
-	static var productLines: [Model: ProductLineProtocol] = [
+	static var productLines: [Model: ProductLineEntity] = [
 			.iPad2: ProductLine.iPad.regular,
 			.iPad3: ProductLine.iPad.regular,
 			.iPad4: ProductLine.iPad.regular,

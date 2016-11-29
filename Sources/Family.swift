@@ -34,7 +34,7 @@ import Foundation
 /// - tv: Apple TV product family.
 /// - watch: Apple Watch product family.
 
-enum Family: String {
+public enum Family: String {
 	case phone = "iPhone"
 	case pod = "iPod"
 	case pad = "iPad"

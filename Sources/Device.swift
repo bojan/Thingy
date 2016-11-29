@@ -29,13 +29,13 @@ import Foundation
 public struct Device {
 
 	/// Specific device model.
-	var model: Model?
+	public var model: Model?
 
 	/// General device family.
-	var family: Family?
+	public var family: Family?
 
 	/// Specific product line.
-	var productLine: ProductLineProtocol?
+	public var productLine: ProductLineEntity?
 
 	fileprivate var _identifier: String?
 
@@ -51,7 +51,7 @@ public struct Device {
 
 // MARK: - Device identification
 
-extension Device {
+internal extension Device {
 
 	/// Extracts the device identifier from low-level APIs.
 	///

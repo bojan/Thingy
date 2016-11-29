@@ -59,7 +59,7 @@ import Foundation
 /// - watchSeries2: Apple Watch Series 2.
 /// - unknown: An unknown device of a specific family.
 
-enum Model {
+public enum Model {
 	case iPhone4S
 	case iPhone5
 	case iPhone5s
@@ -167,12 +167,12 @@ extension Model: MarketingProtocol {
 
 // MARK: - Hashable and equatable protocols
 
-func ==(lhs: Model, rhs: Model) -> Bool {
+public func ==(lhs: Model, rhs: Model) -> Bool {
 	return lhs.marketingName == rhs.marketingName
 }
 
 extension Model: Hashable {
-	var hashValue: Int {
+	public var hashValue: Int {
 		return marketingName.hashValue
 	}
 

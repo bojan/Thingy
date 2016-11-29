@@ -36,5 +36,5 @@ protocol MarketingProtocol {
 
 /// A dummy protocol used to encompass all product line enums.
 
-protocol ProductLineProtocol {
+public protocol ProductLineEntity {
 }

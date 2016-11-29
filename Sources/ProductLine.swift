@@ -28,7 +28,7 @@ import Foundation
 
 /// A struct containing all product lines. Currently iPad only.
 
-struct ProductLine {
+public struct ProductLine {
 
 	/// A type that describes the specific iPad line.
 	///
@@ -37,7 +37,7 @@ struct ProductLine {
 	/// - mini: An iPad mini product.
 	/// - air: An iPad Air product.
 
-	enum iPad: ProductLineProtocol, MarketingProtocol {
+	enum iPad: ProductLineEntity, MarketingProtocol {
 		case regular
 		case pro
 		case mini
