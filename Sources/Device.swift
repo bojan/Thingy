@@ -82,7 +82,7 @@ internal extension Device {
 
 extension Device: MarketingProtocol {
 
-	var marketingName: String {
+	public var marketingName: String {
 		guard
 			let model = model
 		else {

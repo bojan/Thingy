@@ -45,7 +45,7 @@ public enum Family: String {
 // MARK: - Marketing protocol
 
 extension Family: MarketingProtocol {
-	var marketingName: String {
+	public var marketingName: String {
 		switch self {
 		case .phone:
 			return "iPhone"

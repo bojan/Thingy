@@ -98,7 +98,7 @@ public enum Model {
 
 extension Model: MarketingProtocol {
 
-	var marketingName: String {
+	public var marketingName: String {
 		switch self {
 		case .iPhone4S:
 			return "iPhone 4S"

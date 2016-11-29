@@ -28,7 +28,7 @@ import Foundation
 
 /// A protocol that describes product entities (lines and models).
 
-protocol MarketingProtocol {
+public protocol MarketingProtocol {
 
 	/// The full marketing name of the entity.
 	var marketingName: String { get }
