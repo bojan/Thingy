@@ -16,8 +16,8 @@ env:
     - OS_VERSION="3.1"  DEVICE_NAME="Apple Watch Series 2 - 42mm"     SCHEME="$WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" RUN_TESTS="NO"
     - OS_VERSION="2.2"  DEVICE_NAME="Apple Watch - 42mm"              SCHEME="$WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" RUN_TESTS="NO"
 
-    - OS_VERSION="10.2" DEVICE_NAME="iPhone 7 Plus"                   SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
-    - OS_VERSION="9.3"  DEVICE_NAME="iPhone 6"                        SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
+    - OS_VERSION="10.1" DEVICE_NAME="iPhone 7 Plus"                   SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
+    - OS_VERSION="9.3"  DEVICE_NAME="iPhone 6s"                        SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
     - OS_VERSION="8.4"  DEVICE_NAME="iPhone 4S"                       SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
 
     - OS_VERSION="10.1" DEVICE_NAME="Apple TV 1080p"                  SCHEME="$TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    RUN_TESTS="YES"
