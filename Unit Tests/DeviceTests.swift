@@ -35,4 +35,28 @@ class DeviceTests: XCTestCase {
 
 		XCTAssert(device.marketingName == "Unknown Device")
 	}
+
+	func testSimulator() {
+		let device = Device(identifier: "x86_64")
+
+		XCTAssertNotNil(device.model)
+
+		if let model = device.model {
+			expectSimulator(actual: model) { model in
+				 XCTAssertNotNil(model)
+			}
+		}
+
+	}
+
+	func expectSimulator(actual: Model, file: StaticString = #file, line: UInt = #line, test: (Model?) -> Void) {
+		guard case let .simulator(model) = actual
+			else {
+				XCTFail("Expected a simulator, got <\(actual)>", file: file, line: line)
+				return
+		}
+
+		test(model)
+	}
+
 }
