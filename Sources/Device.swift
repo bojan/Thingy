@@ -39,12 +39,17 @@ public struct Device {
 
 	fileprivate var _identifier: String?
 
-	public init() {
-		(family, model, productLine) = Parser.shared.parse(identifier: identifier())
-	}
+	/// Initializes with a custom device identifier.
+	///
+	/// - Parameter identifier: A device identifier, e.g. "iPhone9,2", "iPad6,11.", "AppleTV5,3".
+	public init(identifier: String? = nil) {
+		let identifier = identifier ?? self.identifier()
 
-	public init(identifier: String) {
-		(family, model, productLine) = Parser.shared.parse(identifier: identifier)
+		if let parsedDevice = Parser.parse(identifier: identifier) {
+			self.family = parsedDevice.family
+			self.model = parsedDevice.model
+			self.productLine = parsedDevice.productLine
+		}
 	}
 
 }
@@ -76,7 +81,22 @@ internal extension Device {
 		_identifier = identifier
 		return identifier
 	}
+
+
+	/// Initializes a parsed device using all the properties.
+	///
+	/// - Parameters:
+	///   - family: A device family.
+	///   - model: A device model.
+	///   - productLine: A product line.
+	init(family: Family?, model: Model?, productLine: ProductLineEntity?) {
+		self.family = family
+		self.model = model
+		self.productLine = productLine
+		self._identifier = identifier()
+	}
 }
+
 
 // MARK: - Marketing protocol
 
