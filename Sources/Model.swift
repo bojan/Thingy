@@ -75,6 +75,7 @@ public enum Model {
 	case iPad2
 	case iPad3
 	case iPad4
+	case iPad5
 	case iPadMini
 	case iPadMini2
 	case iPadMini3
@@ -129,6 +130,8 @@ extension Model: MarketingProtocol {
 			return "iPad 3"
 		case .iPad4:
 			return "iPad 4"
+		case .iPad5:
+			return "iPad 5"
 		case .iPadMini:
 			return "iPad mini"
 		case .iPadMini2:
