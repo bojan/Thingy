@@ -3,7 +3,7 @@
 // Thingy
 //
 // Created by Bojan Dimovski on 28.11.16.
-// Copyright © 2016 Bojan Dimovski. All rights reserved.
+// Copyright © 2017 Bojan Dimovski. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
