@@ -10,7 +10,7 @@ Device detection and querying library.
 
 - [x] Device detection
 - [x] Device family detection
-- [ ] Simulator detection
+- [x] Simulator detection
 - [ ] Simple querying
 
 ## Requirements
