@@ -57,7 +57,7 @@ import Foundation
 /// - watch: The original Apple Watch.
 /// - watchSeries1: Apple Watch Series 1.
 /// - watchSeries2: Apple Watch Series 2.
-/// - unknown: An unknown device of a specific family.
+/// - simulator: A simulator for the associated device model.
 
 public enum Model {
 	case iPhone4S
@@ -93,6 +93,8 @@ public enum Model {
 	case watch
 	case watchSeries1
 	case watchSeries2
+
+	indirect case simulator(Model?)
 }
 
 // MARK: - Marketing protocol
@@ -164,6 +166,13 @@ extension Model: MarketingProtocol {
 		case .watchSeries2:
 			return "Apple Watch Series 2"
 
+		case let .simulator(model):
+			guard let modelName = model?.marketingName
+			else {
+				return "Unknown Simulator"
+			}
+
+			return "Simulator (\(modelName))"
 		}
 	}
 }
