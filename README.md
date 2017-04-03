@@ -50,7 +50,49 @@ pod 'Thingy'
 
 ### Manually
 
+Add the repository as a submodule to your project.
+
+```
+git submodule add https://github.com/bojan/Thingy.git Vendor/Thingy
+```
+
+Open the newly created folder in Finder and drag `Thingy.xcodeproj` to your project.
+
+In your project's settings, select your target and under **General** > **Embedded Binaries**, add the framework depdending on the target OS (iOS, watchOS or tvOS).
+
 ## Usage
+
+Import the module where needed:
+
+```
+import Thingy
+```
+
+### Device properties
+
+Inspect the current device:
+
+```
+let myThingy = Thingy()
+
+// Compare models or product families
+if let family = myThingy.family,
+    family == .tv {
+        print("This is an Apple TV device.")
+}
+
+if let model = myThingy.model,
+    model != .iPhone7Plus {
+        print("This is NOT an iPhone 7 Plus.")
+}
+
+// Pretty printed device properties
+
+print(myThingy.family?.marketingName) // e.g. iPad
+print(myThingy.model?.marketingName) // e.g. iPhone 7 Plus
+print(myThingy.productLine?.marketingName) // e.g. Air
+
+```
 
 ## Contributions
 
