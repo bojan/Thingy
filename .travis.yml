@@ -1,26 +1,26 @@
 language: objective-c
-osx_image: xcode8.2
+osx_image: xcode8.3
 env:
   global:
-  - NAME=Device
+  - NAME=Thingy
   - LC_CTYPE=en_US.UTF-8
   - LANG=en_US.UTF-8
   - PROJECT=$NAME.xcodeproj
   - IOS_FRAMEWORK_SCHEME="$NAME iOS"
   - TVOS_FRAMEWORK_SCHEME="$NAME tvOS"
   - WATCHOS_FRAMEWORK_SCHEME="$NAME watchOS"
-  - IOS_SDK=iphonesimulator10.2
-  - TVOS_SDK=appletvsimulator10.1
-  - WATCHOS_SDK=watchsimulator3.1
+  - IOS_SDK=iphonesimulator10.3
+  - TVOS_SDK=appletvsimulator10.2
+  - WATCHOS_SDK=watchsimulator3.2
   matrix:
-    - OS_VERSION="3.1"  DEVICE_NAME="Apple Watch Series 2 - 42mm"     SCHEME="$WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" RUN_TESTS="NO"
+    - OS_VERSION="3.2"  DEVICE_NAME="Apple Watch Series 2 - 42mm"     SCHEME="$WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" RUN_TESTS="NO"
     - OS_VERSION="2.2"  DEVICE_NAME="Apple Watch - 42mm"              SCHEME="$WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" RUN_TESTS="NO"
 
-    - OS_VERSION="10.1" DEVICE_NAME="iPhone 7 Plus"                   SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
+    - OS_VERSION="10.3" DEVICE_NAME="iPhone 7 Plus"                   SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
     - OS_VERSION="9.3"  DEVICE_NAME="iPhone 6s"                        SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
     - OS_VERSION="8.4"  DEVICE_NAME="iPhone 4S"                       SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
 
-    - OS_VERSION="10.1" DEVICE_NAME="Apple TV 1080p"                  SCHEME="$TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    RUN_TESTS="YES"
+    - OS_VERSION="10.2" DEVICE_NAME="Apple TV 1080p"                  SCHEME="$TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    RUN_TESTS="YES"
     - OS_VERSION="9.2"  DEVICE_NAME="Apple TV 1080p"                  SCHEME="$TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    RUN_TESTS="YES"
 
 before_install:
