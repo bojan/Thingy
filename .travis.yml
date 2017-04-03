@@ -1,0 +1,51 @@
+language: objective-c
+osx_image: xcode8.3
+env:
+  global:
+  - NAME=Thingy
+  - LC_CTYPE=en_US.UTF-8
+  - LANG=en_US.UTF-8
+  - PROJECT=$NAME.xcodeproj
+  - IOS_FRAMEWORK_SCHEME="$NAME iOS"
+  - TVOS_FRAMEWORK_SCHEME="$NAME tvOS"
+  - WATCHOS_FRAMEWORK_SCHEME="$NAME watchOS"
+  - IOS_SDK=iphonesimulator10.3
+  - TVOS_SDK=appletvsimulator10.2
+  - WATCHOS_SDK=watchsimulator3.2
+  matrix:
+    - OS_VERSION="3.2"  DEVICE_NAME="Apple Watch Series 2 - 42mm"     SCHEME="$WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" RUN_TESTS="NO"
+    - OS_VERSION="2.2"  DEVICE_NAME="Apple Watch - 42mm"              SCHEME="$WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" RUN_TESTS="NO"
+
+    - OS_VERSION="10.3" DEVICE_NAME="iPhone 7 Plus"                   SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
+    - OS_VERSION="9.3"  DEVICE_NAME="iPhone 6s"                        SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
+    - OS_VERSION="8.4"  DEVICE_NAME="iPhone 4S"                       SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
+
+    - OS_VERSION="10.2" DEVICE_NAME="Apple TV 1080p"                  SCHEME="$TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    RUN_TESTS="YES"
+    - OS_VERSION="9.2"  DEVICE_NAME="Apple TV 1080p"                  SCHEME="$TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    RUN_TESTS="YES"
+
+before_install:
+  - IOS_SIMULATOR_UDID=$(instruments -s devices | grep "$DEVICE_NAME ($OS_VERSION)" | sed -E 's/.*\[([0-9A-F-]+)\].*/\1/g')
+  - echo "Prelaunching simulator for $DEVICE_NAME ($OS_VERSION) with UDID $IOS_SIMULATOR_UDID"
+  - open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
+before_script:
+  - gem install xcpretty-travis-formatter
+script:
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+
+  - DESTINATION="OS=$OS_VERSION,name=$DEVICE_NAME"
+
+  # Build Framework in Debug and Run Tests if specified
+  - if [ $RUN_TESTS == "YES" ]; then
+      travis_retry xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -f `xcpretty-travis-formatter`;
+    else
+      travis_retry xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -f `xcpretty-travis-formatter`;
+    fi
+
+  # Build Framework in Release and Run Tests if specified
+  - if [ $RUN_TESTS == "YES" ]; then
+      travis_retry xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -f `xcpretty-travis-formatter`;
+    else
+      travis_retry xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -f `xcpretty-travis-formatter`;
+    fi
