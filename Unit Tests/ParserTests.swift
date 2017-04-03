@@ -32,17 +32,31 @@ class ParserTests: XCTestCase {
 	func testParsingValidDevice() {
 		let identifier = "iPad6,3"
 
-		let (family, model, productLine) = Parser.shared.parse(identifier: identifier)
+		guard let parsedDevice = Parser.parse(identifier: identifier)
+		else {
+			XCTFail("Expected a non-nil device.")
+			return
+		}
 
-		XCTAssertNotNil(family)
-		XCTAssertNotNil(model)
-		XCTAssertNotNil(productLine)
+		XCTAssertNotNil(parsedDevice.family)
+		XCTAssertNotNil(parsedDevice.model)
+		XCTAssertNotNil(parsedDevice.productLine)
 
+		if let family = parsedDevice.family {
+			XCTAssert(family == .pad)
+		}
+		else {
+			XCTFail("Expected a non-nil family.")
+		}
 
-		XCTAssert(family == .pad)
-		XCTAssert(model == .iPadPro9Inch)
+		if let model = parsedDevice.model {
+			XCTAssert(model == .iPadPro9Inch)
+		}
+		else {
+			XCTFail("Expected a non-nil model.")
+		}
 
-		if let productLine = productLine as? ProductLine.iPad {
+		if let productLine = parsedDevice.productLine as? ProductLine.iPad {
 			XCTAssert(productLine == .pro)
 		}
 	}
@@ -50,21 +64,23 @@ class ParserTests: XCTestCase {
 	func testParsingInvalidDevice() {
 		let identifier = "6,3"
 
-		let (family, model, productLine) = Parser.shared.parse(identifier: identifier)
+		let parsedDevice = Parser.parse(identifier: identifier)
 
-		XCTAssertNil(family)
-		XCTAssertNil(model)
-		XCTAssertNil(productLine)
+		XCTAssertNil(parsedDevice)
 	}
 
 	func testResolveUnknownDevice() {
 		let identifier = "iPad1,337"
 
-		let (family, model, productLine) = Parser.shared.parse(identifier: identifier)
+		guard let parsedDevice = Parser.parse(identifier: identifier)
+			else {
+				XCTFail("Expected a non-nil device.")
+				return
+		}
 
-		XCTAssertNotNil(family)
-		XCTAssertNil(model)
-		XCTAssertNil(productLine)
+		XCTAssertNotNil(parsedDevice.family)
+		XCTAssertNil(parsedDevice.model)
+		XCTAssertNil(parsedDevice.productLine)
 	}
 
 }
