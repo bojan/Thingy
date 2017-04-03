@@ -1,10 +1,10 @@
-# Device
+# Thingy
 Device detection and querying library.
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/bojan/Device/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE)
 [![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
-[![Build Status](https://travis-ci.org/bojan/Device.svg?branch=develop)](https://travis-ci.org/bojan/Device)
+[![Build Status](https://travis-ci.org/bojan/Thingy.svg?branch=develop)](https://travis-ci.org/bojan/Thingy)
 
 ## Features
 
@@ -27,7 +27,7 @@ import PackageDescription
 let package = Package(
     name: "HelloWorld",
     dependencies: [
-        .Package(url: "https://github.com/bojan/Device.git", majorVersion: 1)
+        .Package(url: "https://github.com/bojan/Thingy.git", "1.0.0-alpha.1")
     ]
 )
 ```
@@ -37,7 +37,7 @@ let package = Package(
 Add this to your `Cartfile`:
 
 ```
-github "bojan/Device"
+github "bojan/Thingy"
 ```
 
 ### CocoaPods
@@ -45,7 +45,7 @@ github "bojan/Device"
 Add this to your `Podfile`
 
 ```
-pod 'Device'
+pod 'Thingy'
 ```
 
 ### Manually
@@ -56,7 +56,7 @@ pod 'Device'
 
 All contributions and suggestions are welcome and very much appreciated.
 
-Should you have a feature request or a problem that you may experience, feel free to [open an issue](https://github.com/bojan/Device/issues/new).
+Should you have a feature request or a problem that you may experience, feel free to [open an issue](https://github.com/bojan/Thingy/issues/new).
 
 If you are willing to contribute by adding a feature or squashing a bug or two, please submit a pull request.
 
@@ -68,4 +68,4 @@ Bojan Dimovski
 
 ## License
 
-Device is available under the MIT license. Check the [LICENSE](https://raw.githubusercontent.com/bojan/Device/master/LICENSE) file for more info.
+Thingy is available under the MIT license. Check the [LICENSE](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE) file for more info.
