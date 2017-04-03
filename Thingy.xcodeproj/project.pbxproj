@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		328252881DEE32B50026BAD8 /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D5B9351DE3536900C6ED8C /* Device.framework */; };
-		3282528E1DEE335F0026BAD8 /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9501DE35AFA00C6ED8C /* DeviceTests.swift */; };
+		328252881DEE32B50026BAD8 /* Thingy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D5B9351DE3536900C6ED8C /* Thingy.framework */; };
+		3282528E1DEE335F0026BAD8 /* ThingyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9501DE35AFA00C6ED8C /* ThingyTests.swift */; };
 		3282528F1DEE335F0026BAD8 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD88C813A58AD585E89B0A02 /* ParserTests.swift */; };
-		32D5B93D1DE354E500C6ED8C /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		32D5B93E1DE354E500C6ED8C /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32D5B93D1DE354E500C6ED8C /* Thingy.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Thingy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32D5B93E1DE354E500C6ED8C /* Thingy.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Thingy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32D5B9401DE355B400C6ED8C /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B93F1DE355B400C6ED8C /* Family.swift */; };
 		32D5B9411DE355B400C6ED8C /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B93F1DE355B400C6ED8C /* Family.swift */; };
 		32D5B9421DE355B400C6ED8C /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B93F1DE355B400C6ED8C /* Family.swift */; };
@@ -21,19 +21,19 @@
 		32D5B9491DE356B000C6ED8C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9481DE356B000C6ED8C /* Model.swift */; };
 		32D5B94A1DE356B000C6ED8C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9481DE356B000C6ED8C /* Model.swift */; };
 		32D5B94B1DE356B000C6ED8C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9481DE356B000C6ED8C /* Model.swift */; };
-		32D5B94D1DE3593800C6ED8C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Device.swift */; };
-		32D5B9511DE35AFA00C6ED8C /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9501DE35AFA00C6ED8C /* DeviceTests.swift */; };
+		32D5B94D1DE3593800C6ED8C /* Thingy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Thingy.swift */; };
+		32D5B9511DE35AFA00C6ED8C /* ThingyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9501DE35AFA00C6ED8C /* ThingyTests.swift */; };
 		32FAD8D11DECAA5E00AC5433 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAD8D01DECAA5E00AC5433 /* Parser.swift */; };
 		32FAD8D31DECAB2B00AC5433 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAD8D21DECAB2B00AC5433 /* Protocols.swift */; };
 		32FAD8D41DECB24600AC5433 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD88C813A58AD585E89B0A02 /* ParserTests.swift */; };
-		32FAD8D91DECC12600AC5433 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Device.swift */; };
+		32FAD8D91DECC12600AC5433 /* Thingy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Thingy.swift */; };
 		32FAD8DA1DECC12600AC5433 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAD8D01DECAA5E00AC5433 /* Parser.swift */; };
 		32FAD8DB1DECC12600AC5433 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAD8D21DECAB2B00AC5433 /* Protocols.swift */; };
-		32FAD8DD1DECC12800AC5433 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Device.swift */; };
+		32FAD8DD1DECC12800AC5433 /* Thingy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B94C1DE3593800C6ED8C /* Thingy.swift */; };
 		32FAD8DE1DECC12800AC5433 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAD8D01DECAA5E00AC5433 /* Parser.swift */; };
 		32FAD8DF1DECC12800AC5433 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAD8D21DECAB2B00AC5433 /* Protocols.swift */; };
-		AD88C194CCEBFDA00C7C44EA /* Device.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD88C2DFE43E151C6FB20A10 /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD88C5F6C3AA1CADD3C7480E /* Device.framework */; };
+		AD88C194CCEBFDA00C7C44EA /* Thingy.h in Headers */ = {isa = PBXBuildFile; fileRef = AD88C459867230ACFFEF7EDB /* Thingy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD88C2DFE43E151C6FB20A10 /* Thingy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD88C5F6C3AA1CADD3C7480E /* Thingy.framework */; };
 		AD88C62D76B2BF1732052A85 /* DeviceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD88CD426DB4F7DE84E65B55 /* DeviceMap.swift */; };
 		AD88C8A779AC8051DE5EF927 /* DeviceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD88CD426DB4F7DE84E65B55 /* DeviceMap.swift */; };
 		AD88CB267C2A32BC0BF8FB85 /* DeviceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD88CD426DB4F7DE84E65B55 /* DeviceMap.swift */; };
@@ -59,18 +59,18 @@
 /* Begin PBXFileReference section */
 		3282527D1DEE32220026BAD8 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		328252831DEE32B50026BAD8 /* Tests tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		32D5B9281DE3534B00C6ED8C /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32D5B9351DE3536900C6ED8C /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D5B9281DE3534B00C6ED8C /* Thingy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Thingy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D5B9351DE3536900C6ED8C /* Thingy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Thingy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D5B93F1DE355B400C6ED8C /* Family.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		32D5B9431DE355C200C6ED8C /* ProductLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductLine.swift; sourceTree = "<group>"; };
 		32D5B9481DE356B000C6ED8C /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		32D5B94C1DE3593800C6ED8C /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		32D5B9501DE35AFA00C6ED8C /* DeviceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DeviceTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		32D5B94C1DE3593800C6ED8C /* Thingy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thingy.swift; sourceTree = "<group>"; };
+		32D5B9501DE35AFA00C6ED8C /* ThingyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ThingyTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		32FAD8D01DECAA5E00AC5433 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		32FAD8D21DECAB2B00AC5433 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		AD88C459867230ACFFEF7EDB /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Device.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		AD88C459867230ACFFEF7EDB /* Thingy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Thingy.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		AD88C57407E90816F1ECEF58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		AD88C5F6C3AA1CADD3C7480E /* Device.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Device.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD88C5F6C3AA1CADD3C7480E /* Thingy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Thingy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD88C813A58AD585E89B0A02 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 		AD88CB78B87CDD5F9390F9F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AD88CD426DB4F7DE84E65B55 /* DeviceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMap.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				328252881DEE32B50026BAD8 /* Device.framework in Frameworks */,
+				328252881DEE32B50026BAD8 /* Thingy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD88C2DFE43E151C6FB20A10 /* Device.framework in Frameworks */,
+				AD88C2DFE43E151C6FB20A10 /* Thingy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +134,7 @@
 			children = (
 				AD88C57407E90816F1ECEF58 /* Info.plist */,
 				3282527D1DEE32220026BAD8 /* Info-tvOS.plist */,
-				AD88C459867230ACFFEF7EDB /* Device.h */,
+				AD88C459867230ACFFEF7EDB /* Thingy.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -160,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				32D88E9E1DE3375600E47A72 /* Supporting Files */,
-				32D5B9501DE35AFA00C6ED8C /* DeviceTests.swift */,
+				32D5B9501DE35AFA00C6ED8C /* ThingyTests.swift */,
 				AD88C813A58AD585E89B0A02 /* ParserTests.swift */,
 			);
 			path = "Unit Tests";
@@ -169,10 +169,10 @@
 		AD88C5746FC3A4D01C1C9136 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD88C5F6C3AA1CADD3C7480E /* Device.framework */,
+				AD88C5F6C3AA1CADD3C7480E /* Thingy.framework */,
 				AD88CEBBBC26647E231FF5DD /* Tests iOS.xctest */,
-				32D5B9281DE3534B00C6ED8C /* Device.framework */,
-				32D5B9351DE3536900C6ED8C /* Device.framework */,
+				32D5B9281DE3534B00C6ED8C /* Thingy.framework */,
+				32D5B9351DE3536900C6ED8C /* Thingy.framework */,
 				328252831DEE32B50026BAD8 /* Tests tvOS.xctest */,
 			);
 			name = Products;
@@ -181,7 +181,7 @@
 		AD88C8D3197EFA0401C39BF6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32D5B94C1DE3593800C6ED8C /* Device.swift */,
+				32D5B94C1DE3593800C6ED8C /* Thingy.swift */,
 				32FAD8D01DECAA5E00AC5433 /* Parser.swift */,
 				32FAD8D21DECAB2B00AC5433 /* Protocols.swift */,
 				32D5B9471DE355C800C6ED8C /* Model */,
@@ -197,7 +197,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32D5B93E1DE354E500C6ED8C /* Device.h in Headers */,
+				32D5B93E1DE354E500C6ED8C /* Thingy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +205,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32D5B93D1DE354E500C6ED8C /* Device.h in Headers */,
+				32D5B93D1DE354E500C6ED8C /* Thingy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +213,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD88C194CCEBFDA00C7C44EA /* Device.h in Headers */,
+				AD88C194CCEBFDA00C7C44EA /* Thingy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,9 +238,9 @@
 			productReference = 328252831DEE32B50026BAD8 /* Tests tvOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		32D5B9271DE3534B00C6ED8C /* Device watchOS */ = {
+		32D5B9271DE3534B00C6ED8C /* Thingy watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32D5B92D1DE3534C00C6ED8C /* Build configuration list for PBXNativeTarget "Device watchOS" */;
+			buildConfigurationList = 32D5B92D1DE3534C00C6ED8C /* Build configuration list for PBXNativeTarget "Thingy watchOS" */;
 			buildPhases = (
 				32D5B9231DE3534B00C6ED8C /* Sources */,
 				32D5B9241DE3534B00C6ED8C /* Frameworks */,
@@ -251,14 +251,14 @@
 			);
 			dependencies = (
 			);
-			name = "Device watchOS";
+			name = "Thingy watchOS";
 			productName = "Device watchOS";
-			productReference = 32D5B9281DE3534B00C6ED8C /* Device.framework */;
+			productReference = 32D5B9281DE3534B00C6ED8C /* Thingy.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		32D5B9341DE3536900C6ED8C /* Device tvOS */ = {
+		32D5B9341DE3536900C6ED8C /* Thingy tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32D5B93A1DE3536900C6ED8C /* Build configuration list for PBXNativeTarget "Device tvOS" */;
+			buildConfigurationList = 32D5B93A1DE3536900C6ED8C /* Build configuration list for PBXNativeTarget "Thingy tvOS" */;
 			buildPhases = (
 				32D5B9301DE3536900C6ED8C /* Sources */,
 				32D5B9311DE3536900C6ED8C /* Frameworks */,
@@ -269,9 +269,9 @@
 			);
 			dependencies = (
 			);
-			name = "Device tvOS";
+			name = "Thingy tvOS";
 			productName = "Device tvOS";
-			productReference = 32D5B9351DE3536900C6ED8C /* Device.framework */;
+			productReference = 32D5B9351DE3536900C6ED8C /* Thingy.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AD88C67C53FE4E578B02552D /* Tests iOS */ = {
@@ -292,9 +292,9 @@
 			productReference = AD88CEBBBC26647E231FF5DD /* Tests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AD88CC9CCE3163C7DBDA97EE /* Device iOS */ = {
+		AD88CC9CCE3163C7DBDA97EE /* Thingy iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD88C620B3BDE5FD2AEDC8A8 /* Build configuration list for PBXNativeTarget "Device iOS" */;
+			buildConfigurationList = AD88C620B3BDE5FD2AEDC8A8 /* Build configuration list for PBXNativeTarget "Thingy iOS" */;
 			buildPhases = (
 				AD88CB490D376D7C7FA589DE /* Sources */,
 				AD88CC0E30E8FED9682CB59A /* Frameworks */,
@@ -305,9 +305,9 @@
 			);
 			dependencies = (
 			);
-			name = "Device iOS";
+			name = "Thingy iOS";
 			productName = Device;
-			productReference = AD88C5F6C3AA1CADD3C7480E /* Device.framework */;
+			productReference = AD88C5F6C3AA1CADD3C7480E /* Thingy.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -343,7 +343,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AD88CB75C26FB3DF1A51E108 /* Build configuration list for PBXProject "Device" */;
+			buildConfigurationList = AD88CB75C26FB3DF1A51E108 /* Build configuration list for PBXProject "Thingy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -355,9 +355,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AD88CC9CCE3163C7DBDA97EE /* Device iOS */,
-				32D5B9271DE3534B00C6ED8C /* Device watchOS */,
-				32D5B9341DE3536900C6ED8C /* Device tvOS */,
+				AD88CC9CCE3163C7DBDA97EE /* Thingy iOS */,
+				32D5B9271DE3534B00C6ED8C /* Thingy watchOS */,
+				32D5B9341DE3536900C6ED8C /* Thingy tvOS */,
 				AD88C67C53FE4E578B02552D /* Tests iOS */,
 				328252821DEE32B50026BAD8 /* Tests tvOS */,
 			);
@@ -408,7 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3282528F1DEE335F0026BAD8 /* ParserTests.swift in Sources */,
-				3282528E1DEE335F0026BAD8 /* DeviceTests.swift in Sources */,
+				3282528E1DEE335F0026BAD8 /* ThingyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +422,7 @@
 				32FAD8DE1DECC12800AC5433 /* Parser.swift in Sources */,
 				32D5B9451DE355C200C6ED8C /* ProductLine.swift in Sources */,
 				AD88C62D76B2BF1732052A85 /* DeviceMap.swift in Sources */,
-				32FAD8DD1DECC12800AC5433 /* Device.swift in Sources */,
+				32FAD8DD1DECC12800AC5433 /* Thingy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +436,7 @@
 				32FAD8DA1DECC12600AC5433 /* Parser.swift in Sources */,
 				32D5B9461DE355C200C6ED8C /* ProductLine.swift in Sources */,
 				AD88C8A779AC8051DE5EF927 /* DeviceMap.swift in Sources */,
-				32FAD8D91DECC12600AC5433 /* Device.swift in Sources */,
+				32FAD8D91DECC12600AC5433 /* Thingy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32FAD8D41DECB24600AC5433 /* ParserTests.swift in Sources */,
-				32D5B9511DE35AFA00C6ED8C /* DeviceTests.swift in Sources */,
+				32D5B9511DE35AFA00C6ED8C /* ThingyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +458,7 @@
 				32FAD8D31DECAB2B00AC5433 /* Protocols.swift in Sources */,
 				32FAD8D11DECAA5E00AC5433 /* Parser.swift in Sources */,
 				32D5B9441DE355C200C6ED8C /* ProductLine.swift in Sources */,
-				32D5B94D1DE3593800C6ED8C /* Device.swift in Sources */,
+				32D5B94D1DE3593800C6ED8C /* Thingy.swift in Sources */,
 				AD88CB267C2A32BC0BF8FB85 /* DeviceMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,12 +468,12 @@
 /* Begin PBXTargetDependency section */
 		3282528A1DEE32B50026BAD8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 32D5B9341DE3536900C6ED8C /* Device tvOS */;
+			target = 32D5B9341DE3536900C6ED8C /* Thingy tvOS */;
 			targetProxy = 328252891DEE32B50026BAD8 /* PBXContainerItemProxy */;
 		};
 		AD88C352087385CEF3C5AABB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AD88CC9CCE3163C7DBDA97EE /* Device iOS */;
+			target = AD88CC9CCE3163C7DBDA97EE /* Thingy iOS */;
 			targetProxy = AD88C62ABEDCD78D36C919A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -484,7 +484,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bojandimovski.DeviceTests-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bojandimovski.ThingyTests-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
@@ -496,7 +496,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bojandimovski.DeviceTests-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bojandimovski.ThingyTests-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
@@ -516,7 +516,8 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Device;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Thingy;
+				PRODUCT_NAME = Thingy;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -539,7 +540,8 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Device;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Thingy;
+				PRODUCT_NAME = Thingy;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -560,7 +562,8 @@
 				INFOPLIST_FILE = "Sources/Info-tvOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Device;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Thingy;
+				PRODUCT_NAME = Thingy;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -582,7 +585,8 @@
 				INFOPLIST_FILE = "Sources/Info-tvOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Device;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Thingy;
+				PRODUCT_NAME = Thingy;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -604,7 +608,8 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Device;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Thingy;
+				PRODUCT_NAME = Thingy;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -649,7 +654,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Device;
+				PRODUCT_NAME = Thingy;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -666,7 +671,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bojandimovski.DeviceTests-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bojandimovski.ThingyTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -717,7 +722,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = Device;
+				PRODUCT_NAME = Thingy;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -740,7 +745,8 @@
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Device;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bojandimovski.Thingy;
+				PRODUCT_NAME = Thingy;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -753,7 +759,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bojandimovski.DeviceTests-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bojandimovski.ThingyTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -772,7 +778,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32D5B92D1DE3534C00C6ED8C /* Build configuration list for PBXNativeTarget "Device watchOS" */ = {
+		32D5B92D1DE3534C00C6ED8C /* Build configuration list for PBXNativeTarget "Thingy watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32D5B92E1DE3534C00C6ED8C /* Debug */,
@@ -781,7 +787,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32D5B93A1DE3536900C6ED8C /* Build configuration list for PBXNativeTarget "Device tvOS" */ = {
+		32D5B93A1DE3536900C6ED8C /* Build configuration list for PBXNativeTarget "Thingy tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32D5B93B1DE3536900C6ED8C /* Debug */,
@@ -799,7 +805,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD88C620B3BDE5FD2AEDC8A8 /* Build configuration list for PBXNativeTarget "Device iOS" */ = {
+		AD88C620B3BDE5FD2AEDC8A8 /* Build configuration list for PBXNativeTarget "Thingy iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD88C01082EF1EE75F31C9E6 /* Debug */,
@@ -808,7 +814,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD88CB75C26FB3DF1A51E108 /* Build configuration list for PBXProject "Device" */ = {
+		AD88CB75C26FB3DF1A51E108 /* Build configuration list for PBXProject "Thingy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD88C55B31FDA3A3AE9EEFFE /* Debug */,

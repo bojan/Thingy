@@ -1,6 +1,6 @@
 //
 // ParserTests
-// Device
+// Thingy
 //
 // Created by Bojan Dimovski on 28.11.16.
 // Copyright (c) 2016 Bojan Dimovski.
@@ -25,7 +25,7 @@
 
 
 import XCTest
-@testable import Device
+@testable import Thingy
 
 class ParserTests: XCTestCase {
 

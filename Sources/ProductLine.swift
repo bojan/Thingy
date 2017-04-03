@@ -1,6 +1,6 @@
 //
 // ProductLine
-// Device
+// Thingy
 //
 // Created by Bojan Dimovski on 21.11.16.
 // Copyright (c) 2016 Bojan Dimovski.

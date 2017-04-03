@@ -1,6 +1,6 @@
 //
 // Protocols.swift
-// Device
+// Thingy
 //
 // Created by Bojan Dimovski on 28.11.16.
 // Copyright © 2016 Bojan Dimovski. All rights reserved.

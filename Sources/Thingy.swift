@@ -1,6 +1,6 @@
 //
-// Device
-// Device
+// Thingy.swift
+// Thingy
 //
 // Created by Bojan Dimovski on 21.11.16.
 // Copyright (c) 2016 Bojan Dimovski.
@@ -26,7 +26,7 @@
 
 import Foundation
 
-public struct Device {
+public struct Thingy {
 
 	/// Specific device model.
 	public var model: Model?
@@ -56,14 +56,14 @@ public struct Device {
 
 // MARK: - Device identification
 
-internal extension Device {
+internal extension Thingy {
 
 	/// Extracts the device identifier from low-level APIs.
 	///
-	/// - Returns: A device identifier, e.g. "iPhone9,2", "iPad6,8", "AppleTV5,3".
+	/// - Returns: A device identifier, e.g. "iPhone9,2", "iPad6,11", "AppleTV5,3".
 	internal mutating func identifier() -> String {
 		guard _identifier == nil
-				else {
+		else {
 			return _identifier!
 		}
 
@@ -72,7 +72,8 @@ internal extension Device {
 		let machineMirror = Mirror(reflecting: systemInfo.machine)
 		let identifier = machineMirror.children.reduce("") { identifier, element in
 			guard let value = element.value as? Int8,
-				  value != 0 else {
+				  value != 0
+			else {
 				return identifier
 			}
 			return identifier + String(UnicodeScalar(UInt8(value)))
@@ -97,14 +98,13 @@ internal extension Device {
 	}
 }
 
-
 // MARK: - Marketing protocol
 
-extension Device: MarketingProtocol {
+extension Thingy: MarketingProtocol {
 
 	public var marketingName: String {
 		guard
-			let model = model
+				let model = model
 		else {
 			if let family = family?.marketingName {
 				return NSLocalizedString("Unknown \(family)", comment: "Unknown \(family)")
