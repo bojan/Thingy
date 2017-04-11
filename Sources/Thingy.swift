@@ -35,20 +35,21 @@ public struct Thingy {
 	public var family: Family?
 
 	/// Specific product line.
-	public var productLine: ProductLineEntity?
+	public var productLine: ProductLine?
 
 	fileprivate var _identifier: String?
+	fileprivate var _rawValue: RawThingy?
 
-	/// Initializes with a custom device identifier.
+	/// Inspects your current device if the identifier is omitted, or creates a custom device out of a valid identifier.
 	///
 	/// - Parameter identifier: A device identifier, e.g. "iPhone9,2", "iPad6,11.", "AppleTV5,3".
 	public init(identifier: String? = nil) {
 		let identifier = identifier ?? self.identifier()
 
-		if let parsedDevice = Parser.parse(identifier: identifier) {
-			self.family = parsedDevice.family
-			self.model = parsedDevice.model
-			self.productLine = parsedDevice.productLine
+		let rawThingy = RawThingy(identifier: identifier)
+		if let thingy = rawThingy.thingy {
+			self = thingy
+			_rawValue = rawThingy
 		}
 	}
 
@@ -83,14 +84,13 @@ internal extension Thingy {
 		return identifier
 	}
 
-
 	/// Initializes a parsed device using all the properties.
 	///
 	/// - Parameters:
 	///   - family: A device family.
 	///   - model: A device model.
 	///   - productLine: A product line.
-	init(family: Family?, model: Model?, productLine: ProductLineEntity?) {
+	init(family: Family?, model: Model?, productLine: ProductLine?) {
 		self.family = family
 		self.model = model
 		self.productLine = productLine
