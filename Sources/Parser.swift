@@ -26,8 +26,14 @@
 
 import Foundation
 
+/// Parses a model number into a qualified Thingy value.
 internal struct Parser {
 
+
+	/// Parses an identifier and returns a Thingy when successful.
+	///
+	/// - Parameter identifier: A device identifier, e.g. "iPhone9,2", "iPad6,11.", "AppleTV5,3".
+	/// - Returns: A qualified Thingy value or nil.
 	static func parse(identifier: String) -> Thingy? {
 		var identifier = identifier
 
@@ -47,49 +53,35 @@ internal struct Parser {
 														 range: NSRange(0..<identifier.characters.count),
 														 withTemplate: "$2.$3")
 
-		let modelNumber = Double(modelString) ?? 0
+		let rawModel = Double(modelString) ?? 0
 
-		let familyString = regex.stringByReplacingMatches(in: identifier,
-														  options: [],
-														  range: NSRange(0..<identifier.characters.count),
-														  withTemplate: "$1")
+		let rawFamily = regex.stringByReplacingMatches(in: identifier,
+													   options: [],
+													   range: NSRange(0..<identifier.characters.count),
+													   withTemplate: "$1")
 
-		return resolveDevice(familyString: familyString, modelNumber: modelNumber)
+		return resolveDevice(rawFamily: rawFamily, rawModel: rawModel)
 	}
 
-	private static func resolveDevice(familyString: String, modelNumber: Double) -> Thingy? {
-		guard let family = Family(rawValue: familyString),
-			  let familyMap = DeviceMap.families[family]
+
+	/// Resolves the device out of the raw family and model values.
+	///
+	/// - Parameters:
+	///   - rawFamily: A raw family string, e.g. "iphone", "ipad".
+	///   - rawModel: A raw model number, e.g. 9.2, 6.11, 5.3.
+	/// - Returns: A fully resolved Thingy or nil.
+	private static func resolveDevice(rawFamily: String, rawModel: Double) -> Thingy? {
+		guard let family = Family(rawValue: rawFamily)
 		else {
 			return nil
 		}
 
 		var parsedDevice = Thingy(family: family, model: nil, productLine: nil)
 
-		let model = familyMap.map(resolveModel(modelNumber: modelNumber)).flatMap { $0 }.first
-
+		let model = Model.allValues.filter { $0.numbers.contains(rawModel) }.first
 		parsedDevice.model = model
 
-		if let model = model {
-			parsedDevice.productLine = DeviceMap.productLines[model]
-		}
-
 		return parsedDevice
-	}
-
-	private static func resolveModel(modelNumber: Double) -> (_ key: Model, _ value: [Double]) -> Model? {
-		return { key, value in
-			let filteredModel = value.filter {
-				$0 == modelNumber
-			}.first
-
-			guard let _ = filteredModel
-			else {
-				return nil
-			}
-
-			return key
-		}
 	}
 
 }
