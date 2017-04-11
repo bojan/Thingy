@@ -222,32 +222,33 @@ extension Model {
 
 extension Model {
 
-	var productLine: ProductLineEntity? {
+	/// Product line of the model, currently supported only for the iPad.
+	var productLine: ProductLine? {
 		switch self {
 		case .iPad2:
-			return ProductLine.iPad.regular
+			return Lines.iPad.regular
 		case .iPad3:
-			return ProductLine.iPad.regular
+			return Lines.iPad.regular
 		case .iPad4:
-			return ProductLine.iPad.regular
+			return Lines.iPad.regular
 		case .iPad5:
-			return ProductLine.iPad.regular
+			return Lines.iPad.regular
 		case .iPadAir:
-			return ProductLine.iPad.air
+			return Lines.iPad.air
 		case .iPadAir2:
-			return ProductLine.iPad.air
+			return Lines.iPad.air
 		case .iPadPro12Inch:
-			return ProductLine.iPad.pro
+			return Lines.iPad.pro
 		case .iPadPro9Inch:
-			return ProductLine.iPad.pro
+			return Lines.iPad.pro
 		case .iPadMini:
-			return ProductLine.iPad.mini
+			return Lines.iPad.mini
 		case .iPadMini2:
-			return ProductLine.iPad.mini
+			return Lines.iPad.mini
 		case .iPadMini3:
-			return ProductLine.iPad.mini
+			return Lines.iPad.mini
 		case .iPadMini4:
-			return ProductLine.iPad.mini
+			return Lines.iPad.mini
 		default:
 			return nil
 		}
