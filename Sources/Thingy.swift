@@ -26,6 +26,12 @@
 
 import Foundation
 
+/// Thingy is the main type used to inspect and identify your current or custom device.
+///
+/// It exposes properties such as the device family, model or marketing name.
+///
+/// Besides the device properties it provides a light-weight, yet powerful device comparison.
+
 public struct Thingy {
 
 	/// Specific device model.
@@ -102,6 +108,9 @@ internal extension Thingy {
 
 extension Thingy: MarketingProtocol {
 
+	/// The marketing name of the device.
+	///
+	/// In case of future or undetectable devices the device is marked as e.g. "Unknown iPhone" or "Unknown Device".
 	public var marketingName: String {
 		guard
 				let model = model

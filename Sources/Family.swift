@@ -45,6 +45,8 @@ public enum Family: String {
 // MARK: - Marketing protocol
 
 extension Family: MarketingProtocol {
+
+	/// The marketing name of the product family, e.g. "iPhone", "Apple TV".
 	public var marketingName: String {
 		switch self {
 		case .phone:

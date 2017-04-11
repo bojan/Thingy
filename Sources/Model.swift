@@ -99,6 +99,7 @@ public enum Model {
 	/// - simulator: A simulator for the associated device model.
 	indirect case simulator(Model?)
 
+	/// All real-device values.
 	internal static var allValues: [Model] = [
 			.iPhone4S,
 			.iPhone5,
@@ -142,6 +143,7 @@ extension Model {
 		return numbers.first ?? 0
 	}
 
+	/// Associated model numbers for each device.
 	var numbers: ModelNumbers {
 		switch self {
 		case .iPhone4S:
@@ -260,6 +262,7 @@ extension Model {
 
 extension Model: MarketingProtocol {
 
+	/// The full marketing name of the model, e.g. "iPhone 7 Plus", "Apple TV 4".
 	public var marketingName: String {
 		switch self {
 		case .iPhone4S:
