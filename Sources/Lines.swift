@@ -31,7 +31,8 @@ import Foundation
 public struct Lines {
 
 	/// A type that describes the specific iPad line.
-	enum iPad: ProductLine, MarketingProtocol {
+
+	enum iPad: ProductLine {
 		/// - regular: A standard iPad product.
 		case regular
 		/// - pro: An iPad Pro product.
@@ -56,10 +57,4 @@ public struct Lines {
 		}
 	}
 
-}
-
-// MARK: - Hashable and equatable protocols
-
-func ==(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
-	return lhs.marketingName == rhs.marketingName
 }

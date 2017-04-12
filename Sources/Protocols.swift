@@ -34,7 +34,11 @@ public protocol MarketingProtocol {
 	var marketingName: String { get }
 }
 
+// MARK: - Hashable and equatable protocols
+func ==(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
+	return lhs.marketingName == rhs.marketingName
+}
+
 /// A dummy protocol used to encompass all product line enums.
 
-public protocol ProductLine {
-}
+typealias ProductLine = MarketingProtocol
