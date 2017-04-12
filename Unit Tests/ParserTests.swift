@@ -27,60 +27,42 @@
 import XCTest
 @testable import Thingy
 
-class ParserTests: XCTestCase {
-
+class RawThingyTests: XCTestCase {
 	func testParsingValidDevice() {
 		let identifier = "iPad6,3"
 
-		guard let parsedDevice = Parser.parse(identifier: identifier)
-		else {
-			XCTFail("Expected a non-nil device.")
-			return
-		}
+		let rawThingy = RawThingy(identifier: identifier)
 
-		XCTAssertNotNil(parsedDevice.family)
-		XCTAssertNotNil(parsedDevice.model)
-		XCTAssertNotNil(parsedDevice.productLine)
-
-		if let family = parsedDevice.family {
+		XCTAssertNotNil(rawThingy.family)
+		if let family = rawThingy.family {
 			XCTAssert(family == .pad)
 		}
-		else {
-			XCTFail("Expected a non-nil family.")
-		}
 
-		if let model = parsedDevice.model {
-			XCTAssert(model == .iPadPro9Inch)
-		}
-		else {
-			XCTFail("Expected a non-nil model.")
-		}
-
-		if let productLine = parsedDevice.productLine as? ProductLine.iPad {
-			XCTAssert(productLine == .pro)
-		}
+		XCTAssert(rawThingy.major == 6)
+		XCTAssert(rawThingy.minor == 3)
 	}
 
 	func testParsingInvalidDevice() {
 		let identifier = "6,3"
 
-		let parsedDevice = Parser.parse(identifier: identifier)
+		let rawThingy = RawThingy(identifier: identifier)
 
-		XCTAssertNil(parsedDevice)
+		XCTAssertNil(rawThingy.family)
+		XCTAssert(rawThingy.major == 6)
+		XCTAssert(rawThingy.minor == 3)
 	}
 
-	func testResolveUnknownDevice() {
-		let identifier = "iPad1,337"
+	func testParsingFutureDevice() {
+		let identifier = "iPhone133,7"
 
-		guard let parsedDevice = Parser.parse(identifier: identifier)
-			else {
-				XCTFail("Expected a non-nil device.")
-				return
+		let rawThingy = RawThingy(identifier: identifier)
+
+		XCTAssertNotNil(rawThingy.family)
+		if let family = rawThingy.family {
+			XCTAssert(family == .phone)
 		}
 
-		XCTAssertNotNil(parsedDevice.family)
-		XCTAssertNil(parsedDevice.model)
-		XCTAssertNil(parsedDevice.productLine)
+		XCTAssert(rawThingy.major == 133)
+		XCTAssert(rawThingy.minor == 7)
 	}
-
 }
