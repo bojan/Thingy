@@ -412,6 +412,52 @@ extension Thingy: MarketingProtocol {
 
 }
 
+// MARK: - Comparable protocols
+
+extension Thingy: Comparable {
+
+	/// Compares if the left-hand side Thingy is the same with the right one.
+	///
+	/// - Parameters:
+	///   - lhs: Left-hand side Thingy.
+	///   - rhs: Right-hand side Thingy.
+	/// - Returns: True if the devices are the same.
+	public static func ==(lhs: Thingy, rhs: Thingy) -> Bool {
+		return lhs.family == rhs.family &&
+			lhs.lowestNumber == rhs.lowestNumber
+	}
+
+	/// Compares if the left-hand side Thingy is older than the right one.
+	///
+	/// - Parameters:
+	///   - lhs: Left-hand side Thingy.
+	///   - rhs: Right-hand side Thingy.
+	/// - Returns: True if the left-hand Thingy is older, false if it's newer, the same or if it's a future or unknown device.
+	public static func <(lhs: Thingy, rhs: Thingy) -> Bool {
+		if case .unknown(_) = lhs {
+			return false
+		}
+
+		let leftRaw = RawThingy(family: lhs.family, modelNumber: lhs.lowestNumber)
+		let rightRaw = RawThingy(family: lhs.family, modelNumber: rhs.lowestNumber)
+
+		return leftRaw < rightRaw
+	}
+
+	/// Checks if the current device is newer (or same) than the compared model.
+	///
+	/// - Parameter than: A model to compare the current device against.
+	/// - Returns: True if the device is newer or the same, and false if it's older.
+	public func isNewer(than compared: Thingy) -> Bool {
+		return self >= compared
+	}
+
+	/// Checks if the current device is older than the compared model.
+	///
+	/// - Parameter than: A model to compare the current device against.
+	/// - Returns: True if the device is older, and false if it's newer or the same.
+	public func isOlder(than compared: Thingy) -> Bool {
+		return self < compared
 	}
 
 }
