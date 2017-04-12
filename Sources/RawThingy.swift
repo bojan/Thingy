@@ -30,59 +30,124 @@ internal struct RawThingy {
 
 	var major: Int = 0
 	var minor: Int = 0
-	var family = ""
+	var family: Family?
 	var isSimulator = false
+	fileprivate var _identifier: String?
 
 	var modelNumber: Double {
-		return Double(major) + (Double(minor) / 100)
+		let factor: Double = minor < 10 ? 10 : 100
+		return Double(major) + (Double(minor) / factor)
 	}
 
-	init(identifier: String) {
-		var identifier = identifier
+	init(family: Family, modelNumber: Double) {
+		self.init(identifier: "\(family.rawValue)\(modelNumber)")
+	}
+
+	init(identifier: String? = nil) {
+		var identifier = identifier ?? self.identifier()
+
 		isSimulator = (identifier == "x86_64" || identifier == "i386")
 
 		if let simulatorIdentifier = String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER")),
-			isSimulator {
+		   isSimulator {
 			identifier = simulatorIdentifier
 		}
 
-		let regex = try! NSRegularExpression(pattern: "^(.*)(\\d+)(\\,|\\.)(\\d+)$", options: [.caseInsensitive])
+		let regex = try! NSRegularExpression(pattern: "^([a-zA-Z]*)(\\d+)(\\,|\\.)(\\d+)$", options: [.caseInsensitive])
+
+		let rawFamily = regex.stringByReplacingMatches(in: identifier,
+		                                               options: [],
+		                                               range: NSRange(0..<identifier.characters.count),
+		                                               withTemplate: "$1")
+		family = Family(rawValue: rawFamily)
 
 		let modelString = regex.stringByReplacingMatches(in: identifier,
-		                                                     options: [],
-		                                                     range: NSRange(0..<identifier.characters.count),
-		                                                     withTemplate: "$2.$4")
+														 options: [],
+														 range: NSRange(0..<identifier.characters.count),
+														 withTemplate: "$2.$4")
 
 		let modelComponents = modelString.components(separatedBy: ".")
 		if let majorString = modelComponents.first,
-			let minorString = modelComponents.last {
+		   let minorString = modelComponents.last {
 			major = Int(majorString) ?? 0
 			minor = Int(minorString) ?? 0
 		}
+	}
 
-		family = regex.stringByReplacingMatches(in: identifier,
-		                                        options: [],
-		                                        range: NSRange(0..<identifier.characters.count),
-		                                        withTemplate: "$1")
+	internal mutating func identifier() -> String {
+		guard _identifier == nil
+		else {
+			return _identifier!
+		}
+
+		var systemInfo = utsname()
+		uname(&systemInfo)
+		let machineMirror = Mirror(reflecting: systemInfo.machine)
+		let identifier = machineMirror.children.reduce("") { identifier, element in
+			guard let value = element.value as? Int8,
+				  value != 0
+			else {
+				return identifier
+			}
+			return identifier + String(UnicodeScalar(UInt8(value)))
+		}
+
+		_identifier = identifier
+		return identifier
 	}
 
 	var thingy: Thingy? {
-		guard let family = Family(rawValue: family)
-			else {
-				return nil
+		guard let family = family
+		else {
+			return nil
 		}
 
-		var thingy = Thingy(family: family, model: nil, productLine: nil)
+		let foundThingy = Thingy.allValues
+				.filter {
+					$0.numbers.contains(modelNumber) && $0.family == family
+				}
+				.first
 
-		let foundModel = Model.allValues.filter { $0.numbers.contains(modelNumber) }.first
-		if let model = foundModel {
-			thingy.model = isSimulator ? .simulator(model) : model
+		guard let thingy = foundThingy
+		else {
+			return .unknown(family)
+		}
+
+		guard !isSimulator
+		else {
+			return .simulator(thingy)
 		}
 
 		return thingy
 	}
 
+}
 
+// MARK: - Comparison
+
+extension RawThingy: Comparable {
+
+	public static func <(lhs: RawThingy, rhs: RawThingy) -> Bool {
+		if lhs.family != rhs.family {
+			return false
+		}
+
+		if lhs.major < rhs.major {
+			return true
+		}
+
+		if lhs.minor < rhs.minor {
+			return true
+		}
+
+		return false
+	}
+
+	public static func ==(lhs: RawThingy, rhs: RawThingy) -> Bool {
+		return lhs.major == rhs.major &&
+			   lhs.minor == rhs.minor &&
+			   lhs.family == rhs.family
+	}
 
 }
 
