@@ -27,18 +27,17 @@
 import Foundation
 
 /// A type that describes the product family.
-///
-/// - phone: iPhone product family.
-/// - pod: iPod touch product family.
-/// - pad: iPad product family.
-/// - tv: Apple TV product family.
-/// - watch: Apple Watch product family.
 
 public enum Family: String {
+	/// - phone: iPhone product family.
 	case phone = "iPhone"
+	/// - pod: iPod touch product family.
 	case pod = "iPod"
+	/// - pad: iPad product family.
 	case pad = "iPad"
+	/// - tv: Apple TV product family.
 	case tv = "AppleTV"
+	/// - watch: Apple Watch product family.
 	case watch = "Watch"
 }
 
