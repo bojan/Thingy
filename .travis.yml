@@ -12,7 +12,6 @@ env:
   - IOS_SDK=iphonesimulator10.3
   - TVOS_SDK=appletvsimulator10.2
   - WATCHOS_SDK=watchsimulator3.2
-  - CODECOV_KEY="aa993c42-a933-4c34-890c-85954c7f2114"
   matrix:
     - OS_VERSION="3.2"  DEVICE_NAME="Apple Watch Series 2 - 42mm"     SCHEME="$WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" RUN_TESTS="NO"
     - OS_VERSION="2.2"  DEVICE_NAME="Apple Watch - 42mm"              SCHEME="$WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" RUN_TESTS="NO"
@@ -39,16 +38,14 @@ script:
 
   # Build Framework in Debug and Run Tests if specified
   - if [ $RUN_TESTS == "YES" ]; then
-      travis_retry xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES -enableCodeCoverage YES test;
+      travis_retry xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -f `xcpretty-travis-formatter`;
     else
       travis_retry xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -f `xcpretty-travis-formatter`;
     fi
-  - bash <(curl -s https://codecov.io/bash) -t $CODECOV_KEY;
 
   # Build Framework in Release and Run Tests if specified
   - if [ $RUN_TESTS == "YES" ]; then
-      travis_retry xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES -enableCodeCoverage YES test;
+      travis_retry xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -f `xcpretty-travis-formatter`;
     else
-      travis_retry xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -f `xcpretty-travis-formatter`
+      travis_retry xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -f `xcpretty-travis-formatter`;
     fi
-  - bash <(curl -s https://codecov.io/bash) -t $CODECOV_KEY;
