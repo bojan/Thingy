@@ -1,5 +1,5 @@
 //
-// ParserTests
+// RawDeviceTests
 // Thingy
 //
 // Created by Bojan Dimovski on 28.11.16.
@@ -27,42 +27,42 @@
 import XCTest
 @testable import Thingy
 
-class RawThingyTests: XCTestCase {
+class RawDeviceTests: XCTestCase {
 	func testParsingValidDevice() {
 		let identifier = "iPad6,3"
 
-		let rawThingy = RawThingy(identifier: identifier)
+		let rawDevice = RawDevice(identifier: identifier)
 
-		XCTAssertNotNil(rawThingy.family)
-		if let family = rawThingy.family {
+		XCTAssertNotNil(rawDevice.family)
+		if let family = rawDevice.family {
 			XCTAssert(family == .pad)
 		}
 
-		XCTAssert(rawThingy.major == 6)
-		XCTAssert(rawThingy.minor == 3)
+		XCTAssert(rawDevice.major == 6)
+		XCTAssert(rawDevice.minor == 3)
 	}
 
 	func testParsingInvalidDevice() {
 		let identifier = "6,3"
 
-		let rawThingy = RawThingy(identifier: identifier)
+		let rawDevice = RawDevice(identifier: identifier)
 
-		XCTAssertNil(rawThingy.family)
-		XCTAssert(rawThingy.major == 6)
-		XCTAssert(rawThingy.minor == 3)
+		XCTAssertNil(rawDevice.family)
+		XCTAssert(rawDevice.major == 6)
+		XCTAssert(rawDevice.minor == 3)
 	}
 
 	func testParsingFutureDevice() {
 		let identifier = "iPhone133,7"
 
-		let rawThingy = RawThingy(identifier: identifier)
+		let rawDevice = RawDevice(identifier: identifier)
 
-		XCTAssertNotNil(rawThingy.family)
-		if let family = rawThingy.family {
+		XCTAssertNotNil(rawDevice.family)
+		if let family = rawDevice.family {
 			XCTAssert(family == .phone)
 		}
 
-		XCTAssert(rawThingy.major == 133)
-		XCTAssert(rawThingy.minor == 7)
+		XCTAssert(rawDevice.major == 133)
+		XCTAssert(rawDevice.minor == 7)
 	}
 }

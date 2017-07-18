@@ -1,5 +1,5 @@
 //
-// ThingyTests.swift
+// DeviceTests.swift
 // Thingy
 //
 // Created by Bojan Dimovski on 21.11.16.
@@ -27,13 +27,13 @@
 import XCTest
 @testable import Thingy
 
-class ThingyTests: XCTestCase {
+class DeviceTests: XCTestCase {
 
 	func testResolveValidDevice() {
-		let device1: Thingy? = Thingy(identifier: "iPad4,1")
+		let device1: Device? = Device(identifier: "iPad4,1")
 
 		XCTAssertNotNil(device1)
-		if let device: Thingy = device1 {
+		if let device: Device = device1 {
 			XCTAssert(device.marketingName == "iPad Air")
 			XCTAssert(device.family == .pad)
 			XCTAssertNotNil(device.productLine)
@@ -42,7 +42,7 @@ class ThingyTests: XCTestCase {
 			}
 		}
 
-		let device2 = Thingy(identifier: "AppleTV5,3")
+		let device2 = Device(identifier: "AppleTV5,3")
 
 		XCTAssertNotNil(device2)
 		if let device = device2 {
@@ -51,7 +51,7 @@ class ThingyTests: XCTestCase {
 			XCTAssertNil(device.productLine)
 		}
 
-		let device3 = Thingy(identifier: "iPhone4,1")
+		let device3 = Device(identifier: "iPhone4,1")
 
 		XCTAssertNotNil(device1)
 		if let device = device3 {
@@ -62,7 +62,7 @@ class ThingyTests: XCTestCase {
 	}
 
 	func testResolveFutureDevice() {
-		let device = Thingy(identifier: "iPad133,7")
+		let device = Device(identifier: "iPad133,7")
 
 		XCTAssertNotNil(device)
 		if let device = device {
@@ -72,16 +72,16 @@ class ThingyTests: XCTestCase {
 	}
 
 	func testResolveInvalidDevice() {
-		var device = Thingy(identifier: "iPack1,337")
+		var device = Device(identifier: "iPack1,337")
 
 		XCTAssertNil(device)
 
-		device = Thingy(identifier: "iPhone1337")
+		device = Device(identifier: "iPhone1337")
 		XCTAssertNil(device)
 	}
 
 	func testValidSimulator() {
-		let device = Thingy(identifier: "x86_64")
+		let device = Device(identifier: "x86_64")
 
 		XCTAssertNotNil(device)
 
@@ -94,7 +94,7 @@ class ThingyTests: XCTestCase {
 		}
 	}
 
-	func expectSimulator(actual: Thingy, file: StaticString = #file, line: UInt = #line, test: (Thingy?) -> Void) {
+	func expectSimulator(actual: Device, file: StaticString = #file, line: UInt = #line, test: (Device?) -> Void) {
 		guard case let .simulator(model) = actual
 		else {
 			XCTFail("Expected a simulator, got <\(actual)>", file: file, line: line)

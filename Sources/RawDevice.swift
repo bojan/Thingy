@@ -1,5 +1,5 @@
 //
-// RawThingy.swift
+// RawDevice.swift
 // Thingy
 //
 // Created by Bojan Dimovski on 21.11.16.
@@ -26,7 +26,7 @@
 
 import Foundation
 
-internal struct RawThingy {
+internal struct RawDevice {
 
 	var major: Int = 0
 	var minor: Int = 0
@@ -95,13 +95,13 @@ internal struct RawThingy {
 		return identifier
 	}
 
-	var thingy: Thingy? {
+	var device: Device? {
 		guard let family = family
 		else {
 			return nil
 		}
 
-		let foundThingy = Thingy.allValues.filter {
+		let foundThingy = Device.allValues.filter {
 			$0.numbers.contains(modelNumber) && $0.family == family
 		}.first
 
@@ -122,9 +122,9 @@ internal struct RawThingy {
 
 // MARK: - Comparison
 
-extension RawThingy: Comparable {
+extension RawDevice: Comparable {
 
-	public static func <(lhs: RawThingy, rhs: RawThingy) -> Bool {
+	public static func <(lhs: RawDevice, rhs: RawDevice) -> Bool {
 		if lhs.family != rhs.family {
 			return false
 		}
@@ -141,7 +141,7 @@ extension RawThingy: Comparable {
 		return false
 	}
 
-	public static func ==(lhs: RawThingy, rhs: RawThingy) -> Bool {
+	public static func ==(lhs: RawDevice, rhs: RawDevice) -> Bool {
 		return lhs.major == rhs.major &&
 			   lhs.minor == rhs.minor &&
 			   lhs.family == rhs.family

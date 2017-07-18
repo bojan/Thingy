@@ -13,8 +13,8 @@ import XCTest
 class ComparisonTests: XCTestCase {
 
 	func testCompareDeviceIsEqual() {
-		let device = Thingy(identifier: "iPad4,9")
-		let comparisonModel = Thingy.iPadMini3
+		let device = Device(identifier: "iPad4,9")
+		let comparisonModel = Device.iPadMini3
 
 		XCTAssertNotNil(device)
 		if let device = device {
@@ -29,8 +29,8 @@ class ComparisonTests: XCTestCase {
 	}
 
 	func testCompareDeviceIsNewer() {
-		let device = Thingy.iPadMini4
-		let comparisonModel = Thingy.iPadMini3
+		let device = Device.iPadMini4
+		let comparisonModel = Device.iPadMini3
 
 		do {
 			let result = try device.isNewerOrEqual(than: comparisonModel)
@@ -42,8 +42,8 @@ class ComparisonTests: XCTestCase {
 	}
 
 	func testCompareDeviceIsOlder() {
-		let device = Thingy.iPadPro12Inch
-		let comparisonModel = Thingy.iPadPro10Inch
+		let device = Device.iPadPro12Inch
+		let comparisonModel = Device.iPadPro10Inch
 
 		do {
 			let result = try device.isOlder(than: comparisonModel)
@@ -55,23 +55,23 @@ class ComparisonTests: XCTestCase {
 	}
 
 	func testCompareIncompatibleDevices() {
-		var lhs = Thingy.unknown(.pad)
-		var rhs = Thingy.iPadPro10Inch
+		var lhs = Device.unknown(.pad)
+		var rhs = Device.iPadPro10Inch
 
 		XCTAssertThrows(expression: try lhs.isEqual(to: rhs))
 
-		lhs = Thingy.iPadPro12Inch2G
-		rhs = Thingy.unknown(.pad)
+		lhs = Device.iPadPro12Inch2G
+		rhs = Device.unknown(.pad)
 
 		XCTAssertThrows(expression: try lhs.isEqual(to: rhs))
 
-		lhs = Thingy.iPadPro12Inch2G
-		rhs = Thingy.iPad5
+		lhs = Device.iPadPro12Inch2G
+		rhs = Device.iPad5
 
 		XCTAssertThrows(expression: try lhs.isEqual(to: rhs))
 
-		lhs = Thingy.iPhone7
-		rhs = Thingy.appleTV4
+		lhs = Device.iPhone7
+		rhs = Device.appleTV4
 
 		XCTAssertThrows(expression: try lhs.isEqual(to: rhs))
 	}

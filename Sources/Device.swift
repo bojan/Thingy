@@ -25,12 +25,13 @@
 
 
 import Foundation
+import UIKit
 
 /// A type that describes the specific device model.
 ///
 /// For iOS devices, only devices supporting iOS 8 are included.
 
-public enum Thingy {
+public enum Device {
 
 	/// - iPhone4S: iPhone 4S.
 	case iPhone4S
@@ -101,13 +102,13 @@ public enum Thingy {
 	case watchSeries2
 
 	/// - simulator: A simulator for the associated device model.
-	indirect case simulator(Thingy)
+	indirect case simulator(Device)
 
 	/// - unknown: An unknown or a future device within the associated family.
 	case unknown(Family)
 
 	/// All real-device values.
-	internal static var allValues: [Thingy] = [
+	internal static var allValues: [Device] = [
 			.iPhone4S,
 			.iPhone5,
 			.iPhone5c,
@@ -143,12 +144,12 @@ public enum Thingy {
 
 }
 
-extension Thingy {
+extension Device {
 
 
 	/// Inspects the current device.
 	public init() {
-		self = RawThingy(identifier: nil).thingy!
+		self = RawDevice(identifier: nil).device!
 	}
 
 	/// Creates a custom device out of a valid identifier.
@@ -157,7 +158,7 @@ extension Thingy {
 	///
 	/// - Parameter identifier: A device identifier, e.g. "iPhone9,2", "iPad6,11.", "AppleTV5,3".
 	public init?(identifier: String? = nil) {
-		guard let thingy = RawThingy(identifier: identifier).thingy
+		guard let thingy = RawDevice(identifier: identifier).device
 		else {
 			return nil
 		}
@@ -178,7 +179,7 @@ enum ThingyError: Error {
 
 // MARK: - Family
 
-extension Thingy {
+extension Device {
 
 	/// Associated family for each device.
 	var family: Family {
@@ -235,7 +236,7 @@ extension Thingy {
 
 // MARK: - Model numbers
 
-extension Thingy {
+extension Device {
 
 	internal var lowestNumber: Double {
 		return numbers.first ?? 0
@@ -323,7 +324,7 @@ extension Thingy {
 
 // MARK: - Product lines
 
-extension Thingy {
+extension Device {
 
 	/// Product line of the model, currently supported only for the iPad.
 	var productLine: ProductLine? {
@@ -365,7 +366,7 @@ extension Thingy {
 
 // MARK: - Marketing protocol
 
-extension Thingy: MarketingProtocol {
+extension Device: MarketingProtocol {
 
 	/// The full marketing name of the model, e.g. "iPhone 7 Plus", "Apple TV 4".
 	public var marketingName: String {
@@ -448,9 +449,73 @@ extension Thingy: MarketingProtocol {
 
 }
 
+// MARK: - Display
+
+extension Device {
+
+	var displaySize: Float {
+		return display.size
+	}
+	var display: Display {
+		switch self {
+		case .iPhone4S:
+			return Display(size: 3.5, resolution: CGSize(width: 320, height: 480), physicalResolution: CGSize(width: 640, height: 960), renderedResolution: CGSize(width: 640, height: 960), scale: 2.0, density: 326)
+		case .iPhone5,
+			 .iPhone5c,
+			 .iPhone5s,
+			 .iPhoneSE:
+			return Display(size: 4, resolution: CGSize(width: 320, height: 568), physicalResolution: CGSize(width: 640, height: 1136), renderedResolution: CGSize(width: 640, height: 1136), scale: 2.0, density: 326)
+		case .iPhone6,
+			 .iPhone6s,
+			 .iPhone7:
+			return Display(size: 4.7, resolution: CGSize(width: 375, height: 667), physicalResolution: CGSize(width: 750, height: 1334), renderedResolution: CGSize(width: 750, height: 1334), scale: 2.0, density: 326)
+		case .iPhone6Plus,
+			 .iPhone6sPlus,
+			 .iPhone7Plus:
+			return Display(size: 5.5, resolution: CGSize(width: 414, height: 736), physicalResolution: CGSize(width: 1080, height: 1920), renderedResolution: CGSize(width: 1242, height: 2208), scale: 3.0, density: 401)
+
+		case .iPodTouch5G,
+			 .iPodTouch6G:
+			return .pod
+
+		case .appleTV4:
+			return .tv
+
+		case .watch,
+			 .watchSeries1,
+			 .watchSeries2:
+			return .watch
+
+		case .iPad2,
+			 .iPad3,
+			 .iPad4,
+			 .iPad5,
+			 .iPadAir,
+			 .iPadAir2,
+			 .iPadPro12Inch,
+			 .iPadPro9Inch,
+			 .iPadPro12Inch2G,
+			 .iPadPro10Inch,
+			 .iPadMini,
+			 .iPadMini2,
+			 .iPadMini3,
+			 .iPadMini4:
+			return .pad
+
+		case let .simulator(model):
+			return model.display
+
+		case .unknown(_):
+			return Display(size: 0, resolution: CGSize.zero, physicalResolution: CGSize.zero, renderedResolution: CGSize.zero, scale: 0.0, density: 0)
+		}
+		return nil
+	}
+
+}
+
 // MARK: - Comparable protocols
 
-extension Thingy {
+extension Device {
 
 
 	/// Checks if the current device is the same as the compared model.
@@ -458,8 +523,8 @@ extension Thingy {
 	/// - Parameter to: A model to compare the current device against.
 	/// - Returns: True if the device is the same, and false otherwise.
 	/// - Throws: An error when comparing incompatible families, product lines or unknown products.
-	public func isEqual(to compared: Thingy) throws -> Bool {
-		return try Thingy.compare(lhs: self, rhs: compared, sign: ==)
+	public func isEqual(to compared: Device) throws -> Bool {
+		return try Device.compare(lhs: self, rhs: compared, sign: ==)
 	}
 
 	/// Checks if the current device is newer (or same) than the compared model.
@@ -467,8 +532,8 @@ extension Thingy {
 	/// - Parameter than: A model to compare the current device against.
 	/// - Returns: True if the device is newer or the same, and false if it's older.
 	/// - Throws: An error when comparing incompatible families, product lines or unknown products.
-	public func isNewerOrEqual(than compared: Thingy) throws -> Bool {
-		return try Thingy.compare(lhs: self, rhs: compared, sign: >=)
+	public func isNewerOrEqual(than compared: Device) throws -> Bool {
+		return try Device.compare(lhs: self, rhs: compared, sign: >=)
 	}
 
 	/// Checks if the current device is older than the compared model.
@@ -476,11 +541,11 @@ extension Thingy {
 	/// - Parameter than: A model to compare the current device against.
 	/// - Returns: True if the device is older, and false if it's newer or the same.
 	/// - Throws: An error when comparing incompatible families, product lines or unknown products.
-	public func isOlder(than compared: Thingy) throws -> Bool {
-		return try Thingy.compare(lhs: self, rhs: compared, sign: <)
+	public func isOlder(than compared: Device) throws -> Bool {
+		return try Device.compare(lhs: self, rhs: compared, sign: <)
 	}
 
-	private static func compare(lhs: Thingy, rhs: Thingy, sign: ((RawThingy, RawThingy) -> Bool)) throws -> Bool {
+	private static func compare(lhs: Device, rhs: Device, sign: ((RawDevice, RawDevice) -> Bool)) throws -> Bool {
 		if case .unknown(_) = lhs {
 			throw ThingyError.IncomparableUnknownProduct
 		}
@@ -500,8 +565,8 @@ extension Thingy {
 			throw ThingyError.IncomparableProductLines
 		}
 
-		let lhsRaw = RawThingy(family: lhs.family, modelNumber: lhs.lowestNumber)
-		let rhsRaw = RawThingy(family: rhs.family, modelNumber: rhs.lowestNumber)
+		let lhsRaw = RawDevice(family: lhs.family, modelNumber: lhs.lowestNumber)
+		let rhsRaw = RawDevice(family: rhs.family, modelNumber: rhs.lowestNumber)
 
 		return sign(lhsRaw, rhsRaw)
 	}
