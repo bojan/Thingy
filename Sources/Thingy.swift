@@ -161,6 +161,15 @@ extension Thingy {
 
 }
 
+// MARK: - Errors
+
+enum ThingyError: Error {
+	case InvalidIdentifier
+	case IncomparableFamilies
+	case IncomparableProductLines
+	case IncomparableUnknownProduct
+}
+
 // MARK: - Family
 
 extension Thingy {
