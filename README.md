@@ -11,8 +11,9 @@ Device detection and querying library.
 
 - [x] Device detection
 - [x] Device family detection
+- [ ] Device screens
 - [x] Simulator detection
-- [ ] Simple querying
+- [x] Simple querying
 
 ## Requirements
 
@@ -73,26 +74,45 @@ import Thingy
 
 Inspect the current device:
 
-```
-let myThingy = Thingy()
+```swift
+
+let myDevice = Thingy()
 
 // Compare models or product families
-if let family = myThingy.family,
-    family == .tv {
-        print("This is an Apple TV device.")
+if myDevice.family == .tv {
+    print("This is an Apple TV device.")
 }
 
-if let model = myThingy.model,
-    model != .iPhone7Plus {
-        print("This is NOT an iPhone 7 Plus.")
+if myDevice.model != .iPhone7Plus {
+    print("This is NOT an iPhone 7 Plus.")
 }
 
 // Pretty printed device properties
 
-print(myThingy.family?.marketingName) // e.g. iPad
-print(myThingy.model?.marketingName) // e.g. iPhone 7 Plus
-print(myThingy.productLine?.marketingName) // e.g. Air
+print(myDevice.family.marketingName) // e.g. iPad
+print(myDevice.model.marketingName) // e.g. iPhone 7 Plus
+print(myDevice.productLine.marketingName) // e.g. Air
 
+```
+
+### Model comparison
+
+```swift
+let myDevice = Thingy()
+
+do {
+	let result = try myDevice.isEqual(to: Thingy.iPadPro12Inch)
+}
+catch {
+	print("The devices are incompatible.")
+}
+
+do {
+	let result = try myDevice.isOlder(than: Thingy.iPadPro10Inch)
+}
+catch {
+	print("The devices are incompatible.")
+}
 ```
 
 ## Contributions
