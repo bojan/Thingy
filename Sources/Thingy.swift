@@ -471,13 +471,11 @@ extension Thingy {
 	}
 
 	private static func compare(lhs: Thingy, rhs: Thingy, sign: ((RawThingy, RawThingy) -> Bool)) throws -> Bool {
-		guard case .unknown(_) = lhs
-		else {
+		if case .unknown(_) = lhs {
 			throw ThingyError.IncomparableUnknownProduct
 		}
 
-		guard case .unknown(_) = rhs
-		else {
+		if case .unknown(_) = rhs {
 			throw ThingyError.IncomparableUnknownProduct
 		}
 
