@@ -145,7 +145,13 @@ public enum Thingy {
 
 extension Thingy {
 
-	/// Inspects your current device if the identifier is omitted, or creates a custom device out of a valid identifier.
+
+	/// Inspects the current device.
+	public init() {
+		self = RawThingy(identifier: nil).thingy!
+	}
+
+	/// Creates a custom device out of a valid identifier.
 	///
 	/// If a device cannot be created, returns an unknown device.
 	///

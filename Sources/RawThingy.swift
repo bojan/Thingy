@@ -75,9 +75,8 @@ internal struct RawThingy {
 	}
 
 	internal mutating func identifier() -> String {
-		guard _identifier == nil
-		else {
-			return _identifier!
+		if let _identifier = _identifier {
+			return _identifier
 		}
 
 		var systemInfo = utsname()
@@ -102,11 +101,9 @@ internal struct RawThingy {
 			return nil
 		}
 
-		let foundThingy = Thingy.allValues
-				.filter {
+		let foundThingy = Thingy.allValues.filter {
 			$0.numbers.contains(modelNumber) && $0.family == family
-		}
-				.first
+		}.first
 
 		guard let thingy = foundThingy
 		else {
