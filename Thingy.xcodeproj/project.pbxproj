@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		324F2FD21F1E906000490671 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F2FD11F1E906000490671 /* XCTest.swift */; };
+		324F2FD31F1E906000490671 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F2FD11F1E906000490671 /* XCTest.swift */; };
 		328252881DEE32B50026BAD8 /* Thingy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D5B9351DE3536900C6ED8C /* Thingy.framework */; };
 		3282528E1DEE335F0026BAD8 /* ThingyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9501DE35AFA00C6ED8C /* ThingyTests.swift */; };
 		3282528F1DEE335F0026BAD8 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD88C813A58AD585E89B0A02 /* ParserTests.swift */; };
@@ -53,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		324F2FD11F1E906000490671 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
 		3282527D1DEE32220026BAD8 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		328252831DEE32B50026BAD8 /* Tests tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D5B9281DE3534B00C6ED8C /* Thingy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Thingy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				AD88CB78B87CDD5F9390F9F3 /* Info.plist */,
+				324F2FD11F1E906000490671 /* XCTest.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -403,6 +407,7 @@
 			files = (
 				3282528F1DEE335F0026BAD8 /* ParserTests.swift in Sources */,
 				3282528E1DEE335F0026BAD8 /* ThingyTests.swift in Sources */,
+				324F2FD31F1E906000490671 /* XCTest.swift in Sources */,
 				AD88C71A7646264271171921 /* ComparisonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +442,7 @@
 			files = (
 				32FAD8D41DECB24600AC5433 /* ParserTests.swift in Sources */,
 				32D5B9511DE35AFA00C6ED8C /* ThingyTests.swift in Sources */,
+				324F2FD21F1E906000490671 /* XCTest.swift in Sources */,
 				AD88C7B050DA29CEE742C7D5 /* ComparisonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
