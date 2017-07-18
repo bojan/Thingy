@@ -136,7 +136,8 @@ extension RawThingy: Comparable {
 			return true
 		}
 
-		if lhs.minor < rhs.minor {
+		if lhs.major == rhs.major &&
+			lhs.minor < rhs.minor {
 			return true
 		}
 
