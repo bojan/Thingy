@@ -56,9 +56,9 @@ internal struct RawThingy {
 		let regex = try! NSRegularExpression(pattern: "^([a-zA-Z]*)(\\d+)(\\,|\\.)(\\d+)$", options: [.caseInsensitive])
 
 		let rawFamily = regex.stringByReplacingMatches(in: identifier,
-		                                               options: [],
-		                                               range: NSRange(0..<identifier.characters.count),
-		                                               withTemplate: "$1")
+													   options: [],
+													   range: NSRange(0..<identifier.characters.count),
+													   withTemplate: "$1")
 		family = Family(rawValue: rawFamily)
 
 		let modelString = regex.stringByReplacingMatches(in: identifier,
@@ -104,8 +104,8 @@ internal struct RawThingy {
 
 		let foundThingy = Thingy.allValues
 				.filter {
-					$0.numbers.contains(modelNumber) && $0.family == family
-				}
+			$0.numbers.contains(modelNumber) && $0.family == family
+		}
 				.first
 
 		guard let thingy = foundThingy
@@ -137,7 +137,7 @@ extension RawThingy: Comparable {
 		}
 
 		if lhs.major == rhs.major &&
-			lhs.minor < rhs.minor {
+		   lhs.minor < rhs.minor {
 			return true
 		}
 

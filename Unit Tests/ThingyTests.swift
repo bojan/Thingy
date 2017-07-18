@@ -23,6 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+
 import XCTest
 @testable import Thingy
 
@@ -86,7 +87,7 @@ class ThingyTests: XCTestCase {
 
 		if let device = device {
 			expectSimulator(actual: device) { device in
-				 XCTAssertNotNil(device)
+				XCTAssertNotNil(device)
 			}
 
 			XCTAssert(!device.marketingName.isEmpty)
@@ -95,9 +96,9 @@ class ThingyTests: XCTestCase {
 
 	func expectSimulator(actual: Thingy, file: StaticString = #file, line: UInt = #line, test: (Thingy?) -> Void) {
 		guard case let .simulator(model) = actual
-			else {
-				XCTFail("Expected a simulator, got <\(actual)>", file: file, line: line)
-				return
+		else {
+			XCTFail("Expected a simulator, got <\(actual)>", file: file, line: line)
+			return
 		}
 
 		test(model)
