@@ -338,6 +338,10 @@ extension Thingy {
 			return Lines.iPad.pro
 		case .iPadPro9Inch:
 			return Lines.iPad.pro
+		case .iPadPro12Inch2G:
+			return Lines.iPad.pro
+		case .iPadPro10Inch:
+			return Lines.iPad.pro
 		case .iPadMini:
 			return Lines.iPad.mini
 		case .iPadMini2:
