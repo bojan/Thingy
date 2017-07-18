@@ -440,50 +440,62 @@ extension Thingy: MarketingProtocol {
 
 // MARK: - Comparable protocols
 
-extension Thingy: Comparable {
+extension Thingy {
 
-	/// Compares if the left-hand side Thingy is the same with the right one.
+
+	/// Checks if the current device is the same as the compared model.
 	///
-	/// - Parameters:
-	///   - lhs: Left-hand side Thingy.
-	///   - rhs: Right-hand side Thingy.
-	/// - Returns: True if the devices are the same.
-	public static func ==(lhs: Thingy, rhs: Thingy) -> Bool {
-		return lhs.family == rhs.family &&
-			lhs.lowestNumber == rhs.lowestNumber
-	}
-
-	/// Compares if the left-hand side Thingy is older than the right one.
-	///
-	/// - Parameters:
-	///   - lhs: Left-hand side Thingy.
-	///   - rhs: Right-hand side Thingy.
-	/// - Returns: True if the left-hand Thingy is older, false if it's newer, the same or if it's a future or unknown device.
-	public static func <(lhs: Thingy, rhs: Thingy) -> Bool {
-		if case .unknown(_) = lhs {
-			return false
-		}
-
-		let leftRaw = RawThingy(family: lhs.family, modelNumber: lhs.lowestNumber)
-		let rightRaw = RawThingy(family: lhs.family, modelNumber: rhs.lowestNumber)
-
-		return leftRaw < rightRaw
+	/// - Parameter to: A model to compare the current device against.
+	/// - Returns: True if the device is the same, and false otherwise.
+	/// - Throws: An error when comparing incompatible families, product lines or unknown products.
+	public func isEqual(to compared: Thingy) throws -> Bool {
+		return try Thingy.compare(lhs: self, rhs: compared, sign: ==)
 	}
 
 	/// Checks if the current device is newer (or same) than the compared model.
 	///
 	/// - Parameter than: A model to compare the current device against.
 	/// - Returns: True if the device is newer or the same, and false if it's older.
-	public func isNewer(than compared: Thingy) -> Bool {
-		return self >= compared
+	/// - Throws: An error when comparing incompatible families, product lines or unknown products.
+	public func isNewerOrEqual(than compared: Thingy) throws -> Bool {
+		return try Thingy.compare(lhs: self, rhs: compared, sign: >=)
 	}
 
 	/// Checks if the current device is older than the compared model.
 	///
 	/// - Parameter than: A model to compare the current device against.
 	/// - Returns: True if the device is older, and false if it's newer or the same.
-	public func isOlder(than compared: Thingy) -> Bool {
-		return self < compared
+	/// - Throws: An error when comparing incompatible families, product lines or unknown products.
+	public func isOlder(than compared: Thingy) throws -> Bool {
+		return try Thingy.compare(lhs: self, rhs: compared, sign: <)
+	}
+
+	private static func compare(lhs: Thingy, rhs: Thingy, sign: ((RawThingy, RawThingy) -> Bool)) throws -> Bool {
+		guard case .unknown(_) = lhs
+		else {
+			throw ThingyError.IncomparableUnknownProduct
+		}
+
+		guard case .unknown(_) = rhs
+		else {
+			throw ThingyError.IncomparableUnknownProduct
+		}
+
+		guard lhs.family == rhs.family
+		else {
+			throw ThingyError.IncomparableFamilies
+		}
+
+		if let lhsProductLine = lhs.productLine,
+		   let rhsProductLine = rhs.productLine,
+		   lhsProductLine != rhsProductLine {
+			throw ThingyError.IncomparableProductLines
+		}
+
+		let lhsRaw = RawThingy(family: lhs.family, modelNumber: lhs.lowestNumber)
+		let rhsRaw = RawThingy(family: rhs.family, modelNumber: rhs.lowestNumber)
+
+		return sign(lhsRaw, rhsRaw)
 	}
 
 }
