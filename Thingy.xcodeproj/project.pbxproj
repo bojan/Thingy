@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		324F2FD21F1E906000490671 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F2FD11F1E906000490671 /* XCTest.swift */; };
 		324F2FD31F1E906000490671 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F2FD11F1E906000490671 /* XCTest.swift */; };
+		324F2FD51F1E9DC600490671 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F2FD41F1E9DC600490671 /* Display.swift */; };
+		324F2FD61F1E9DC600490671 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F2FD41F1E9DC600490671 /* Display.swift */; };
+		324F2FD71F1E9DC600490671 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F2FD41F1E9DC600490671 /* Display.swift */; };
 		328252881DEE32B50026BAD8 /* Thingy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D5B9351DE3536900C6ED8C /* Thingy.framework */; };
 		3282528E1DEE335F0026BAD8 /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5B9501DE35AFA00C6ED8C /* DeviceTests.swift */; };
 		3282528F1DEE335F0026BAD8 /* RawDeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD88C813A58AD585E89B0A02 /* RawDeviceTests.swift */; };
@@ -56,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		324F2FD11F1E906000490671 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
+		324F2FD41F1E9DC600490671 /* Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
 		3282527D1DEE32220026BAD8 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		328252831DEE32B50026BAD8 /* Tests tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D5B9281DE3534B00C6ED8C /* Thingy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Thingy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,7 @@
 			children = (
 				32D5B93F1DE355B400C6ED8C /* Family.swift */,
 				32D5B9431DE355C200C6ED8C /* Lines.swift */,
+				324F2FD41F1E9DC600490671 /* Display.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 				32D5B94A1DE356B000C6ED8C /* Device.swift in Sources */,
 				32D5B9411DE355B400C6ED8C /* Family.swift in Sources */,
 				32FAD8DF1DECC12800AC5433 /* Protocols.swift in Sources */,
+				324F2FD61F1E9DC600490671 /* Display.swift in Sources */,
 				32FAD8DE1DECC12800AC5433 /* RawDevice.swift in Sources */,
 				32D5B9451DE355C200C6ED8C /* Lines.swift in Sources */,
 			);
@@ -431,6 +437,7 @@
 				32D5B94B1DE356B000C6ED8C /* Device.swift in Sources */,
 				32D5B9421DE355B400C6ED8C /* Family.swift in Sources */,
 				32FAD8DB1DECC12600AC5433 /* Protocols.swift in Sources */,
+				324F2FD71F1E9DC600490671 /* Display.swift in Sources */,
 				32FAD8DA1DECC12600AC5433 /* RawDevice.swift in Sources */,
 				32D5B9461DE355C200C6ED8C /* Lines.swift in Sources */,
 			);
@@ -454,6 +461,7 @@
 				32D5B9491DE356B000C6ED8C /* Device.swift in Sources */,
 				32D5B9401DE355B400C6ED8C /* Family.swift in Sources */,
 				32FAD8D31DECAB2B00AC5433 /* Protocols.swift in Sources */,
+				324F2FD51F1E9DC600490671 /* Display.swift in Sources */,
 				32FAD8D11DECAA5E00AC5433 /* RawDevice.swift in Sources */,
 				32D5B9441DE355C200C6ED8C /* Lines.swift in Sources */,
 			);
