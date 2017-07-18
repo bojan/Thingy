@@ -76,10 +76,14 @@ public enum Thingy {
 	case iPadAir
 	/// - iPadAir2: All iPad Air 2 variants.
 	case iPadAir2
-	/// - iPadPro12Inch: The 12.9 inch iPad Pro in all variants.
+	/// - iPadPro12Inch: The 1st generation 12.9 inch iPad Pro in all variants.
 	case iPadPro12Inch
 	/// - iPadPro9Inch: The 9.7 inch iPad Pro in all variants.
 	case iPadPro9Inch
+	/// - iPadPro12Inch: The 2nd generation 12.9 inch iPad Pro in all variants.
+	case iPadPro12Inch2G
+	/// - iPadPro12Inch: The 10.5 inch iPad Pro in all variants.
+	case iPadPro10Inch
 
 	/// - iPodTouch5G: All iPod touch 5G variants.
 	case iPodTouch5G
@@ -129,6 +133,8 @@ public enum Thingy {
 			.iPadAir2,
 			.iPadPro12Inch,
 			.iPadPro9Inch,
+			.iPadPro12Inch2G,
+			.iPadPro10Inch,
 			.iPadMini,
 			.iPadMini2,
 			.iPadMini3,
@@ -195,6 +201,8 @@ extension Thingy {
 			 .iPadAir2,
 			 .iPadPro12Inch,
 			 .iPadPro9Inch,
+			 .iPadPro12Inch2G,
+			 .iPadPro10Inch,
 			 .iPadMini,
 			 .iPadMini2,
 			 .iPadMini3,
@@ -275,6 +283,11 @@ extension Thingy {
 			return [6.7, 6.8]
 		case .iPadPro9Inch:
 			return [6.3, 6.4]
+		case .iPadPro12Inch2G:
+			return [7.1, 7.2]
+		case .iPadPro10Inch:
+			return [7.3, 7.4]
+
 		case .iPadMini:
 			return [2.5, 2.6, 2.7]
 		case .iPadMini2:
@@ -382,9 +395,13 @@ extension Thingy: MarketingProtocol {
 		case .iPadAir2:
 			return "iPad Air 2"
 		case .iPadPro12Inch:
-			return "iPad Pro 12.9in"
+			return "iPad Pro (12.9 inch)"
 		case .iPadPro9Inch:
-			return "iPad Pro 9.7in"
+			return "iPad Pro (9.7 inch)"
+		case .iPadPro12Inch2G:
+			return "iPad Pro (12.9 inch) (2nd generation)"
+		case .iPadPro10Inch:
+			return "iPad Pro (10.5 inch)"
 
 		case .iPodTouch5G:
 			return "iPod touch 5G"
