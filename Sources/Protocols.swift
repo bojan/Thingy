@@ -39,6 +39,10 @@ func ==(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
 	return lhs.marketingName == rhs.marketingName
 }
 
+func !=(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
+	return lhs.marketingName != rhs.marketingName
+}
+
 /// A dummy protocol used to encompass all product line enums.
 
 typealias ProductLine = MarketingProtocol
