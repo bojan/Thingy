@@ -76,7 +76,7 @@ Inspect the current device:
 
 ```swift
 
-let myDevice = Thingy()
+let myDevice = Device()
 
 // Compare models or product families
 if myDevice.family == .tv {
@@ -98,7 +98,7 @@ print(myDevice.productLine.marketingName) // e.g. Air
 ### Model comparison
 
 ```swift
-let myDevice = Thingy()
+let myDevice = Device()
 
 do {
 	let result = try myDevice.isEqual(to: Thingy.iPadPro12Inch)
@@ -118,7 +118,7 @@ catch {
 ### Device size
 
 ```swift
-let myDevice = Thingy()
+let myDevice = Device()
 
 if myDevice.display == .screen10_5Inch {
     print("This is the 10.5in iPad Pro.")
