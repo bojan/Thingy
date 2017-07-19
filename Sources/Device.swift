@@ -63,7 +63,7 @@ public enum Device {
 	case iPad3
 	/// - iPad4: All iPad 4 variants.
 	case iPad4
-	/// - iPad5: All iPad 5 (2017) variants.
+	/// - iPad5: All iPad (2017) variants.
 	case iPad5
 	/// - iPadMini: The original iPad mini in all variants.
 	case iPadMini
@@ -401,7 +401,7 @@ extension Device: MarketingProtocol {
 		case .iPad4:
 			return "iPad 4"
 		case .iPad5:
-			return "iPad 5"
+			return "iPad (2017)"
 		case .iPadMini:
 			return "iPad mini"
 		case .iPadMini2:
@@ -424,9 +424,9 @@ extension Device: MarketingProtocol {
 			return "iPad Pro (10.5 inch)"
 
 		case .iPodTouch5G:
-			return "iPod touch 5G"
+			return "iPod touch (5th generation)"
 		case .iPodTouch6G:
-			return "iPod touch 6G"
+			return "iPod touch (6th generation)"
 
 		case .appleTV4:
 			return "Apple TV 4"
@@ -453,62 +453,71 @@ extension Device: MarketingProtocol {
 
 extension Device {
 
-	var displaySize: Float {
+
+	/// Returns the display size in inches.
+	var displaySize: Display.Size {
 		return display.size
 	}
+
+	/// Returns an extended info on the display, including all resolutions, scale and density.
 	var display: Display {
 		switch self {
 		case .iPhone4S:
-			return Display(size: 3.5, resolution: CGSize(width: 320, height: 480), physicalResolution: CGSize(width: 640, height: 960), renderedResolution: CGSize(width: 640, height: 960), scale: 2.0, density: 326)
+			return Display(size: .screen3_5Inch, resolution: CGSize(width: 320, height: 480), physicalResolution: CGSize(width: 640, height: 960), renderedResolution: CGSize(width: 640, height: 960), scale: 2.0, density: 326)
+
 		case .iPhone5,
 			 .iPhone5c,
 			 .iPhone5s,
-			 .iPhoneSE:
-			return Display(size: 4, resolution: CGSize(width: 320, height: 568), physicalResolution: CGSize(width: 640, height: 1136), renderedResolution: CGSize(width: 640, height: 1136), scale: 2.0, density: 326)
+			 .iPhoneSE,
+			 .iPodTouch5G,
+			 .iPodTouch6G:
+			return Display(size: .screen4Inch, resolution: CGSize(width: 320, height: 568), physicalResolution: CGSize(width: 640, height: 1136), renderedResolution: CGSize(width: 640, height: 1136), scale: 2.0, density: 326)
+
 		case .iPhone6,
 			 .iPhone6s,
 			 .iPhone7:
-			return Display(size: 4.7, resolution: CGSize(width: 375, height: 667), physicalResolution: CGSize(width: 750, height: 1334), renderedResolution: CGSize(width: 750, height: 1334), scale: 2.0, density: 326)
+			return Display(size: .screen4_7Inch, resolution: CGSize(width: 375, height: 667), physicalResolution: CGSize(width: 750, height: 1334), renderedResolution: CGSize(width: 750, height: 1334), scale: 2.0, density: 326)
+
 		case .iPhone6Plus,
 			 .iPhone6sPlus,
 			 .iPhone7Plus:
-			return Display(size: 5.5, resolution: CGSize(width: 414, height: 736), physicalResolution: CGSize(width: 1080, height: 1920), renderedResolution: CGSize(width: 1242, height: 2208), scale: 3.0, density: 401)
-
-		case .iPodTouch5G,
-			 .iPodTouch6G:
-			return .pod
+			return Display(size: .screen5_5Inch, resolution: CGSize(width: 414, height: 736), physicalResolution: CGSize(width: 1080, height: 1920), renderedResolution: CGSize(width: 1242, height: 2208), scale: 3.0, density: 401)
 
 		case .appleTV4:
-			return .tv
+			return Display(size: .notApplicable, resolution: CGSize(width: 1920, height: 1080), physicalResolution: CGSize(width: 1920, height: 1080), renderedResolution: CGSize(width: 1920, height: 1080), scale: 1.0, density: 0)
 
-		case .watch,
-			 .watchSeries1,
-			 .watchSeries2:
-			return .watch
+		case .iPad2:
+			return Display(size: .screen9_7Inch, resolution: CGSize(width: 1024, height: 768), physicalResolution: CGSize(width: 1024, height: 768), renderedResolution: CGSize(width: 1024, height: 768), scale: 1.0, density: 132)
 
-		case .iPad2,
-			 .iPad3,
+		case .iPad3,
 			 .iPad4,
 			 .iPad5,
 			 .iPadAir,
 			 .iPadAir2,
-			 .iPadPro12Inch,
-			 .iPadPro9Inch,
-			 .iPadPro12Inch2G,
-			 .iPadPro10Inch,
-			 .iPadMini,
-			 .iPadMini2,
+			 .iPadPro9Inch:
+			return Display(size: .screen9_7Inch, resolution: CGSize(width: 1024, height: 768), physicalResolution: CGSize(width: 2048, height: 1536), renderedResolution: CGSize(width: 2048, height: 1536), scale: 2.0, density: 264)
+		case .iPadPro12Inch,
+			 .iPadPro12Inch2G:
+			return Display(size: .screen12_9Inch, resolution: CGSize(width: 1366, height: 1024), physicalResolution: CGSize(width: 2732, height: 2048), renderedResolution: CGSize(width: 2732, height: 2048), scale: 2.0, density: 264)
+		case .iPadPro10Inch:
+			return Display(size: .screen12_9Inch, resolution: CGSize(width: 1112, height: 834), physicalResolution: CGSize(width: 2224, height: 1668), renderedResolution: CGSize(width: 2224, height: 1668), scale: 2.0, density: 264)
+		case .iPadMini:
+			return Display(size: .screen7_9Inch, resolution: CGSize(width: 1024, height: 768), physicalResolution: CGSize(width: 1024, height: 768), renderedResolution: CGSize(width: 1024, height: 768), scale: 1.0, density: 163)
+		case .iPadMini2,
 			 .iPadMini3,
 			 .iPadMini4:
-			return .pad
+			return Display(size: .screen7_9Inch, resolution: CGSize(width: 1024, height: 768), physicalResolution: CGSize(width: 2048, height: 1536), renderedResolution: CGSize(width: 2048, height: 1536), scale: 2.0, density: 326)
 
 		case let .simulator(model):
 			return model.display
 
-		case .unknown(_):
-			return Display(size: 0, resolution: CGSize.zero, physicalResolution: CGSize.zero, renderedResolution: CGSize.zero, scale: 0.0, density: 0)
+		// FIXME: Add a way to inspect the Apple Watch displays.
+		case .unknown(_),
+			 .watch,
+			 .watchSeries1,
+			 .watchSeries2:
+			return Display(size: .notApplicable, resolution: CGSize.zero, physicalResolution: CGSize.zero, renderedResolution: CGSize.zero, scale: 0, density: 0)
 		}
-		return nil
 	}
 
 }
