@@ -11,7 +11,7 @@ Device detection and querying library.
 
 - [x] Device detection
 - [x] Device family detection
-- [ ] Device screens
+- [x] Device screens
 - [x] Simulator detection
 - [x] Simple querying
 
@@ -113,6 +113,17 @@ do {
 catch {
 	print("The devices are incompatible.")
 }
+```
+
+### Device size
+
+```swift
+let myDevice = Thingy()
+
+if myDevice.display == .screen10_5Inch {
+    print("This is the 10.5in iPad Pro.")
+}
+
 ```
 
 ## Contributions
