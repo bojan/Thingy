@@ -26,7 +26,7 @@
 
 import Foundation
 
-/// A protocol that describes product entities (lines and models).
+/// A protocol that describes products (lines and models).
 
 public protocol MarketingProtocol {
 
@@ -34,7 +34,15 @@ public protocol MarketingProtocol {
 	var marketingName: String { get }
 }
 
+// MARK: - Hashable and equatable protocols
+func ==(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
+	return lhs.marketingName == rhs.marketingName
+}
+
+func !=(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
+	return lhs.marketingName != rhs.marketingName
+}
+
 /// A dummy protocol used to encompass all product line enums.
 
-public protocol ProductLineEntity {
-}
+typealias ProductLine = MarketingProtocol

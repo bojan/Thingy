@@ -1,8 +1,8 @@
 //
-// ThingyTests.swift
+// RawDeviceTests
 // Thingy
 //
-// Created by Bojan Dimovski on 21.11.16.
+// Created by Bojan Dimovski on 28.11.16.
 // Copyright © 2017 Bojan Dimovski. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,56 +23,46 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+
 import XCTest
 @testable import Thingy
 
-class ThingyTests: XCTestCase {
+class RawDeviceTests: XCTestCase {
+	func testParsingValidDevice() {
+		let identifier = "iPad6,3"
 
-	func testDefaultDeviceIdentifier() {
-		var device = Thingy()
-		let identifier = device.identifier()
-		XCTAssertFalse(identifier.isEmpty)
-	}
+		let rawDevice = RawDevice(identifier: identifier)
 
-	func testResolveMarketingNameValid() {
-		let device = Thingy(identifier: "iPad6,3")
-
-		XCTAssert(device.marketingName == "iPad Pro 9.7in")
-	}
-
-	func testResolveMarketingNameWithoutModel() {
-		let device = Thingy(identifier: "iPad1,337")
-
-		XCTAssert(device.marketingName == "Unknown iPad")
-	}
-
-	func testResolveMarketingNameUnknownDevice() {
-		let device = Thingy(identifier: "iPack1,337")
-
-		XCTAssert(device.marketingName == "Unknown Device")
-	}
-
-	func testSimulator() {
-		let device = Thingy(identifier: "x86_64")
-
-		XCTAssertNotNil(device.model)
-
-		if let model = device.model {
-			expectSimulator(actual: model) { model in
-				 XCTAssertNotNil(model)
-			}
+		XCTAssertNotNil(rawDevice.family)
+		if let family = rawDevice.family {
+			XCTAssert(family == .pad)
 		}
 
+		XCTAssert(rawDevice.major == 6)
+		XCTAssert(rawDevice.minor == 3)
 	}
 
-	func expectSimulator(actual: Model, file: StaticString = #file, line: UInt = #line, test: (Model?) -> Void) {
-		guard case let .simulator(model) = actual
-			else {
-				XCTFail("Expected a simulator, got <\(actual)>", file: file, line: line)
-				return
+	func testParsingInvalidDevice() {
+		let identifier = "6,3"
+
+		let rawDevice = RawDevice(identifier: identifier)
+
+		XCTAssertNil(rawDevice.family)
+		XCTAssert(rawDevice.major == 6)
+		XCTAssert(rawDevice.minor == 3)
+	}
+
+	func testParsingFutureDevice() {
+		let identifier = "iPhone133,7"
+
+		let rawDevice = RawDevice(identifier: identifier)
+
+		XCTAssertNotNil(rawDevice.family)
+		if let family = rawDevice.family {
+			XCTAssert(family == .phone)
 		}
 
-		test(model)
+		XCTAssert(rawDevice.major == 133)
+		XCTAssert(rawDevice.minor == 7)
 	}
-
 }

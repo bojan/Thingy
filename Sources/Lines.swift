@@ -28,21 +28,21 @@ import Foundation
 
 /// A struct containing all product lines. Currently iPad only.
 
-public struct ProductLine {
+public struct Lines {
 
 	/// A type that describes the specific iPad line.
-	///
-	/// - regular: A standard iPad product.
-	/// - pro: An iPad Pro product.
-	/// - mini: An iPad mini product.
-	/// - air: An iPad Air product.
 
-	enum iPad: ProductLineEntity, MarketingProtocol {
+	enum iPad: ProductLine {
+		/// - regular: A standard iPad product.
 		case regular
+		/// - pro: An iPad Pro product.
 		case pro
+		/// - mini: An iPad mini product.
 		case mini
+		/// - air: An iPad Air product.
 		case air
 
+		/// The marketing name of the iPad product line, e.g. "Pro", "Air".
 		var marketingName: String {
 			switch self {
 			case .pro:
@@ -57,10 +57,4 @@ public struct ProductLine {
 		}
 	}
 
-}
-
-// MARK: - Hashable and equatable protocols
-
-func ==(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
-	return lhs.marketingName == rhs.marketingName
 }
