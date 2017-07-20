@@ -45,4 +45,4 @@ func !=(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
 
 /// A dummy protocol used to encompass all product line enums.
 
-typealias ProductLine = MarketingProtocol
+public typealias ProductLine = MarketingProtocol

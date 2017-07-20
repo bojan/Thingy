@@ -108,7 +108,7 @@ public enum Device {
 	case unknown(Family)
 
 	/// All real-device values.
-	internal static var allValues: [Device] = [
+	public static let allValues: [Device] = [
 			.iPhone4S,
 			.iPhone5,
 			.iPhone5c,
@@ -144,7 +144,7 @@ public enum Device {
 
 }
 
-extension Device {
+public extension Device {
 
 
 	/// Inspects the current device.
@@ -170,7 +170,7 @@ extension Device {
 
 // MARK: - Errors
 
-enum ThingyError: Error {
+public enum ThingyError: Error {
 	case InvalidIdentifier
 	case IncomparableFamilies
 	case IncomparableProductLines
@@ -179,10 +179,10 @@ enum ThingyError: Error {
 
 // MARK: - Family
 
-extension Device {
+public extension Device {
 
 	/// Associated family for each device.
-	var family: Family {
+	public var family: Family {
 		switch self {
 		case .iPhone4S,
 			 .iPhone5,
@@ -236,14 +236,14 @@ extension Device {
 
 // MARK: - Model numbers
 
-extension Device {
+internal extension Device {
 
 	internal var lowestNumber: Double {
 		return numbers.first ?? 0
 	}
 
 	/// Associated model numbers for each device.
-	var numbers: [Double] {
+	internal var numbers: [Double] {
 		switch self {
 		case .iPhone4S:
 			return [4.1]
@@ -324,10 +324,10 @@ extension Device {
 
 // MARK: - Product lines
 
-extension Device {
+public extension Device {
 
 	/// Product line of the model, currently supported only for the iPad.
-	var productLine: ProductLine? {
+	public var productLine: ProductLine? {
 		switch self {
 		case .iPad2:
 			return Lines.iPad.regular
@@ -451,16 +451,16 @@ extension Device: MarketingProtocol {
 
 // MARK: - Display
 
-extension Device {
+public extension Device {
 
 
 	/// Returns the display size in inches.
-	var displaySize: Display.Size {
+	public var displaySize: Display.Size {
 		return display.size
 	}
 
 	/// Returns an extended info on the display, including all resolutions, scale and density.
-	var display: Display {
+	public var display: Display {
 		switch self {
 		case .iPhone4S:
 			return Display(size: .screen3_5Inch, resolution: CGSize(width: 320, height: 480), physicalResolution: CGSize(width: 640, height: 960), renderedResolution: CGSize(width: 640, height: 960), scale: 2.0, density: 326)
@@ -524,7 +524,7 @@ extension Device {
 
 // MARK: - Comparable protocols
 
-extension Device {
+public extension Device {
 
 
 	/// Checks if the current device is the same as the compared model.
