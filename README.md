@@ -101,17 +101,17 @@ print(myDevice.productLine.marketingName) // e.g. Air
 let myDevice = Device()
 
 do {
-	let result = try myDevice.isEqual(to: Thingy.iPadPro12Inch)
+    let result = try myDevice.isEqual(to: Thingy.iPadPro12Inch)
 }
 catch {
-	print("The devices are incompatible.")
+    print("The devices are incompatible.")
 }
 
 do {
-	let result = try myDevice.isOlder(than: Thingy.iPadPro10Inch)
+    let result = try myDevice.isOlder(than: Thingy.iPadPro10Inch)
 }
 catch {
-	print("The devices are incompatible.")
+    print("The devices are incompatible.")
 }
 ```
 
