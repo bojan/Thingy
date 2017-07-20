@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                      = "Thingy"
-  s.version                   = "1.0.0-alpha.1"
+  s.version                   = "1.0.0"
   s.summary                   = "Device detection and querying library."
   s.homepage                  = "https://github.com/bojan/Thingy"
   s.license                   = "MIT"
