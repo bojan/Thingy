@@ -48,10 +48,11 @@ internal struct RawDevice {
 
 		isSimulator = (identifier == "x86_64" || identifier == "i386")
 
-		if let simulatorIdentifier = String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER")),
-		   isSimulator {
-			identifier = simulatorIdentifier
-		}
+    if isSimulator {
+      if let simulatorIdentifier = String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER")) {
+        identifier = simulatorIdentifier
+      }
+    }
 
 		let regex = try! NSRegularExpression(pattern: "^([a-zA-Z]*)(\\d+)(\\,|\\.)(\\d+)$", options: [.caseInsensitive])
 
