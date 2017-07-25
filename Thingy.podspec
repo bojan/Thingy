@@ -1,16 +1,15 @@
-Pod::Spec.new do |s|
-  s.name                      = "Thingy"
-  s.version                   = "1.0.1"
-  s.summary                   = "Device detection and querying library."
-  s.homepage                  = "https://github.com/bojan/Thingy"
-  s.license                   = "MIT"
-  s.author                    = "Bojan Dimovski"
-  s.social_media_url          = "http://twitter.com/bojand"
+Pod::Spec.new do |spec|
+  spec.name                      = "Thingy"
+  spec.version                   = "1.0.2"
+  spec.summary                   = "Device detection and querying library."
+  spec.homepage                  = "https://github.com/bojan/Thingy"
+  spec.license                   = "MIT"
+  spec.author                    = "Bojan Dimovski"
 
-  s.ios.deployment_target     = '8.0'
-  s.tvos.deployment_target    = '9.0'
-  s.watchos.deployment_target = '2.0'
+  spec.ios.deployment_target     = "8.0"
+  spec.tvos.deployment_target    = "9.0"
+  spec.watchos.deployment_target = "2.0"
 
-  s.source                    = { :git => "https://github.com/bojan/Thingy.git", :tag => s.version }
-  s.source_files              = 'Sources/*.swift'
+  spec.source                    = { :git => "https://github.com/bojan/Thingy.git", :tag => spec.version }
+  spec.source_files              = "Sources/*.swift"
 end

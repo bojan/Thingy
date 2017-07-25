@@ -622,8 +622,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CURRENT_PROJECT_VERSION = 3;
-				DYLIB_CURRENT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
+				DYLIB_CURRENT_VERSION = 4;
 				ENABLE_TESTABILITY = YES;
 				PRODUCT_NAME = Thingy;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -649,8 +649,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CURRENT_PROJECT_VERSION = 3;
-				DYLIB_CURRENT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
+				DYLIB_CURRENT_VERSION = 4;
 				ENABLE_TESTABILITY = YES;
 				PRODUCT_NAME = Thingy;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
