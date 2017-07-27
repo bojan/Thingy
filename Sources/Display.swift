@@ -34,7 +34,7 @@ public struct Display {
 
 	/// An enum that describes the display size in inches.
 
-	enum Size: Float {
+	public enum Size: Float {
 		/// - screen1_32Inch: Small Apple Watch screen.
 		case screen1_32Inch = 1.32
 
@@ -70,20 +70,20 @@ public struct Display {
 	}
 
 	/// Screen size in inches.
-	var size: Size
+	public var size: Size
 
 	/// Resolution of the device.
-	var resolution: CGSize
+	public var resolution: CGSize
 
 	/// Full physical resolution of the device, without any down-/up-sampling.
-	var physicalResolution: CGSize
+	public var physicalResolution: CGSize
 
 	/// Rendered resolution of the device, with down-/up-sampling.
-	var renderedResolution: CGSize
+	public var renderedResolution: CGSize
 
 	/// Screen scale, 1.0 for non-Retina devices.
-	var scale: Float
+	public var scale: Float
 
 	/// Density of the display in PPI (pixels-per-inch).
-	var density: Int
+	public var density: Int
 }

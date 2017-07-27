@@ -32,7 +32,7 @@ public struct Lines {
 
 	/// A type that describes the specific iPad line.
 
-	enum iPad: ProductLine {
+	public enum iPad: ProductLine {
 		/// - regular: A standard iPad product.
 		case regular
 		/// - pro: An iPad Pro product.
@@ -43,7 +43,7 @@ public struct Lines {
 		case air
 
 		/// The marketing name of the iPad product line, e.g. "Pro", "Air".
-		var marketingName: String {
+		public var marketingName: String {
 			switch self {
 			case .pro:
 				return "Pro"

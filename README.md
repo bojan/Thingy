@@ -1,11 +1,11 @@
 # Thingy
 Device detection and querying library.
 
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=59774a14bf1fbd000156ac9e&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/59774a14bf1fbd000156ac9e/build/latest?branch=master)
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE)
-[![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+[![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Thingy.svg)](https://cocoapods.org/pods/Thingy)
-[![Build Status](https://travis-ci.org/bojan/Thingy.svg?branch=develop)](https://travis-ci.org/bojan/Thingy)
 
 ## Features
 
@@ -29,7 +29,7 @@ import PackageDescription
 let package = Package(
     name: "HelloWorld",
     dependencies: [
-        .Package(url: "https://github.com/bojan/Thingy.git", "1.0.0-alpha.1")
+        .Package(url: "https://github.com/bojan/Thingy.git", "1.0.2")
     ]
 )
 ```
