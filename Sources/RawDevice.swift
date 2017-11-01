@@ -48,23 +48,23 @@ internal struct RawDevice {
 
 		isSimulator = (identifier == "x86_64" || identifier == "i386")
 
-    if isSimulator {
-      if let simulatorIdentifier = String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER")) {
-        identifier = simulatorIdentifier
-      }
-    }
+		if isSimulator {
+			if let simulatorIdentifier = String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER")) {
+				identifier = simulatorIdentifier
+			}
+		}
 
 		let regex = try! NSRegularExpression(pattern: "^([a-zA-Z]*)(\\d+)(\\,|\\.)(\\d+)$", options: [.caseInsensitive])
 
 		let rawFamily = regex.stringByReplacingMatches(in: identifier,
 													   options: [],
-													   range: NSRange(0..<identifier.characters.count),
+													   range: NSRange(0..<identifier.count),
 													   withTemplate: "$1")
 		family = Family(rawValue: rawFamily)
 
 		let modelString = regex.stringByReplacingMatches(in: identifier,
 														 options: [],
-														 range: NSRange(0..<identifier.characters.count),
+														 range: NSRange(0..<identifier.count),
 														 withTemplate: "$2.$4")
 
 		let modelComponents = modelString.components(separatedBy: ".")
