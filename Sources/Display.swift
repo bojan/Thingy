@@ -31,9 +31,7 @@ import UIKit
 
 public struct Display {
 
-
 	/// An enum that describes the display size in inches.
-
 	public enum Size: Float {
 		/// - screen1_32Inch: Small Apple Watch screen.
 		case screen1_32Inch = 1.32
@@ -53,6 +51,9 @@ public struct Display {
 		/// - screen5_5Inch: 5.5in iPhone screen.
 		case screen5_5Inch = 5.5
 
+		/// - screen5_8Inch: 5.8in iPhone screen.
+		case screen5_8Inch = 5.8
+
 		/// - screen7_9Inch: 7.9in iPad screen.
 		case screen7_9Inch = 7.9
 
@@ -67,6 +68,15 @@ public struct Display {
 
 		/// - notApplicable: Not applicable, in case of the Apple TV.
 		case notApplicable = -1
+	}
+
+	/// An enum that describes all color spaces.
+	public enum ColorSpace {
+		/// - Wide color display (P3)
+		case p3
+
+		/// - Full sRGB standard
+		case sRGB
 	}
 
 	/// Screen size in inches.
@@ -86,4 +96,10 @@ public struct Display {
 
 	/// Density of the display in PPI (pixels-per-inch).
 	public var density: Int
+
+	/// True Tone display.
+	public var hasTrueTone: Bool
+
+	/// Color space.
+	public var colorSpace: ColorSpace
 }
