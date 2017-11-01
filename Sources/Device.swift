@@ -49,13 +49,18 @@ public enum Device {
 	case iPhone6s
 	/// - iPhone6sPlus: All iPhone 6s Plus variants.
 	case iPhone6sPlus
-	/// - iPhoneSE: iPhone SE.
+	/// - iPhoneSE: All iPhone SE variants.
 	case iPhoneSE
 	/// - iPhone7: All iPhone 7 variants.
 	case iPhone7
 	/// - iPhone7Plus: All iPhone 7 Plus variants.
 	case iPhone7Plus
-
+	/// - iPhone8: All iPhone 8 variants.
+	case iPhone8
+	/// - iPhone8Plus: All iPhone 8 Plus variants.
+	case iPhone8Plus
+	/// - iPhoneX: All iPhone X variants.
+	case iPhoneX
 
 	/// - iPad2: All iPad 2 variants.
 	case iPad2
@@ -94,12 +99,17 @@ public enum Device {
 	/// - appleTV4: Apple TV 4.
 	case appleTV4
 
+	/// - appleTV4K: Apple TV 4K.
+	case appleTV4K
+
 	/// - watch: The original Apple Watch.
 	case watch
 	/// - watchSeries1: Apple Watch Series 1.
 	case watchSeries1
 	/// - watchSeries2: Apple Watch Series 2.
 	case watchSeries2
+	/// - watchSeries3: Apple Watch Series 3.
+	case watchSeries3
 
 	/// - simulator: A simulator for the associated device model.
 	indirect case simulator(Device)
@@ -109,43 +119,47 @@ public enum Device {
 
 	/// All real-device values.
 	public static let allValues: [Device] = [
-			.iPhone4S,
-			.iPhone5,
-			.iPhone5c,
-			.iPhone5s,
-			.iPhone6,
-			.iPhone6Plus,
-			.iPhone6s,
-			.iPhone6sPlus,
-			.iPhoneSE,
-			.iPhone7,
-			.iPhone7Plus,
-			.iPodTouch5G,
-			.iPodTouch6G,
-			.appleTV4,
-			.watch,
-			.watchSeries1,
-			.watchSeries2,
-			.iPad2,
-			.iPad3,
-			.iPad4,
-			.iPad5,
-			.iPadAir,
-			.iPadAir2,
-			.iPadPro12Inch,
-			.iPadPro9Inch,
-			.iPadPro12Inch2G,
-			.iPadPro10Inch,
-			.iPadMini,
-			.iPadMini2,
-			.iPadMini3,
-			.iPadMini4,
+		.iPhone4S,
+		.iPhone5,
+		.iPhone5c,
+		.iPhone5s,
+		.iPhone6,
+		.iPhone6Plus,
+		.iPhone6s,
+		.iPhone6sPlus,
+		.iPhoneSE,
+		.iPhone7,
+		.iPhone7Plus,
+		.iPhone8,
+		.iPhone8Plus,
+		.iPhoneX,
+		.iPodTouch5G,
+		.iPodTouch6G,
+		.appleTV4,
+		.appleTV4K,
+		.watch,
+		.watchSeries1,
+		.watchSeries2,
+		.watchSeries3,
+		.iPad2,
+		.iPad3,
+		.iPad4,
+		.iPad5,
+		.iPadAir,
+		.iPadAir2,
+		.iPadPro12Inch,
+		.iPadPro9Inch,
+		.iPadPro12Inch2G,
+		.iPadPro10Inch,
+		.iPadMini,
+		.iPadMini2,
+		.iPadMini3,
+		.iPadMini4,
 	]
 
 }
 
 public extension Device {
-
 
 	/// Inspects the current device.
 	public init() {
@@ -158,14 +172,12 @@ public extension Device {
 	///
 	/// - Parameter identifier: A device identifier, e.g. "iPhone9,2", "iPad6,11.", "AppleTV5,3".
 	public init?(identifier: String? = nil) {
-		guard let thingy = RawDevice(identifier: identifier).device
+		guard let device = RawDevice(identifier: identifier).device
 		else {
 			return nil
 		}
-
-		self = thingy
+		self = device
 	}
-
 }
 
 // MARK: - Errors
@@ -194,19 +206,24 @@ public extension Device {
 			 .iPhone6sPlus,
 			 .iPhoneSE,
 			 .iPhone7,
-			 .iPhone7Plus:
+			 .iPhone7Plus,
+			 .iPhone8,
+			 .iPhone8Plus,
+			 .iPhoneX:
 			return .phone
 
 		case .iPodTouch5G,
 			 .iPodTouch6G:
 			return .pod
 
-		case .appleTV4:
+		case .appleTV4,
+			 .appleTV4K:
 			return .tv
 
 		case .watch,
 			 .watchSeries1,
-			 .watchSeries2:
+			 .watchSeries2,
+			 .watchSeries3:
 			return .watch
 
 		case .iPad2,
@@ -267,6 +284,12 @@ internal extension Device {
 			return [9.1, 9.3]
 		case .iPhone7Plus:
 			return [9.2, 9.4]
+		case .iPhone8:
+			return [10.1, 10.4]
+		case .iPhone8Plus:
+			return [10.2, 10.5]
+		case .iPhoneX:
+			return [10.3, 10.6]
 
 		case .iPodTouch5G:
 			return [5.1]
@@ -275,6 +298,8 @@ internal extension Device {
 
 		case .appleTV4:
 			return [5.3]
+		case .appleTV4K:
+			return [6.2]
 
 		case .watch:
 			return [1.1, 1.2]
@@ -282,6 +307,8 @@ internal extension Device {
 			return [2.6, 2.7]
 		case .watchSeries2:
 			return [2.3, 2.4]
+		case .watchSeries3:
+			return [3.1, 3.2, 3.3, 3.4]
 
 		case .iPad2:
 			return [2.1, 2.2, 2.3, 2.4]
@@ -393,6 +420,12 @@ extension Device: MarketingProtocol {
 			return "iPhone 7"
 		case .iPhone7Plus:
 			return "iPhone 7 Plus"
+		case .iPhone8:
+			return "iPhone 8"
+		case .iPhone8Plus:
+			return "iPhone 8 Plus"
+		case .iPhoneX:
+			return "iPhone X"
 
 		case .iPad2:
 			return "iPad 2"
@@ -415,13 +448,13 @@ extension Device: MarketingProtocol {
 		case .iPadAir2:
 			return "iPad Air 2"
 		case .iPadPro12Inch:
-			return "iPad Pro (12.9 inch)"
+			return "12.9-inch iPad Pro"
 		case .iPadPro9Inch:
-			return "iPad Pro (9.7 inch)"
+			return "9.7-inch iPad Pro"
 		case .iPadPro12Inch2G:
-			return "iPad Pro (12.9 inch) (2nd generation)"
+			return "12.9-inch iPad Pro (2nd generation)"
 		case .iPadPro10Inch:
-			return "iPad Pro (10.5 inch)"
+			return "10.5-inch iPad Pro"
 
 		case .iPodTouch5G:
 			return "iPod touch (5th generation)"
@@ -429,7 +462,9 @@ extension Device: MarketingProtocol {
 			return "iPod touch (6th generation)"
 
 		case .appleTV4:
-			return "Apple TV 4"
+			return "Apple TV"
+		case .appleTV4K:
+			return "Apple TV 4K"
 
 		case .watch:
 			return "Apple Watch"
@@ -437,6 +472,8 @@ extension Device: MarketingProtocol {
 			return "Apple Watch Series 1"
 		case .watchSeries2:
 			return "Apple Watch Series 2"
+		case .watchSeries3:
+			return "Apple Watch Series 3"
 
 		case let .simulator(model):
 			return NSLocalizedString("Simulator (\(model.marketingName))", comment: "Simulator (\(model.marketingName))")
@@ -549,7 +586,6 @@ public extension Device {
 // MARK: - Comparable protocols
 
 public extension Device {
-
 
 	/// Checks if the current device is the same as the compared model.
 	///
