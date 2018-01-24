@@ -46,7 +46,7 @@ class DeviceTests: XCTestCase {
 
 		XCTAssertNotNil(device2)
 		if let device = device2 {
-			XCTAssert(device.marketingName == "Apple TV 4")
+			XCTAssert(device.marketingName == "Apple TV")
 			XCTAssert(device.family == .tv)
 			XCTAssertNil(device.productLine)
 		}
