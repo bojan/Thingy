@@ -9,7 +9,8 @@ A modern device detection and querying library.
 
 ## Features
 
-- [x] Modern Swifty syntax
+- [x] Swift 4 support
+- [x] Modern syntax
 - [x] Device detection
 - [x] Device family detection
 - [x] Device screens
