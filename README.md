@@ -7,10 +7,13 @@ A modern device detection and querying library.
 [![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Thingy.svg)](https://cocoapods.org/pods/Thingy)
 
+[Documentation](https://bojan.github.io/Thingy)
+
 ## Features
 
 - [x] Swift 4 support
 - [x] Modern syntax
+- [x] Documentation
 - [x] Device detection
 - [x] Device family detection
 - [x] Device screens
