@@ -149,4 +149,3 @@ extension RawDevice: Comparable {
 	}
 
 }
-
