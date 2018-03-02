@@ -76,4 +76,40 @@ class ComparisonTests: XCTestCase {
 		XCTAssertThrows(expression: try lhs.isEqual(to: rhs))
 	}
 
+	func testCompareScreenSize() {
+		var device1 = Device.iPadMini2
+		var device2 = Device.iPadPro12Inch2G
+
+		XCTAssertTrue(device1.displaySize < device2.displaySize)
+
+		device1 = Device.iPadMini2
+		device2 = Device.iPadMini4
+
+		XCTAssertTrue(device1.displaySize <= device2.displaySize)
+
+		device1 = Device.iPadPro10Inch
+		device2 = Device.iPadPro9Inch
+
+		XCTAssertFalse(device1.displaySize < device2.displaySize)
+
+		device1 = Device.iPad3
+		device2 = Device.iPad5
+
+		XCTAssertTrue(device1.displaySize == device2.displaySize)
+
+		device1 = Device.iPhoneX
+		device2 = Device.iPhone4S
+
+		XCTAssertTrue(device1.displaySize > device2.displaySize)
+
+		device1 = Device.iPhone8Plus
+		device2 = Device.iPhone8
+
+		XCTAssertTrue(device1.displaySize >= device2.displaySize)
+
+		device1 = Device.iPhone7
+		device2 = Device.iPhone7Plus
+
+		XCTAssertFalse(device1.displaySize > device2.displaySize)
+	}
 }
