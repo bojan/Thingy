@@ -34,7 +34,7 @@ import PackageDescription
 let package = Package(
     name: "HelloWorld",
     dependencies: [
-        .Package(url: "https://github.com/bojan/Thingy.git", "2.0.0")
+        .Package(url: "https://github.com/bojan/Thingy.git", "2.0.1")
     ]
 )
 ```
