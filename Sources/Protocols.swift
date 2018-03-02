@@ -26,8 +26,8 @@
 
 import Foundation
 
+/// :nodoc:
 /// A protocol that describes products (lines and models).
-
 public protocol MarketingProtocol {
 
 	/// The full marketing name of the entity.
@@ -35,14 +35,17 @@ public protocol MarketingProtocol {
 }
 
 // MARK: - Hashable and equatable protocols
+
+/// :nodoc:
 func ==(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
 	return lhs.marketingName == rhs.marketingName
 }
 
+/// :nodoc:
 func !=(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
 	return lhs.marketingName != rhs.marketingName
 }
 
+/// :nodoc:
 /// A dummy protocol used to encompass all product line enums.
-
 public typealias ProductLine = MarketingProtocol
