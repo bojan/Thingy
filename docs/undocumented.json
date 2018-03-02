@@ -1,0 +1,40 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/bojand/Projects/Personal/Thingy/Sources/Device.swift",
+      "line": 185,
+      "symbol": "ThingyError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bojand/Projects/Personal/Thingy/Sources/Device.swift",
+      "line": 186,
+      "symbol": "ThingyError.InvalidIdentifier",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bojand/Projects/Personal/Thingy/Sources/Device.swift",
+      "line": 187,
+      "symbol": "ThingyError.IncomparableFamilies",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bojand/Projects/Personal/Thingy/Sources/Device.swift",
+      "line": 188,
+      "symbol": "ThingyError.IncomparableProductLines",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bojand/Projects/Personal/Thingy/Sources/Device.swift",
+      "line": 189,
+      "symbol": "ThingyError.IncomparableUnknownProduct",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/bojand/Projects/Personal/Thingy"
+}

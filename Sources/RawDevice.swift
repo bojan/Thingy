@@ -26,6 +26,7 @@
 
 import Foundation
 
+/// :nodoc:
 internal struct RawDevice {
 
 	var major: Int = 0
@@ -123,6 +124,7 @@ internal struct RawDevice {
 
 // MARK: - Comparison
 
+/// :nodoc:
 extension RawDevice: Comparable {
 
 	public static func <(lhs: RawDevice, rhs: RawDevice) -> Bool {
