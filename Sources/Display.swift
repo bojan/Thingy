@@ -103,3 +103,15 @@ public struct Display {
 	/// Color space.
 	public var colorSpace: ColorSpace
 }
+
+// MARK: - Screen size comparison
+
+extension Display.Size: Comparable {
+	public static func <(lhs: Display.Size, rhs: Display.Size) -> Bool {
+		return lhs.rawValue < rhs.rawValue
+	}
+
+	public static func ==(lhs: Display.Size, rhs: Display.Size) -> Bool {
+		return lhs.rawValue == rhs.rawValue
+	}
+}
