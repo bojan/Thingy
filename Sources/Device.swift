@@ -70,6 +70,8 @@ public enum Device {
 	case iPad4
 	/// - iPad5: All iPad (2017) variants.
 	case iPad5
+	/// - iPad6: All iPad (2016) variants.
+	case iPad6
 	/// - iPadMini: The original iPad mini in all variants.
 	case iPadMini
 	/// - iPadMini2: All iPad mini 2 variants.
@@ -230,6 +232,7 @@ public extension Device {
 			 .iPad3,
 			 .iPad4,
 			 .iPad5,
+			 .iPad6,
 			 .iPadAir,
 			 .iPadAir2,
 			 .iPadPro12Inch,
@@ -316,8 +319,6 @@ internal extension Device {
 			return [3.1, 3.2, 3.3]
 		case .iPad4:
 			return [3.4, 3.5, 3.6]
-		case .iPad5:
-			return [6.11, 6.12]
 		case .iPadAir:
 			return [4.1, 4.2, 4.3]
 		case .iPadAir2:
@@ -326,10 +327,14 @@ internal extension Device {
 			return [6.7, 6.8]
 		case .iPadPro9Inch:
 			return [6.3, 6.4]
+		case .iPad5:
+			return [6.11, 6.12]
 		case .iPadPro12Inch2G:
 			return [7.1, 7.2]
 		case .iPadPro10Inch:
 			return [7.3, 7.4]
+		case .iPad6:
+			return [7.5, 7.6]
 
 		case .iPadMini:
 			return [2.5, 2.6, 2.7]
@@ -435,6 +440,8 @@ extension Device: MarketingProtocol {
 			return "iPad 4"
 		case .iPad5:
 			return "iPad (2017)"
+		case .iPad6:
+			return "iPad (2018)"
 		case .iPadMini:
 			return "iPad mini"
 		case .iPadMini2:
@@ -544,6 +551,7 @@ public extension Device {
 		case .iPad3,
 			 .iPad4,
 			 .iPad5,
+			 .iPad6,
 			 .iPadAir,
 			 .iPadAir2:
 			return Display(size: .screen9_7Inch, resolution: CGSize(width: 1024, height: 768), physicalResolution: CGSize(width: 2048, height: 1536), renderedResolution: CGSize(width: 2048, height: 1536), scale: 2.0, density: 264, hasTrueTone: false, colorSpace: .sRGB)
