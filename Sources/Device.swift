@@ -70,7 +70,7 @@ public enum Device {
 	case iPad4
 	/// - iPad5: All iPad (2017) variants.
 	case iPad5
-	/// - iPad6: All iPad (2016) variants.
+	/// - iPad6: All iPad (2018) variants.
 	case iPad6
 	/// - iPadMini: The original iPad mini in all variants.
 	case iPadMini
@@ -184,10 +184,14 @@ public extension Device {
 
 // MARK: - Errors
 
+/// Errors thrown by Thingy.
+
 public enum ThingyError: Error {
-	case InvalidIdentifier
+	/// - An error thrown when devices of different families get compared.
 	case IncomparableFamilies
+	/// - An error thrown when devices from different product lines get compared.
 	case IncomparableProductLines
+	/// - An error thrown when an unknown device gets compared.
 	case IncomparableUnknownProduct
 }
 

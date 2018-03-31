@@ -13,7 +13,7 @@
     <a title="Thingy  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Thingy Docs</a> (95% documented)</p>
+        <p><a href="index.html">Thingy Docs</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -75,11 +75,14 @@
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg" alt="Carthage compatible"></a>
 <a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/SPM-compatible-brightgreen.svg" alt="SPM"></a>
 <a href="https://cocoapods.org/pods/Thingy"><img src="https://img.shields.io/cocoapods/v/Thingy.svg" alt="CocoaPods compatible"></a></p>
+
+<p><a href="https://bojan.github.io/Thingy">Documentation</a></p>
 <h2 id='features' class='heading'>Features</h2>
 
 <ul>
 <li>[x] Swift 4 support</li>
 <li>[x] Modern syntax</li>
+<li>[x] Documentation</li>
 <li>[x] Device detection</li>
 <li>[x] Device family detection</li>
 <li>[x] Device screens</li>
@@ -93,10 +96,10 @@
 <p>Create a <code>Package.swift</code> file, and add this snippet:</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PackageDescription</span>
 
-<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="nf">Package</span><span class="p">(</span>
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
     <span class="nv">name</span><span class="p">:</span> <span class="s">"HelloWorld"</span><span class="p">,</span>
     <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
-        <span class="o">.</span><span class="nf">Package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/bojan/Thingy.git"</span><span class="p">,</span> <span class="s">"2.0.0"</span><span class="p">)</span>
+        <span class="o">.</span><span class="kt">Package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/bojan/Thingy.git"</span><span class="p">,</span> <span class="s">"2.0.2"</span><span class="p">)</span>
     <span class="p">]</span>
 <span class="p">)</span>
 </code></pre>
@@ -128,14 +131,14 @@
 
 <p>Inspect the current device:</p>
 <pre class="highlight swift"><code>
-<span class="k">let</span> <span class="nv">myDevice</span> <span class="o">=</span> <span class="nf">Device</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">myDevice</span> <span class="o">=</span> <span class="kt">Device</span><span class="p">()</span>
 
 <span class="c1">// Compare models or product families</span>
-<span class="k">if</span> <span class="n">myDevice</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="o">.</span><span class="nf">tv</span> <span class="p">{</span>
+<span class="k">if</span> <span class="n">myDevice</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="o">.</span><span class="n">tv</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="s">"This is an Apple TV device."</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="k">if</span> <span class="n">myDevice</span><span class="o">.</span><span class="n">model</span> <span class="o">!=</span> <span class="o">.</span><span class="nf">iPhone7Plus</span> <span class="p">{</span>
+<span class="k">if</span> <span class="n">myDevice</span><span class="o">.</span><span class="n">model</span> <span class="o">!=</span> <span class="o">.</span><span class="n">iPhone7Plus</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="s">"This is NOT an iPhone 7 Plus."</span><span class="p">)</span>
 <span class="p">}</span>
 
@@ -147,26 +150,26 @@
 
 </code></pre>
 <h3 id='model-comparison' class='heading'>Model comparison</h3>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myDevice</span> <span class="o">=</span> <span class="nf">Device</span><span class="p">()</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myDevice</span> <span class="o">=</span> <span class="kt">Device</span><span class="p">()</span>
 
-<span class="nf">do</span> <span class="p">{</span>
+<span class="k">do</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="k">try</span> <span class="n">myDevice</span><span class="o">.</span><span class="nf">isEqual</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">Thingy</span><span class="o">.</span><span class="n">iPadPro12Inch</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="nf">catch</span> <span class="p">{</span>
+<span class="k">catch</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="s">"The devices are incompatible."</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="nf">do</span> <span class="p">{</span>
+<span class="k">do</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="k">try</span> <span class="n">myDevice</span><span class="o">.</span><span class="nf">isOlder</span><span class="p">(</span><span class="nv">than</span><span class="p">:</span> <span class="kt">Thingy</span><span class="o">.</span><span class="n">iPadPro10Inch</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="nf">catch</span> <span class="p">{</span>
+<span class="k">catch</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="s">"The devices are incompatible."</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
 <h3 id='device-size' class='heading'>Device size</h3>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myDevice</span> <span class="o">=</span> <span class="nf">Device</span><span class="p">()</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myDevice</span> <span class="o">=</span> <span class="kt">Device</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="n">myDevice</span><span class="o">.</span><span class="n">display</span> <span class="o">==</span> <span class="o">.</span><span class="nf">screen10_5Inch</span> <span class="p">{</span>
+<span class="k">if</span> <span class="n">myDevice</span><span class="o">.</span><span class="n">display</span> <span class="o">==</span> <span class="o">.</span><span class="n">screen10_5Inch</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="s">"This is the 10.5in iPad Pro."</span><span class="p">)</span>
 <span class="p">}</span>
 
@@ -193,7 +196,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/bojan/Thingy" target="_blank" rel="external">Bojan Dimovski</a>. All rights reserved. (Last updated: 2018-01-29)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/bojan/Thingy" target="_blank" rel="external">Bojan Dimovski</a>. All rights reserved. (Last updated: 2018-03-31)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
