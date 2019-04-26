@@ -23,7 +23,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-
 import Foundation
 import UIKit
 
@@ -31,7 +30,7 @@ import UIKit
 ///
 /// For iOS devices, only devices supporting iOS 8 are included.
 
-public enum Device {
+public enum Device: CaseIterable {
 
 	/// - iPhone4S: iPhone 4S.
 	case iPhone4S
@@ -61,6 +60,12 @@ public enum Device {
 	case iPhone8Plus
 	/// - iPhoneX: All iPhone X variants.
 	case iPhoneX
+	/// - iPhoneXR: All iPhone XR variants.
+	case iPhoneXR
+	/// - iPhoneXS: All iPhone XS variants.
+	case iPhoneXS
+	/// - iPhoneXSMax: All iPhone XS Max variants.
+	case iPhoneXSMax
 
 	/// - iPad2: All iPad 2 variants.
 	case iPad2
@@ -80,18 +85,26 @@ public enum Device {
 	case iPadMini3
 	/// - iPadMini4: All iPad mini 4 variants.
 	case iPadMini4
+	/// - iPadMini5: All iPad mini 5 variants.
+	case iPadMini5
 	/// - iPadAir: The original iPad Air in all variants.
 	case iPadAir
 	/// - iPadAir2: All iPad Air 2 variants.
 	case iPadAir2
+	/// - iPadAir3: All iPad Air 3 variants.
+	case iPadAir3
 	/// - iPadPro12Inch: The 1st generation 12.9 inch iPad Pro in all variants.
 	case iPadPro12Inch
 	/// - iPadPro9Inch: The 9.7 inch iPad Pro in all variants.
 	case iPadPro9Inch
-	/// - iPadPro12Inch: The 2nd generation 12.9 inch iPad Pro in all variants.
+	/// - iPadPro12Inch2G: The 2nd generation 12 inch iPad Pro in all variants.
 	case iPadPro12Inch2G
-	/// - iPadPro12Inch: The 10.5 inch iPad Pro in all variants.
+	/// - iPadPro10Inch: The 10.5 inch iPad Pro in all variants.
 	case iPadPro10Inch
+	/// - iPadPro12Inch3G: The 3rd generation 12.9 inch iPad Pro in all variants.
+	case iPadPro12Inch3G
+	/// - iPadPro11Inch: The 11 inch iPad Pro in all variants.
+	case iPadPro11Inch
 
 	/// - iPodTouch5G: All iPod touch 5G variants.
 	case iPodTouch5G
@@ -105,13 +118,15 @@ public enum Device {
 	case appleTV4K
 
 	/// - watch: The original Apple Watch.
-	case watch
+	case watch(Display.Size)
 	/// - watchSeries1: Apple Watch Series 1.
-	case watchSeries1
+	case watchSeries1(Display.Size)
 	/// - watchSeries2: Apple Watch Series 2.
-	case watchSeries2
+	case watchSeries2(Display.Size)
 	/// - watchSeries3: Apple Watch Series 3.
-	case watchSeries3
+	case watchSeries3(Display.Size)
+	/// - watchSeries4: Apple Watch Series 4.
+	case watchSeries4(Display.Size)
 
 	/// - simulator: A simulator for the associated device model.
 	indirect case simulator(Device)
@@ -120,7 +135,7 @@ public enum Device {
 	case unknown(Family)
 
 	/// All real-device values.
-	public static let allValues: [Device] = [
+	public static let allCases: [Device] = [
 		.iPhone4S,
 		.iPhone5,
 		.iPhone5c,
@@ -135,28 +150,42 @@ public enum Device {
 		.iPhone8,
 		.iPhone8Plus,
 		.iPhoneX,
+		.iPhoneXR,
+		.iPhoneXS,
+		.iPhoneXSMax,
 		.iPodTouch5G,
 		.iPodTouch6G,
 		.appleTV4,
 		.appleTV4K,
-		.watch,
-		.watchSeries1,
-		.watchSeries2,
-		.watchSeries3,
+		.watch(.screen38mm),
+		.watch(.screen42mm),
+		.watchSeries1(.screen38mm),
+		.watchSeries1(.screen42mm),
+		.watchSeries2(.screen38mm),
+		.watchSeries2(.screen42mm),
+		.watchSeries3(.screen38mm),
+		.watchSeries3(.screen42mm),
+		.watchSeries4(.screen40mm),
+		.watchSeries4(.screen44mm),
 		.iPad2,
 		.iPad3,
 		.iPad4,
 		.iPad5,
+		.iPad6,
 		.iPadAir,
 		.iPadAir2,
+		.iPadAir3,
 		.iPadPro12Inch,
 		.iPadPro9Inch,
 		.iPadPro12Inch2G,
 		.iPadPro10Inch,
+		.iPadPro12Inch3G,
+		.iPadPro11Inch,
 		.iPadMini,
 		.iPadMini2,
 		.iPadMini3,
 		.iPadMini4,
+		.iPadMini5,
 	]
 
 }
