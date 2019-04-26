@@ -23,7 +23,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-
 import Foundation
 import UIKit
 
@@ -33,11 +32,18 @@ public struct Display {
 
 	/// An enum that describes the display size in inches.
 	public enum Size: Float {
-		/// - screen1_32Inch: Small Apple Watch screen.
-		case screen1_32Inch = 1.32
 
-		/// - screen1_5Inch: Big Apple Watch screen.
-		case screen1_5Inch = 1.5
+		/// - screen38mm: 38mm Apple Watch screen.
+		case screen38mm = 38
+
+		/// - screen42mm: 42mm Apple Watch screen.
+		case screen42mm = 42
+
+		/// - screen40mm: 40mm Apple Watch screen.
+		case screen40mm = 40
+
+		/// - screen44mm: 44mm Apple Watch screen.
+		case screen44mm = 44
 
 		/// - screen3_5Inch: 3.5in iPhone screen.
 		case screen3_5Inch = 3.5
@@ -54,6 +60,12 @@ public struct Display {
 		/// - screen5_8Inch: 5.8in iPhone screen.
 		case screen5_8Inch = 5.8
 
+		/// - screen6_1Inch: 6.1in iPhone screen.
+		case screen6_1Inch = 6.1
+
+		/// - screen6_5Inch: 6.5in iPhone screen.
+		case screen6_5Inch = 6.5
+
 		/// - screen7_9Inch: 7.9in iPad screen.
 		case screen7_9Inch = 7.9
 
@@ -62,6 +74,9 @@ public struct Display {
 
 		/// - screen10_5Inch: 10.5in iPad screen.
 		case screen10_5Inch = 10.5
+
+		/// - screen10_5Inch: 10.5in iPad screen.
+		case screen11Inch = 11
 
 		/// - screen12_9Inch: 12.9in iPad screen.
 		case screen12_9Inch = 12.9
@@ -102,6 +117,7 @@ public struct Display {
 
 	/// Color space.
 	public var colorSpace: ColorSpace
+
 }
 
 // MARK: - Screen size comparison
