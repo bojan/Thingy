@@ -675,7 +675,7 @@ public extension Device {
 	/// - Parameter to: A model to compare the current device against.
 	/// - Returns: True if the device is the same, and false otherwise.
 	/// - Throws: An error when comparing incompatible families, product lines or unknown products.
-	public func isEqual(to compared: Device) throws -> Bool {
+	func isEqual(to compared: Device) throws -> Bool {
 		return try Device.compare(lhs: self, rhs: compared, sign: ==)
 	}
 
@@ -684,7 +684,7 @@ public extension Device {
 	/// - Parameter than: A model to compare the current device against.
 	/// - Returns: True if the device is newer or the same, and false if it's older.
 	/// - Throws: An error when comparing incompatible families, product lines or unknown products.
-	public func isNewerOrEqual(than compared: Device) throws -> Bool {
+	func isNewerOrEqual(than compared: Device) throws -> Bool {
 		return try Device.compare(lhs: self, rhs: compared, sign: >=)
 	}
 
@@ -693,16 +693,16 @@ public extension Device {
 	/// - Parameter than: A model to compare the current device against.
 	/// - Returns: True if the device is older, and false if it's newer or the same.
 	/// - Throws: An error when comparing incompatible families, product lines or unknown products.
-	public func isOlder(than compared: Device) throws -> Bool {
+	func isOlder(than compared: Device) throws -> Bool {
 		return try Device.compare(lhs: self, rhs: compared, sign: <)
 	}
 
-	private static func compare(lhs: Device, rhs: Device, sign: ((RawDevice, RawDevice) -> Bool)) throws -> Bool {
-		if case .unknown(_) = lhs {
+	internal static func compare(lhs: Device, rhs: Device, sign: ((RawDevice, RawDevice) -> Bool)) throws -> Bool {
+		if case .unknown = lhs {
 			throw ThingyError.IncomparableUnknownProduct
 		}
 
-		if case .unknown(_) = rhs {
+		if case .unknown = rhs {
 			throw ThingyError.IncomparableUnknownProduct
 		}
 
