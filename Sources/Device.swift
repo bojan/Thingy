@@ -490,6 +490,12 @@ extension Device: MarketingProtocol {
 			return "iPhone 8 Plus"
 		case .iPhoneX:
 			return "iPhone X"
+		case .iPhoneXR:
+			return "iPhone XR"
+		case .iPhoneXS:
+			return "iPhone XS"
+		case .iPhoneXSMax:
+			return "iPhone XS Max"
 
 		case .iPad2:
 			return "iPad 2"
@@ -509,18 +515,26 @@ extension Device: MarketingProtocol {
 			return "iPad mini 3"
 		case .iPadMini4:
 			return "iPad mini 4"
+		case .iPadMini5:
+			return "iPad mini 5"
 		case .iPadAir:
 			return "iPad Air"
 		case .iPadAir2:
 			return "iPad Air 2"
+		case .iPadAir3:
+			return "iPad Air 3"
 		case .iPadPro12Inch:
 			return "12.9-inch iPad Pro"
 		case .iPadPro9Inch:
 			return "9.7-inch iPad Pro"
 		case .iPadPro12Inch2G:
 			return "12.9-inch iPad Pro (2nd generation)"
+		case .iPadPro12Inch3G:
+			return "12.9-inch iPad Pro (2nd generation)"
 		case .iPadPro10Inch:
 			return "10.5-inch iPad Pro"
+		case .iPadPro11Inch:
+			return "11-inch iPad Pro"
 
 		case .iPodTouch5G:
 			return "iPod touch (5th generation)"
@@ -540,6 +554,8 @@ extension Device: MarketingProtocol {
 			return "Apple Watch Series 2"
 		case .watchSeries3:
 			return "Apple Watch Series 3"
+		case .watchSeries4:
+			return "Apple Watch Series 4"
 
 		case let .simulator(model):
 			return NSLocalizedString("Simulator (\(model.marketingName))", comment: "Simulator (\(model.marketingName))")
