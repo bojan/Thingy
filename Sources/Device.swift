@@ -191,22 +191,17 @@ public enum Device: CaseIterable {
 }
 
 public extension Device {
-
-	/// Inspects the current device.
-	public init() {
-		self = RawDevice(identifier: nil).device!
-	}
-
 	/// Creates a custom device out of a valid identifier.
 	///
 	/// If a device cannot be created, returns an unknown device.
 	///
 	/// - Parameter identifier: A device identifier, e.g. "iPhone9,2", "iPad6,11.", "AppleTV5,3".
-	public init?(identifier: String? = nil) {
+	init?(identifier: String? = nil) {
 		guard let device = RawDevice(identifier: identifier).device
 		else {
 			return nil
 		}
+
 		self = device
 	}
 }
