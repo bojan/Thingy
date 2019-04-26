@@ -29,27 +29,43 @@ import XCTest
 
 class RawDeviceTests: XCTestCase {
 	func testParsingValidDevice() {
-		let identifier = "iPad6,3"
+		var device = RawDevice(identifier: "iPad6,3")
 
-		let rawDevice = RawDevice(identifier: identifier)
-
-		XCTAssertNotNil(rawDevice.family)
-		if let family = rawDevice.family {
+		XCTAssertNotNil(device.family)
+		if let family = device.family {
 			XCTAssert(family == .pad)
 		}
 
-		XCTAssert(rawDevice.major == 6)
-		XCTAssert(rawDevice.minor == 3)
+		XCTAssert(device.major == 6)
+		XCTAssert(device.minor == 3)
+		XCTAssertEqual(device.modelNumber, 6.3)
+
+		device = RawDevice(identifier: "iPad10,10")
+		XCTAssert(device.major == 10)
+		XCTAssert(device.minor == 10)
+		XCTAssertEqual(device.modelNumber, 10.10)
+	}
+
+	func testSimulatorDevice() {
+		let device = RawDevice(identifier: nil)
+		XCTAssertNotNil(device)
+		XCTAssertTrue(device.isSimulator)
 	}
 
 	func testParsingInvalidDevice() {
-		let identifier = "6,3"
+		var device = RawDevice(identifier: "6,3")
 
-		let rawDevice = RawDevice(identifier: identifier)
+		XCTAssertNil(device.family)
+		XCTAssert(device.major == 6)
+		XCTAssert(device.minor == 3)
+		XCTAssertEqual(device.modelNumber, 6.3)
 
-		XCTAssertNil(rawDevice.family)
-		XCTAssert(rawDevice.major == 6)
-		XCTAssert(rawDevice.minor == 3)
+		device = RawDevice(identifier: "foo")
+
+		XCTAssertNil(device.family)
+		XCTAssert(device.major == 0)
+		XCTAssert(device.minor == 0)
+		XCTAssertEqual(device.modelNumber, 0)
 	}
 
 	func testParsingFutureDevice() {
@@ -65,4 +81,10 @@ class RawDeviceTests: XCTestCase {
 		XCTAssert(rawDevice.major == 133)
 		XCTAssert(rawDevice.minor == 7)
 	}
+
+	func testRawDeviceComparison() {
+		XCTAssertFalse(RawDevice(family: .pad, modelNumber: 0.0) < RawDevice(family: .phone, modelNumber: 0.0))
+		XCTAssertTrue(RawDevice(family: .pad, modelNumber: 1.2) < RawDevice(family: .pad, modelNumber: 1.3))
+	}
+
 }
