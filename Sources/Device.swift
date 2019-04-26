@@ -530,7 +530,7 @@ extension Device: MarketingProtocol {
 		case .iPadPro12Inch2G:
 			return "12.9-inch iPad Pro (2nd generation)"
 		case .iPadPro12Inch3G:
-			return "12.9-inch iPad Pro (2nd generation)"
+			return "12.9-inch iPad Pro (3rd generation)"
 		case .iPadPro10Inch:
 			return "10.5-inch iPad Pro"
 		case .iPadPro11Inch:
