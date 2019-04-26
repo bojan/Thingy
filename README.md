@@ -6,7 +6,8 @@ A modern device detection and querying library.
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Thingy.svg)](https://cocoapods.org/pods/Thingy)
-[![Documentation](https://raw.githubusercontent.com/bojan/Thingy/master/docs/badge.svg)](https://bojan.github.io/Thingy)
+[![Documentation](https://raw.githubusercontent.com/bojan/Thingy/master/docs/badge.svg?sanitize=true)](https://bojan.github.io/Thingy)
+[![codecov](https://codecov.io/gh/bojan/Thingy/branch/master/graph/badge.svg)](https://codecov.io/gh/bojan/Thingy)
 
 ## Features
 
