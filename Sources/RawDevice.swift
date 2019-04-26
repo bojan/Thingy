@@ -33,7 +33,7 @@ internal struct RawDevice {
 	var minor: Int = 0
 	var family: Family?
 	var isSimulator = false
-	fileprivate var _identifier: String?
+	private var _identifier: String?
 
 	var modelNumber: Double {
 		let factor: Double = minor < 10 ? 10 : 100
@@ -49,31 +49,38 @@ internal struct RawDevice {
 
 		isSimulator = (identifier == "x86_64" || identifier == "i386")
 
-		if isSimulator {
-			if let simulatorIdentifier = String(validatingUTF8: getenv("SIMULATOR_MODEL_IDENTIFIER")) {
-				identifier = simulatorIdentifier
-			}
+		if let simulatorIdentifier = ProcessInfo.processInfo.environment["SIMULATOR_MODEL_IDENTIFIER"],
+			isSimulator {
+			identifier = simulatorIdentifier
 		}
 
-		let regex = try! NSRegularExpression(pattern: "^([a-zA-Z]*)(\\d+)(\\,|\\.)(\\d+)$", options: [.caseInsensitive])
+		guard let regex = try? NSRegularExpression(pattern: "^([a-zA-Z]*)(\\d+)(\\,|\\.)(\\d+)$", options: [.caseInsensitive])
+		else {
+			return
+		}
 
+		let range = NSRange(location: 0, length: identifier.count)
 		let rawFamily = regex.stringByReplacingMatches(in: identifier,
 													   options: [],
-													   range: NSRange(0..<identifier.count),
+													   range: range,
 													   withTemplate: "$1")
 		family = Family(rawValue: rawFamily)
 
 		let modelString = regex.stringByReplacingMatches(in: identifier,
 														 options: [],
-														 range: NSRange(0..<identifier.count),
+														 range: range,
 														 withTemplate: "$2.$4")
 
 		let modelComponents = modelString.components(separatedBy: ".")
-		if let majorString = modelComponents.first,
-		   let minorString = modelComponents.last {
-			major = Int(majorString) ?? 0
-			minor = Int(minorString) ?? 0
+
+		guard let majorString = modelComponents.first,
+			let minorString = modelComponents.last
+		else {
+			return
 		}
+
+		major = Int(majorString) ?? 0
+		minor = Int(minorString) ?? 0
 	}
 
 	internal mutating func identifier() -> String {
@@ -103,7 +110,7 @@ internal struct RawDevice {
 			return nil
 		}
 
-		let foundThingy = Device.allValues.filter {
+		let foundThingy = Device.allCases.filter {
 			$0.numbers.contains(modelNumber) && $0.family == family
 		}.first
 
@@ -128,20 +135,17 @@ internal struct RawDevice {
 extension RawDevice: Comparable {
 
 	public static func <(lhs: RawDevice, rhs: RawDevice) -> Bool {
-		if lhs.family != rhs.family {
+		guard lhs.family == rhs.family
+		else {
 			return false
 		}
 
-		if lhs.major < rhs.major {
+		guard lhs.major >= rhs.major
+		else {
 			return true
 		}
 
-		if lhs.major == rhs.major &&
-		   lhs.minor < rhs.minor {
-			return true
-		}
-
-		return false
+		return lhs.major == rhs.major && lhs.minor < rhs.minor
 	}
 
 	public static func ==(lhs: RawDevice, rhs: RawDevice) -> Bool {

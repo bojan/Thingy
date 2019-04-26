@@ -59,6 +59,20 @@ class DeviceTests: XCTestCase {
 			XCTAssert(device.family == .phone)
 			XCTAssertNil(device.productLine)
 		}
+
+		let device4 = Device(identifier: "iPod7,1")
+		if let device = device4 {
+			XCTAssert(device.marketingName == "iPod touch (6th generation)")
+			XCTAssert(device.family == .pod)
+			XCTAssertNil(device.productLine)
+		}
+
+		let device5 = Device(identifier: "Watch4,2")
+		if let device = device5 {
+			XCTAssert(device.marketingName == "Apple Watch Series 4")
+			XCTAssert(device.family == .watch)
+			XCTAssertNil(device.productLine)
+		}
 	}
 
 	func testResolveFutureDevice() {
