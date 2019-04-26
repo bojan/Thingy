@@ -11,7 +11,7 @@ A modern device detection and querying library.
 
 ## Features
 
-- [x] Swift 4 support
+- [x] Swift 5 support
 - [x] Modern syntax
 - [x] Documentation
 - [x] Device detection
@@ -34,7 +34,7 @@ import PackageDescription
 let package = Package(
     name: "HelloWorld",
     dependencies: [
-        .Package(url: "https://github.com/bojan/Thingy.git", "2.0.2")
+        .Package(url: "https://github.com/bojan/Thingy.git", "2.1.0")
     ]
 )
 ```
@@ -88,8 +88,8 @@ if myDevice.family == .tv {
     print("This is an Apple TV device.")
 }
 
-if myDevice.model != .iPhone7Plus {
-    print("This is NOT an iPhone 7 Plus.")
+if myDevice.model != .iPhoneXSMax {
+    print("This is NOT an iPhone XS Max.")
 }
 
 // Pretty printed device properties
