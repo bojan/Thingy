@@ -224,53 +224,61 @@ public enum ThingyError: Error {
 public extension Device {
 
 	/// Associated family for each device.
-	public var family: Family {
+	var family: Family {
 		switch self {
 		case .iPhone4S,
-			 .iPhone5,
-			 .iPhone5c,
-			 .iPhone5s,
-			 .iPhone6,
-			 .iPhone6Plus,
-			 .iPhone6s,
-			 .iPhone6sPlus,
-			 .iPhoneSE,
-			 .iPhone7,
-			 .iPhone7Plus,
-			 .iPhone8,
-			 .iPhone8Plus,
-			 .iPhoneX:
+		     .iPhone5,
+		     .iPhone5c,
+		     .iPhone5s,
+		     .iPhone6,
+		     .iPhone6Plus,
+		     .iPhone6s,
+		     .iPhone6sPlus,
+		     .iPhoneSE,
+		     .iPhone7,
+		     .iPhone7Plus,
+		     .iPhone8,
+		     .iPhone8Plus,
+		     .iPhoneX,
+		     .iPhoneXR,
+		     .iPhoneXS,
+		     .iPhoneXSMax:
 			return .phone
 
 		case .iPodTouch5G,
-			 .iPodTouch6G:
+		     .iPodTouch6G:
 			return .pod
 
 		case .appleTV4,
-			 .appleTV4K:
+		     .appleTV4K:
 			return .tv
 
 		case .watch,
-			 .watchSeries1,
-			 .watchSeries2,
-			 .watchSeries3:
+		     .watchSeries1,
+		     .watchSeries2,
+		     .watchSeries3,
+		     .watchSeries4:
 			return .watch
 
 		case .iPad2,
-			 .iPad3,
-			 .iPad4,
-			 .iPad5,
-			 .iPad6,
-			 .iPadAir,
-			 .iPadAir2,
-			 .iPadPro12Inch,
-			 .iPadPro9Inch,
-			 .iPadPro12Inch2G,
-			 .iPadPro10Inch,
-			 .iPadMini,
-			 .iPadMini2,
-			 .iPadMini3,
-			 .iPadMini4:
+		     .iPad3,
+		     .iPad4,
+		     .iPad5,
+		     .iPad6,
+		     .iPadAir,
+		     .iPadAir2,
+		     .iPadAir3,
+		     .iPadPro12Inch,
+		     .iPadPro12Inch2G,
+		     .iPadPro12Inch3G,
+		     .iPadPro9Inch,
+		     .iPadPro10Inch,
+		     .iPadPro11Inch,
+		     .iPadMini,
+		     .iPadMini2,
+		     .iPadMini3,
+		     .iPadMini4,
+		     .iPadMini5:
 			return .pad
 
 		case let .simulator(model):
