@@ -423,35 +423,30 @@ internal extension Device {
 public extension Device {
 
 	/// Product line of the model, currently supported only for the iPad.
-	public var productLine: ProductLine? {
+	var productLine: ProductLine? {
 		switch self {
-		case .iPad2:
+		case .iPad2,
+		     .iPad3,
+		     .iPad4,
+		     .iPad5,
+		     .iPad6:
 			return Lines.iPad.regular
-		case .iPad3:
-			return Lines.iPad.regular
-		case .iPad4:
-			return Lines.iPad.regular
-		case .iPad5:
-			return Lines.iPad.regular
-		case .iPadAir:
+		case .iPadAir,
+		     .iPadAir2,
+		     .iPadAir3:
 			return Lines.iPad.air
-		case .iPadAir2:
-			return Lines.iPad.air
-		case .iPadPro12Inch:
+		case .iPadPro12Inch,
+		     .iPadPro12Inch2G,
+		     .iPadPro12Inch3G,
+		     .iPadPro9Inch,
+		     .iPadPro10Inch,
+		     .iPadPro11Inch:
 			return Lines.iPad.pro
-		case .iPadPro9Inch:
-			return Lines.iPad.pro
-		case .iPadPro12Inch2G:
-			return Lines.iPad.pro
-		case .iPadPro10Inch:
-			return Lines.iPad.pro
-		case .iPadMini:
-			return Lines.iPad.mini
-		case .iPadMini2:
-			return Lines.iPad.mini
-		case .iPadMini3:
-			return Lines.iPad.mini
-		case .iPadMini4:
+		case .iPadMini,
+		     .iPadMini2,
+		     .iPadMini3,
+		     .iPadMini4,
+		     .iPadMini5:
 			return Lines.iPad.mini
 		default:
 			return nil
