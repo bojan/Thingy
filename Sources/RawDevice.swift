@@ -103,7 +103,7 @@ internal struct RawDevice {
 			return nil
 		}
 
-		let foundThingy = Device.allValues.filter {
+		let foundThingy = Device.allCases.filter {
 			$0.numbers.contains(modelNumber) && $0.family == family
 		}.first
 
