@@ -30,7 +30,7 @@ import UIKit
 
 public struct Display {
 
-	/// An enum that describes the display size in inches.
+	/// An enum that describes the display size.
 	public enum Size: Float {
 
 		/// - screen38mm: 38mm Apple Watch screen.
