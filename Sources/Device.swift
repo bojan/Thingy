@@ -294,12 +294,12 @@ public extension Device {
 
 internal extension Device {
 
-	internal var lowestNumber: Double {
+	var lowestNumber: Double {
 		return numbers.first ?? 0
 	}
 
 	/// Associated model numbers for each device.
-	internal var numbers: [Double] {
+	var numbers: [Double] {
 		switch self {
 		case .iPhone4S:
 			return [4.1]
@@ -329,6 +329,12 @@ internal extension Device {
 			return [10.2, 10.5]
 		case .iPhoneX:
 			return [10.3, 10.6]
+		case .iPhoneXR:
+			return [11.8]
+		case .iPhoneXS:
+			return [11.2]
+		case .iPhoneXSMax:
+			return [11.4, 11.6]
 
 		case .iPodTouch5G:
 			return [5.1]
@@ -340,14 +346,26 @@ internal extension Device {
 		case .appleTV4K:
 			return [6.2]
 
-		case .watch:
-			return [1.1, 1.2]
-		case .watchSeries1:
-			return [2.6, 2.7]
-		case .watchSeries2:
-			return [2.3, 2.4]
-		case .watchSeries3:
-			return [3.1, 3.2, 3.3, 3.4]
+		case .watch(.screen38mm):
+			return [1.1]
+		case .watch(.screen42mm):
+			return [1.2]
+		case .watchSeries1(.screen38mm):
+			return [2.6]
+		case .watchSeries1(.screen42mm):
+			return [2.7]
+		case .watchSeries2(.screen38mm):
+			return [2.3]
+		case .watchSeries2(.screen42mm):
+			return [2.4]
+		case .watchSeries3(.screen38mm):
+			return [3.1, 3.3]
+		case .watchSeries3(.screen42mm):
+			return [3.2, 3.4]
+		case .watchSeries4(.screen40mm):
+			return [4.1, 4.3]
+		case .watchSeries4(.screen44mm):
+			return [4.2, 4.4]
 
 		case .iPad2:
 			return [2.1, 2.2, 2.3, 2.4]
@@ -355,22 +373,30 @@ internal extension Device {
 			return [3.1, 3.2, 3.3]
 		case .iPad4:
 			return [3.4, 3.5, 3.6]
+		case .iPad5:
+			return [6.11, 6.12]
+		case .iPad6:
+			return [7.5, 7.6]
+
 		case .iPadAir:
 			return [4.1, 4.2, 4.3]
 		case .iPadAir2:
 			return [5.3, 5.4]
+		case .iPadAir3:
+			return [11.3, 11.4]
+
 		case .iPadPro12Inch:
 			return [6.7, 6.8]
 		case .iPadPro9Inch:
 			return [6.3, 6.4]
-		case .iPad5:
-			return [6.11, 6.12]
 		case .iPadPro12Inch2G:
 			return [7.1, 7.2]
 		case .iPadPro10Inch:
 			return [7.3, 7.4]
-		case .iPad6:
-			return [7.5, 7.6]
+		case .iPadPro12Inch3G:
+			return [8.5, 8.6, 8.7, 8.8]
+		case .iPadPro11Inch:
+			return [8.1, 8.2, 8.3, 8.4]
 
 		case .iPadMini:
 			return [2.5, 2.6, 2.7]
@@ -380,11 +406,13 @@ internal extension Device {
 			return [4.7, 4.8, 4.9]
 		case .iPadMini4:
 			return [5.1, 5.2]
+		case .iPadMini5:
+			return [11.1, 11.2]
 
 		case let .simulator(model):
 			return model.numbers
 
-		case .unknown(_):
+		default:
 			return [0.0]
 		}
 	}
