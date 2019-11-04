@@ -8,6 +8,7 @@ A modern device detection and querying library.
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Thingy.svg)](https://cocoapods.org/pods/Thingy)
 [![Documentation](https://raw.githubusercontent.com/bojan/Thingy/master/docs/badge.svg?sanitize=true)](https://bojan.github.io/Thingy)
 [![codecov](https://codecov.io/gh/bojan/Thingy/branch/master/graph/badge.svg)](https://codecov.io/gh/bojan/Thingy)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbojan%2FThingy.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbojan%2FThingy?ref=badge_shield)
 
 ## Features
 
@@ -148,3 +149,6 @@ Bojan Dimovski
 ## License
 
 Thingy is available under the MIT license. Check the [LICENSE](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE) file for more info.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbojan%2FThingy.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbojan%2FThingy?ref=badge_large)
