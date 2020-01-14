@@ -23,15 +23,15 @@ A modern device detection and querying library.
 
 ### Swift Packager Manager (SPM)
 
-Create a `Package.swift` file, and add this snippet:
+Use Xcode 11 to add Thingy as a package or update your `Package.swift` for manual setups:
 
-``` swift
+```swift
 import PackageDescription
 
 let package = Package(
     name: "HelloWorld",
     dependencies: [
-        .Package(url: "https://github.com/bojan/Thingy.git", "2.1.0")
+        .Package(url: "https://github.com/bojan/Thingy.git", "3.0.0")
     ]
 )
 ```
@@ -40,7 +40,7 @@ let package = Package(
 
 Add this to your `Cartfile`:
 
-```
+```ogdl
 github "bojan/Thingy"
 ```
 
@@ -48,7 +48,7 @@ github "bojan/Thingy"
 
 Add the repository as a submodule to your project.
 
-```
+```bash
 git submodule add https://github.com/bojan/Thingy.git Vendor/Thingy
 ```
 
@@ -60,7 +60,7 @@ In your project's settings, select your target and under **General** > **Embedde
 
 Import the module where needed:
 
-```
+```swift
 import Thingy
 ```
 
