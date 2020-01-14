@@ -2,12 +2,9 @@
 A modern device detection and querying library.
 
 [![Build Status](https://app.bitrise.io/app/5638e96850380bcf/status.svg?token=ATvHHXw6RMbyde-i0FPV_w&branch=master)](https://app.bitrise.io/app/5638e96850380bcf)
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+[![GitHub license](https://img.shields.io/badge/license-WTFPL-green)](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE)
 [![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/Thingy.svg)](https://cocoapods.org/pods/Thingy)
-[![Documentation](https://raw.githubusercontent.com/bojan/Thingy/master/docs/badge.svg?sanitize=true)](https://bojan.github.io/Thingy)
-[![codecov](https://codecov.io/gh/bojan/Thingy/branch/master/graph/badge.svg)](https://codecov.io/gh/bojan/Thingy)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 
 ## Features
 
@@ -26,15 +23,15 @@ A modern device detection and querying library.
 
 ### Swift Packager Manager (SPM)
 
-Create a `Package.swift` file, and add this snippet:
+Use Xcode 11 to add Thingy as a package or update your `Package.swift` for manual setups:
 
-``` swift
+```swift
 import PackageDescription
 
 let package = Package(
     name: "HelloWorld",
     dependencies: [
-        .Package(url: "https://github.com/bojan/Thingy.git", "2.1.0")
+        .Package(url: "https://github.com/bojan/Thingy.git", "3.0.0")
     ]
 )
 ```
@@ -43,23 +40,15 @@ let package = Package(
 
 Add this to your `Cartfile`:
 
-```
+```ogdl
 github "bojan/Thingy"
-```
-
-### CocoaPods
-
-Add this to your `Podfile`
-
-```
-pod 'Thingy'
 ```
 
 ### Manually
 
 Add the repository as a submodule to your project.
 
-```
+```bash
 git submodule add https://github.com/bojan/Thingy.git Vendor/Thingy
 ```
 
@@ -71,7 +60,7 @@ In your project's settings, select your target and under **General** > **Embedde
 
 Import the module where needed:
 
-```
+```swift
 import Thingy
 ```
 
@@ -142,9 +131,8 @@ If you are willing to contribute by adding a feature or squashing a bug or two, 
 ## Author
 
 Bojan Dimovski
-- [@bojand](https://twitter.com/bojand)
 - [LinkedIn](http://linkedin.com/in/bdimovski)
 
 ## License
 
-Thingy is available under the MIT license. Check the [LICENSE](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE) file for more info.
+Thingy is available under the WTFPL license. Check the [LICENSE](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE) file for more info.
