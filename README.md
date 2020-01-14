@@ -2,11 +2,9 @@
 A modern device detection and querying library.
 
 [![Build Status](https://app.bitrise.io/app/5638e96850380bcf/status.svg?token=ATvHHXw6RMbyde-i0FPV_w&branch=master)](https://app.bitrise.io/app/5638e96850380bcf)
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+[![GitHub license](https://img.shields.io/badge/license-WTFPL-green)](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE)
 [![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/Thingy.svg)](https://cocoapods.org/pods/Thingy)
-[![Documentation](https://raw.githubusercontent.com/bojan/Thingy/master/docs/badge.svg)](https://bojan.github.io/Thingy)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 
 ## Features
 
@@ -44,14 +42,6 @@ Add this to your `Cartfile`:
 
 ```
 github "bojan/Thingy"
-```
-
-### CocoaPods
-
-Add this to your `Podfile`
-
-```
-pod 'Thingy'
 ```
 
 ### Manually
@@ -141,9 +131,8 @@ If you are willing to contribute by adding a feature or squashing a bug or two, 
 ## Author
 
 Bojan Dimovski
-- [@bojand](https://twitter.com/bojand)
 - [LinkedIn](http://linkedin.com/in/bdimovski)
 
 ## License
 
-Thingy is available under the MIT license. Check the [LICENSE](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE) file for more info.
+Thingy is available under the WTFPL license. Check the [LICENSE](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE) file for more info.
