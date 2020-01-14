@@ -38,6 +38,10 @@ let package = Package(
     targets: [
         .target(
             name: "Thingy",
-            path: "Sources")
+            path: "Sources"),
+		.testTarget(
+				name: "ThingyTests",
+				dependencies: ["Thingy"],
+				path: "Tests"),
     ]
 )
