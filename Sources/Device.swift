@@ -5,23 +5,21 @@
 // Created by Bojan Dimovski on 21.11.16.
 // Copyright © 2017 Bojan Dimovski. All rights reserved.
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//                    Version 2, December 2004
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
+// Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+// Everyone is permitted to copy and distribute verbatim or modified
+// copies of this license document, and changing it is allowed as long
+// as the name is changed.
+//
+//            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+//
+//  0. You just DO WHAT THE FUCK YOU WANT TO.
+//
+//
 
 import Foundation
 import UIKit
@@ -66,6 +64,12 @@ public enum Device: CaseIterable {
 	case iPhoneXS
 	/// - iPhoneXSMax: All iPhone XS Max variants.
 	case iPhoneXSMax
+	/// - iPhone11: All iPhone 11 variants.
+	case iPhone11
+	/// - iPhone11Pro: All iPhone 11 Pro variants.
+	case iPhone11Pro
+	/// - iPhone11ProMax: All iPhone 11 Pro Max variants.
+	case iPhone11ProMax
 
 	/// - iPad2: All iPad 2 variants.
 	case iPad2
@@ -77,6 +81,8 @@ public enum Device: CaseIterable {
 	case iPad5
 	/// - iPad6: All iPad (2018) variants.
 	case iPad6
+	/// - iPad7: All iPad (2019) variants.
+	case iPad7
 	/// - iPadMini: The original iPad mini in all variants.
 	case iPadMini
 	/// - iPadMini2: All iPad mini 2 variants.
@@ -110,6 +116,8 @@ public enum Device: CaseIterable {
 	case iPodTouch5G
 	/// - iPodTouch6G: All iPod touch 6G variants.
 	case iPodTouch6G
+	/// - iPodTouch7G: All iPod touch 7G variants.
+	case iPodTouch7G
 
 	/// - appleTV4: Apple TV 4.
 	case appleTV4
@@ -127,6 +135,8 @@ public enum Device: CaseIterable {
 	case watchSeries3(Display.Size)
 	/// - watchSeries4: Apple Watch Series 4.
 	case watchSeries4(Display.Size)
+	/// - watchSeries5: Apple Watch Series 5.
+	case watchSeries5(Display.Size)
 
 	/// - simulator: A simulator for the associated device model.
 	indirect case simulator(Device)
@@ -153,6 +163,9 @@ public enum Device: CaseIterable {
 		.iPhoneXR,
 		.iPhoneXS,
 		.iPhoneXSMax,
+		.iPhone11,
+		.iPhone11Pro,
+		.iPhone11ProMax,
 		.iPodTouch5G,
 		.iPodTouch6G,
 		.appleTV4,
@@ -167,6 +180,8 @@ public enum Device: CaseIterable {
 		.watchSeries3(.screen42mm),
 		.watchSeries4(.screen40mm),
 		.watchSeries4(.screen44mm),
+		.watchSeries5(.screen40mm),
+		.watchSeries5(.screen44mm),
 		.iPad2,
 		.iPad3,
 		.iPad4,
@@ -212,11 +227,11 @@ public extension Device {
 
 public enum ThingyError: Error {
 	/// - An error thrown when devices of different families get compared.
-	case IncomparableFamilies
+	case incomparableFamilies
 	/// - An error thrown when devices from different product lines get compared.
-	case IncomparableProductLines
+	case incomparableProductLines
 	/// - An error thrown when an unknown device gets compared.
-	case IncomparableUnknownProduct
+	case incomparableUnknownProduct
 }
 
 // MARK: - Family
@@ -242,11 +257,15 @@ public extension Device {
 		     .iPhoneX,
 		     .iPhoneXR,
 		     .iPhoneXS,
-		     .iPhoneXSMax:
+		     .iPhoneXSMax,
+			 .iPhone11,
+			 .iPhone11Pro,
+			 .iPhone11ProMax:
 			return .phone
 
 		case .iPodTouch5G,
-		     .iPodTouch6G:
+		     .iPodTouch6G,
+			 .iPodTouch7G:
 			return .pod
 
 		case .appleTV4,
@@ -257,7 +276,8 @@ public extension Device {
 		     .watchSeries1,
 		     .watchSeries2,
 		     .watchSeries3,
-		     .watchSeries4:
+		     .watchSeries4,
+			 .watchSeries5:
 			return .watch
 
 		case .iPad2,
@@ -265,6 +285,7 @@ public extension Device {
 		     .iPad4,
 		     .iPad5,
 		     .iPad6,
+			 .iPad7,
 		     .iPadAir,
 		     .iPadAir2,
 		     .iPadAir3,
@@ -335,11 +356,19 @@ internal extension Device {
 			return [11.2]
 		case .iPhoneXSMax:
 			return [11.4, 11.6]
+		case .iPhone11:
+			return [12.1]
+		case .iPhone11Pro:
+			return [12.3]
+		case .iPhone11ProMax:
+			return [12.5]
 
 		case .iPodTouch5G:
 			return [5.1]
 		case .iPodTouch6G:
 			return [7.1]
+		case .iPodTouch7G:
+			return [9.1]
 
 		case .appleTV4:
 			return [5.3]
@@ -366,6 +395,10 @@ internal extension Device {
 			return [4.1, 4.3]
 		case .watchSeries4(.screen44mm):
 			return [4.2, 4.4]
+		case .watchSeries5(.screen40mm):
+			return [5.1, 5.3]
+		case .watchSeries5(.screen44mm):
+			return [5.2, 5.4]
 
 		case .iPad2:
 			return [2.1, 2.2, 2.3, 2.4]
@@ -377,6 +410,8 @@ internal extension Device {
 			return [6.11, 6.12]
 		case .iPad6:
 			return [7.5, 7.6]
+		case .iPad7:
+			return [7.11, 7.12]
 
 		case .iPadAir:
 			return [4.1, 4.2, 4.3]
@@ -429,7 +464,8 @@ public extension Device {
 		     .iPad3,
 		     .iPad4,
 		     .iPad5,
-		     .iPad6:
+			 .iPad6,
+			 .iPad7:
 			return Lines.iPad.regular
 		case .iPadAir,
 		     .iPadAir2,
@@ -496,6 +532,12 @@ extension Device: MarketingProtocol {
 			return "iPhone XS"
 		case .iPhoneXSMax:
 			return "iPhone XS Max"
+		case .iPhone11:
+			return "iPhone 11"
+		case .iPhone11Pro:
+			return "iPhone 11 Pro"
+		case .iPhone11ProMax:
+			return "iPhone 11 Pro Max"
 
 		case .iPad2:
 			return "iPad 2"
@@ -507,6 +549,8 @@ extension Device: MarketingProtocol {
 			return "iPad (2017)"
 		case .iPad6:
 			return "iPad (2018)"
+		case .iPad7:
+			return "iPad (2019)"
 		case .iPadMini:
 			return "iPad mini"
 		case .iPadMini2:
@@ -540,6 +584,8 @@ extension Device: MarketingProtocol {
 			return "iPod touch (5th generation)"
 		case .iPodTouch6G:
 			return "iPod touch (6th generation)"
+		case .iPodTouch7G:
+			return "iPod touch (7th generation)"
 
 		case .appleTV4:
 			return "Apple TV"
@@ -556,6 +602,8 @@ extension Device: MarketingProtocol {
 			return "Apple Watch Series 3"
 		case .watchSeries4:
 			return "Apple Watch Series 4"
+		case .watchSeries5:
+			return "Apple Watch Series 5"
 
 		case let .simulator(model):
 			return NSLocalizedString("Simulator (\(model.marketingName))", comment: "Simulator (\(model.marketingName))")
@@ -588,7 +636,8 @@ public extension Device {
 		     .iPhone5s,
 		     .iPhoneSE,
 		     .iPodTouch5G,
-		     .iPodTouch6G:
+		     .iPodTouch6G,
+			 .iPodTouch7G:
 			return Display(size: .screen4Inch, resolution: CGSize(width: 320, height: 568), physicalResolution: CGSize(width: 640, height: 1136), renderedResolution: CGSize(width: 640, height: 1136), scale: 2.0, density: 326, hasTrueTone: false, colorSpace: .sRGB)
 
 		case .iPhone6,
@@ -611,13 +660,13 @@ public extension Device {
 		case .iPhone8Plus:
 			return Display(size: .screen5_5Inch, resolution: CGSize(width: 414, height: 736), physicalResolution: CGSize(width: 1080, height: 1920), renderedResolution: CGSize(width: 1242, height: 2208), scale: 3.0, density: 401, hasTrueTone: true, colorSpace: .p3)
 
-		case .iPhoneX, .iPhoneXS:
+		case .iPhoneX, .iPhoneXS, .iPhone11Pro:
 			return Display(size: .screen5_8Inch, resolution: CGSize(width: 375, height: 812), physicalResolution: CGSize(width: 1125, height: 2436), renderedResolution: CGSize(width: 1125, height: 2436), scale: 3.0, density: 458, hasTrueTone: true, colorSpace: .p3)
 
-		case .iPhoneXR:
+		case .iPhoneXR, .iPhone11:
 			return Display(size: .screen6_1Inch, resolution: CGSize(width: 414, height: 896), physicalResolution: CGSize(width: 828, height: 1792), renderedResolution: CGSize(width: 828, height: 1792), scale: 2.0, density: 326, hasTrueTone: true, colorSpace: .p3)
 
-		case .iPhoneXSMax:
+		case .iPhoneXSMax, .iPhone11ProMax:
 			return Display(size: .screen6_5Inch, resolution: CGSize(width: 414, height: 896), physicalResolution: CGSize(width: 1242, height: 2688), renderedResolution: CGSize(width: 1242, height: 2688), scale: 3.0, density: 458, hasTrueTone: true, colorSpace: .p3)
 
 		case .appleTV4:
@@ -636,6 +685,9 @@ public extension Device {
 		     .iPadAir,
 		     .iPadAir2:
 			return Display(size: .screen9_7Inch, resolution: CGSize(width: 1024, height: 768), physicalResolution: CGSize(width: 2048, height: 1536), renderedResolution: CGSize(width: 2048, height: 1536), scale: 2.0, density: 264, hasTrueTone: false, colorSpace: .sRGB)
+
+		case .iPad7:
+			return Display(size: .screen10_2Inch, resolution: CGSize(width: 1080, height: 810), physicalResolution: CGSize(width: 2160, height: 1620), renderedResolution: CGSize(width: 2160, height: 1620), scale: 2.0, density: 264, hasTrueTone: false, colorSpace: .sRGB)
 
 		case .iPadPro12Inch:
 			return Display(size: .screen12_9Inch, resolution: CGSize(width: 1366, height: 1024), physicalResolution: CGSize(width: 2732, height: 2048), renderedResolution: CGSize(width: 2732, height: 2048), scale: 2.0, density: 264, hasTrueTone: false, colorSpace: .sRGB)
@@ -678,9 +730,11 @@ public extension Device {
 		     .watchSeries2(.screen42mm),
 		     .watchSeries3(.screen42mm):
 			return Display(size: .screen42mm, resolution: CGSize(width: 195, height: 156), physicalResolution: CGSize(width: 390, height: 312), renderedResolution: CGSize(width: 390, height: 312), scale: 2.0, density: 303, hasTrueTone: false, colorSpace: .sRGB)
-		case .watchSeries4(.screen40mm):
+		case .watchSeries4(.screen40mm),
+			 .watchSeries5(.screen40mm):
 			return Display(size: .screen40mm, resolution: CGSize(width: 197, height: 162), physicalResolution: CGSize(width: 394, height: 324), renderedResolution: CGSize(width: 394, height: 324), scale: 2.0, density: 326, hasTrueTone: false, colorSpace: .sRGB)
-		case .watchSeries4(.screen44mm):
+		case .watchSeries4(.screen44mm),
+			 .watchSeries5(.screen44mm):
 			return Display(size: .screen44mm, resolution: CGSize(width: 224, height: 184), physicalResolution: CGSize(width: 448, height: 368), renderedResolution: CGSize(width: 448, height: 368), scale: 2.0, density: 326, hasTrueTone: false, colorSpace: .sRGB)
 
 		default:
@@ -724,22 +778,22 @@ public extension Device {
 
 	internal static func compare(lhs: Device, rhs: Device, sign: ((RawDevice, RawDevice) -> Bool)) throws -> Bool {
 		if case .unknown = lhs {
-			throw ThingyError.IncomparableUnknownProduct
+			throw ThingyError.incomparableUnknownProduct
 		}
 
 		if case .unknown = rhs {
-			throw ThingyError.IncomparableUnknownProduct
+			throw ThingyError.incomparableUnknownProduct
 		}
 
 		guard lhs.family == rhs.family
 		else {
-			throw ThingyError.IncomparableFamilies
+			throw ThingyError.incomparableFamilies
 		}
 
 		if let lhsProductLine = lhs.productLine,
 		   let rhsProductLine = rhs.productLine,
 		   lhsProductLine != rhsProductLine {
-			throw ThingyError.IncomparableProductLines
+			throw ThingyError.incomparableProductLines
 		}
 
 		let lhsRaw = RawDevice(family: lhs.family, modelNumber: lhs.lowestNumber)
