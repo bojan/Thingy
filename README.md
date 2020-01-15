@@ -5,6 +5,7 @@ A modern device detection and querying library.
 [![GitHub license](https://img.shields.io/badge/license-WTFPL-green)](https://raw.githubusercontent.com/bojan/Thingy/master/LICENSE)
 [![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+[![codecov](https://codecov.io/gh/bojan/Thingy/branch/master/graph/badge.svg)](https://codecov.io/gh/bojan/Thingy)
 
 ## Features
 
