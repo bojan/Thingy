@@ -47,7 +47,7 @@ internal struct RawDevice {
 		isSimulator = (identifier == "x86_64" || identifier == "i386")
 
 		if let simulatorIdentifier = ProcessInfo.processInfo.environment["SIMULATOR_MODEL_IDENTIFIER"],
-			isSimulator {
+		   isSimulator {
 			identifier = simulatorIdentifier
 		}
 
@@ -58,20 +58,20 @@ internal struct RawDevice {
 
 		let range = NSRange(location: 0, length: identifier.count)
 		let rawFamily = regex.stringByReplacingMatches(in: identifier,
-													   options: [],
-													   range: range,
-													   withTemplate: "$1")
+		                                               options: [],
+		                                               range: range,
+		                                               withTemplate: "$1")
 		family = Family(rawValue: rawFamily)
 
 		let modelString = regex.stringByReplacingMatches(in: identifier,
-														 options: [],
-														 range: range,
-														 withTemplate: "$2.$4")
+		                                                 options: [],
+		                                                 range: range,
+		                                                 withTemplate: "$2.$4")
 
 		let modelComponents = modelString.components(separatedBy: ".")
 
 		guard let majorString = modelComponents.first,
-			let minorString = modelComponents.last
+		      let minorString = modelComponents.last
 		else {
 			return
 		}
@@ -90,7 +90,7 @@ internal struct RawDevice {
 		let machineMirror = Mirror(reflecting: systemInfo.machine)
 		let identifier = machineMirror.children.reduce("") { identifier, element in
 			guard let value = element.value as? Int8,
-				  value != 0
+			      value != 0
 			else {
 				return identifier
 			}
@@ -147,8 +147,8 @@ extension RawDevice: Comparable {
 
 	public static func ==(lhs: RawDevice, rhs: RawDevice) -> Bool {
 		return lhs.major == rhs.major &&
-			   lhs.minor == rhs.minor &&
-			   lhs.family == rhs.family
+		       lhs.minor == rhs.minor &&
+		       lhs.family == rhs.family
 	}
 
 }
