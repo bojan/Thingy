@@ -146,9 +146,9 @@ extension RawDevice: Comparable {
 	}
 
 	public static func ==(lhs: RawDevice, rhs: RawDevice) -> Bool {
-		return lhs.major == rhs.major &&
-		       lhs.minor == rhs.minor &&
-		       lhs.family == rhs.family
+		lhs.major == rhs.major &&
+		lhs.minor == rhs.minor &&
+		lhs.family == rhs.family
 	}
 
 }

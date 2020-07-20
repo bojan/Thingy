@@ -25,8 +25,7 @@ import Foundation
 import UIKit
 
 /// A struct that provides an extended info on the display.
-
-public struct Display {
+public struct Display: Equatable {
 
 	/// An enum that describes the display size.
 	public enum Size: Float {
@@ -125,10 +124,10 @@ public struct Display {
 
 extension Display.Size: Comparable {
 	public static func <(lhs: Display.Size, rhs: Display.Size) -> Bool {
-		return lhs.rawValue < rhs.rawValue
+		lhs.rawValue < rhs.rawValue
 	}
 
 	public static func ==(lhs: Display.Size, rhs: Display.Size) -> Bool {
-		return lhs.rawValue == rhs.rawValue
+		lhs.rawValue == rhs.rawValue
 	}
 }

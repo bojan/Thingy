@@ -24,14 +24,12 @@
 import Foundation
 
 /// A struct containing all product lines. Currently iPad only.
-
-public struct Lines {
+public enum Lines {
 
 	/// A type that describes the specific iPad line.
-
 	public enum iPad: ProductLine {
-		/// - regular: A standard iPad product.
-		case regular
+		/// - standard: A standard iPad product.
+		case standard
 		/// - pro: An iPad Pro product.
 		case pro
 		/// - mini: An iPad mini product.
@@ -48,6 +46,27 @@ public struct Lines {
 				return "mini"
 			case .air:
 				return "Air"
+			default:
+				return ""
+			}
+		}
+	}
+
+	public enum iPhone: ProductLine {
+		/// - standard: A standard iPhone product.
+		case standard
+		/// - pro: An iPhone Pro product.
+		case pro
+		/// - se: An iPhone SE product.
+		case se
+
+		/// The marketing name of the iPhone product line, e.g. "Pro", "SE".
+		public var marketingName: String {
+			switch self {
+			case .pro:
+				return "Pro"
+			case .se:
+				return "SE"
 			default:
 				return ""
 			}

@@ -27,7 +27,6 @@ import UIKit
 /// A type that describes the specific device model.
 ///
 /// For iOS devices, only devices supporting iOS 8 are included.
-
 public enum Device: CaseIterable {
 
 	/// - iPhone4S: iPhone 4S.
@@ -48,6 +47,8 @@ public enum Device: CaseIterable {
 	case iPhone6sPlus
 	/// - iPhoneSE: All iPhone SE variants.
 	case iPhoneSE
+	/// - iPhoneSE2: All iPhone SE (2020) variants.
+	case iPhoneSE2G
 	/// - iPhone7: All iPhone 7 variants.
 	case iPhone7
 	/// - iPhone7Plus: All iPhone 7 Plus variants.
@@ -155,6 +156,7 @@ public enum Device: CaseIterable {
 		.iPhone6s,
 		.iPhone6sPlus,
 		.iPhoneSE,
+		.iPhoneSE2G,
 		.iPhone7,
 		.iPhone7Plus,
 		.iPhone8,

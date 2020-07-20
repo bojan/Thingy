@@ -31,6 +31,8 @@ extension Device: MarketingProtocol {
 			return "iPhone 6s Plus"
 		case .iPhoneSE:
 			return "iPhone SE"
+		case .iPhoneSE2G:
+			return "iPhone SE (2020)"
 		case .iPhone7:
 			return "iPhone 7"
 		case .iPhone7Plus:

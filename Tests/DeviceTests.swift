@@ -26,84 +26,84 @@ import XCTest
 
 class DeviceTests: XCTestCase {
 
-	func testResolveValidDevice() {
-		let device1: Device? = Device(identifier: "iPad4,1")
+	func testResolveValidIPad() throws {
+		let sut = try XCTUnwrap(Device(identifier: "iPad8,8"))
 
-		XCTAssertNotNil(device1)
-		if let device: Device = device1 {
-			XCTAssert(device.marketingName == "iPad Air")
-			XCTAssert(device.family == .pad)
-			XCTAssertNotNil(device.productLine)
-			if let productLine = device.productLine {
-				XCTAssert(productLine == Lines.iPad.air)
-			}
-		}
+		XCTAssertEqual(sut.marketingName, "12.9-inch iPad Pro (3rd generation)")
+		XCTAssertEqual(sut.family, .pad)
 
-		let device2 = Device(identifier: "AppleTV5,3")
-
-		XCTAssertNotNil(device2)
-		if let device = device2 {
-			XCTAssert(device.marketingName == "Apple TV")
-			XCTAssert(device.family == .tv)
-			XCTAssertNil(device.productLine)
-		}
-
-		let device3 = Device(identifier: "iPhone4,1")
-
-		XCTAssertNotNil(device1)
-		if let device = device3 {
-			XCTAssert(device.marketingName == "iPhone 4S")
-			XCTAssert(device.family == .phone)
-			XCTAssertNil(device.productLine)
-		}
-
-		let device4 = Device(identifier: "iPod7,1")
-		if let device = device4 {
-			XCTAssert(device.marketingName == "iPod touch (6th generation)")
-			XCTAssert(device.family == .pod)
-			XCTAssertNil(device.productLine)
-		}
-
-		let device5 = Device(identifier: "Watch4,2")
-		if let device = device5 {
-			XCTAssert(device.marketingName == "Apple Watch Series 4")
-			XCTAssert(device.family == .watch)
-			XCTAssertNil(device.productLine)
-		}
+		let productLine = try XCTUnwrap(sut.productLine)
+		XCTAssertEqual(productLine.marketingName, Lines.iPad.pro.marketingName)
 	}
 
-	func testResolveFutureDevice() {
-		let device = Device(identifier: "iPad133,7")
+	func testResolveValidAppleTV() throws {
+		let sut = try XCTUnwrap(Device(identifier: "AppleTV6,2"))
 
-		XCTAssertNotNil(device)
-		if let device = device {
-			XCTAssert(device.family == .pad)
-			XCTAssert(device.marketingName == "Unknown iPad")
-		}
+		XCTAssertEqual(sut.marketingName, "Apple TV 4K")
+		XCTAssertEqual(sut.family, .tv)
+		XCTAssertNil(sut.productLine)
+	}
+
+	func testResolveValidIPhone() throws {
+		let sut = try XCTUnwrap(Device(identifier: "iPhone12,8"))
+
+		XCTAssertEqual(sut.marketingName, "iPhone SE (2020)")
+		XCTAssertEqual(sut.family, .phone)
+
+		let productLine = try XCTUnwrap(sut.productLine)
+		XCTAssertEqual(productLine.marketingName, Lines.iPhone.se.marketingName)
+	}
+
+	func testResolveValidIPod() throws {
+		let sut = try XCTUnwrap(Device(identifier: "iPod9,1"))
+
+		XCTAssertEqual(sut.marketingName, "iPod touch (7th generation)")
+		XCTAssertEqual(sut.family, .pod)
+		XCTAssertNil(sut.productLine)
+	}
+
+	func testResolveValidWatch() throws {
+		let sut = try XCTUnwrap(Device(identifier: "Watch5,1"))
+
+		XCTAssertEqual(sut.marketingName, "Apple Watch Series 5")
+		XCTAssertEqual(sut.family, .watch)
+		XCTAssertNil(sut.productLine)
+	}
+
+
+	func testResolveFutureDevice() throws {
+		let sut = try XCTUnwrap(Device(identifier: "iPad133,7"))
+
+		XCTAssertEqual(sut.family, .pad)
+		XCTAssertEqual(sut.marketingName, "Unknown iPad")
 	}
 
 	func testResolveInvalidDevice() {
-		var device = Device(identifier: "iPack1,337")
+		var sut = Device(identifier: "iPack133,7")
 
-		XCTAssertNil(device)
+		XCTAssertNil(sut)
 
-		device = Device(identifier: "iPhone1337")
-		XCTAssertNil(device)
+		sut = Device(identifier: "iPhone1337")
+		XCTAssertNil(sut)
 	}
 
-	func testValidSimulator() {
-		let device = Device(identifier: "x86_64")
+	func testValidSimulator() throws {
+		let sut = try XCTUnwrap(Device(identifier: "x86_64"))
 
-		XCTAssertNotNil(device)
+		expectSimulator(actual: sut) {
+			XCTAssertNotNil($0)
+		}
 
-		if let device = device {
-			expectSimulator(actual: device) { device in
-				XCTAssertNotNil(device)
-			}
+		XCTAssertFalse(sut.marketingName.isEmpty)
+	}
 
-			XCTAssert(!device.marketingName.isEmpty)
+	func testAllDevices() throws {
+		Device.allCases.forEach { device in
+			XCTAssertNotEqual(device.display, Display(size: .notApplicable, resolution: CGSize.zero, physicalResolution: CGSize.zero, renderedResolution: CGSize.zero, scale: 0, density: 0, hasTrueTone: false, colorSpace: .sRGB))
+			XCTAssertNotEqual(device.numbers, [0.0])
 		}
 	}
+
 
 	func expectSimulator(actual: Device, file: StaticString = #file, line: UInt = #line, test: (Device?) -> Void) {
 		guard case let .simulator(model) = actual
@@ -114,5 +114,4 @@ class DeviceTests: XCTestCase {
 
 		test(model)
 	}
-
 }
