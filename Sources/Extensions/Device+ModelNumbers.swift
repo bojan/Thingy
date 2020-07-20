@@ -35,6 +35,8 @@ internal extension Device {
 			return [8.2]
 		case .iPhoneSE:
 			return [8.4]
+		case .iPhoneSE2G:
+			return [12.8]
 		case .iPhone7:
 			return [9.1, 9.3]
 		case .iPhone7Plus:
