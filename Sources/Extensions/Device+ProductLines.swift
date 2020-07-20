@@ -10,7 +10,7 @@ import Foundation
 
 public extension Device {
 
-	/// Product line of the model, currently supported only for the iPad.
+	/// Product line of the model.
 	var productLine: ProductLine? {
 		switch family {
 		case .pad:

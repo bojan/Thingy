@@ -52,6 +52,7 @@ public enum Lines {
 		}
 	}
 
+	/// A type that describes the specific iPhone line.
 	public enum iPhone: ProductLine {
 		/// - standard: A standard iPhone product.
 		case standard
