@@ -6,9 +6,9 @@
 public enum Device: CaseIterable
 ```
 
-> A type that describes the specific device model.
->
-> For iOS devices, only devices supporting iOS 8 are included.
+A type that describes the specific device model.
+
+For iOS devices, only devices supporting iOS 8 are included.
 
 ## Cases
 ### `iPhone4S`
@@ -17,7 +17,7 @@ public enum Device: CaseIterable
 case iPhone4S
 ```
 
-> - iPhone4S: iPhone 4S.
+- iPhone4S: iPhone 4S.
 
 ### `iPhone5`
 
@@ -25,7 +25,7 @@ case iPhone4S
 case iPhone5
 ```
 
-> - iPhone5: All iPhone 5 variants.
+- iPhone5: All iPhone 5 variants.
 
 ### `iPhone5s`
 
@@ -33,7 +33,7 @@ case iPhone5
 case iPhone5s
 ```
 
-> - iPhone5s: All iPhone 5s variants.
+- iPhone5s: All iPhone 5s variants.
 
 ### `iPhone5c`
 
@@ -41,7 +41,7 @@ case iPhone5s
 case iPhone5c
 ```
 
-> - iPhone5c: All iPhone 5c variants.
+- iPhone5c: All iPhone 5c variants.
 
 ### `iPhone6`
 
@@ -49,7 +49,7 @@ case iPhone5c
 case iPhone6
 ```
 
-> - iPhone6: All iPhone 6 variants.
+- iPhone6: All iPhone 6 variants.
 
 ### `iPhone6Plus`
 
@@ -57,7 +57,7 @@ case iPhone6
 case iPhone6Plus
 ```
 
-> - iPhone6Plus: All iPhone 6 Plus variants.
+- iPhone6Plus: All iPhone 6 Plus variants.
 
 ### `iPhone6s`
 
@@ -65,7 +65,7 @@ case iPhone6Plus
 case iPhone6s
 ```
 
-> - iPhone6s: All iPhone 6s variants.
+- iPhone6s: All iPhone 6s variants.
 
 ### `iPhone6sPlus`
 
@@ -73,7 +73,7 @@ case iPhone6s
 case iPhone6sPlus
 ```
 
-> - iPhone6sPlus: All iPhone 6s Plus variants.
+- iPhone6sPlus: All iPhone 6s Plus variants.
 
 ### `iPhoneSE`
 
@@ -81,7 +81,15 @@ case iPhone6sPlus
 case iPhoneSE
 ```
 
-> - iPhoneSE: All iPhone SE variants.
+- iPhoneSE: All iPhone SE variants.
+
+### `iPhoneSE2G`
+
+```swift
+case iPhoneSE2G
+```
+
+- iPhoneSE2: All iPhone SE (2020) variants.
 
 ### `iPhone7`
 
@@ -89,7 +97,7 @@ case iPhoneSE
 case iPhone7
 ```
 
-> - iPhone7: All iPhone 7 variants.
+- iPhone7: All iPhone 7 variants.
 
 ### `iPhone7Plus`
 
@@ -97,7 +105,7 @@ case iPhone7
 case iPhone7Plus
 ```
 
-> - iPhone7Plus: All iPhone 7 Plus variants.
+- iPhone7Plus: All iPhone 7 Plus variants.
 
 ### `iPhone8`
 
@@ -105,7 +113,7 @@ case iPhone7Plus
 case iPhone8
 ```
 
-> - iPhone8: All iPhone 8 variants.
+- iPhone8: All iPhone 8 variants.
 
 ### `iPhone8Plus`
 
@@ -113,7 +121,7 @@ case iPhone8
 case iPhone8Plus
 ```
 
-> - iPhone8Plus: All iPhone 8 Plus variants.
+- iPhone8Plus: All iPhone 8 Plus variants.
 
 ### `iPhoneX`
 
@@ -121,7 +129,7 @@ case iPhone8Plus
 case iPhoneX
 ```
 
-> - iPhoneX: All iPhone X variants.
+- iPhoneX: All iPhone X variants.
 
 ### `iPhoneXR`
 
@@ -129,7 +137,7 @@ case iPhoneX
 case iPhoneXR
 ```
 
-> - iPhoneXR: All iPhone XR variants.
+- iPhoneXR: All iPhone XR variants.
 
 ### `iPhoneXS`
 
@@ -137,7 +145,7 @@ case iPhoneXR
 case iPhoneXS
 ```
 
-> - iPhoneXS: All iPhone XS variants.
+- iPhoneXS: All iPhone XS variants.
 
 ### `iPhoneXSMax`
 
@@ -145,7 +153,7 @@ case iPhoneXS
 case iPhoneXSMax
 ```
 
-> - iPhoneXSMax: All iPhone XS Max variants.
+- iPhoneXSMax: All iPhone XS Max variants.
 
 ### `iPhone11`
 
@@ -153,7 +161,7 @@ case iPhoneXSMax
 case iPhone11
 ```
 
-> - iPhone11: All iPhone 11 variants.
+- iPhone11: All iPhone 11 variants.
 
 ### `iPhone11Pro`
 
@@ -161,7 +169,7 @@ case iPhone11
 case iPhone11Pro
 ```
 
-> - iPhone11Pro: All iPhone 11 Pro variants.
+- iPhone11Pro: All iPhone 11 Pro variants.
 
 ### `iPhone11ProMax`
 
@@ -169,7 +177,7 @@ case iPhone11Pro
 case iPhone11ProMax
 ```
 
-> - iPhone11ProMax: All iPhone 11 Pro Max variants.
+- iPhone11ProMax: All iPhone 11 Pro Max variants.
 
 ### `iPad2`
 
@@ -177,7 +185,7 @@ case iPhone11ProMax
 case iPad2
 ```
 
-> - iPad2: All iPad 2 variants.
+- iPad2: All iPad 2 variants.
 
 ### `iPad3`
 
@@ -185,7 +193,7 @@ case iPad2
 case iPad3
 ```
 
-> - iPad3: All iPad 3 variants.
+- iPad3: All iPad 3 variants.
 
 ### `iPad4`
 
@@ -193,7 +201,7 @@ case iPad3
 case iPad4
 ```
 
-> - iPad4: All iPad 4 variants.
+- iPad4: All iPad 4 variants.
 
 ### `iPad5`
 
@@ -201,7 +209,7 @@ case iPad4
 case iPad5
 ```
 
-> - iPad5: All iPad (2017) variants.
+- iPad5: All iPad (2017) variants.
 
 ### `iPad6`
 
@@ -209,7 +217,7 @@ case iPad5
 case iPad6
 ```
 
-> - iPad6: All iPad (2018) variants.
+- iPad6: All iPad (2018) variants.
 
 ### `iPad7`
 
@@ -217,7 +225,7 @@ case iPad6
 case iPad7
 ```
 
-> - iPad7: All iPad (2019) variants.
+- iPad7: All iPad (2019) variants.
 
 ### `iPadMini`
 
@@ -225,7 +233,7 @@ case iPad7
 case iPadMini
 ```
 
-> - iPadMini: The original iPad mini in all variants.
+- iPadMini: The original iPad mini in all variants.
 
 ### `iPadMini2`
 
@@ -233,7 +241,7 @@ case iPadMini
 case iPadMini2
 ```
 
-> - iPadMini2: All iPad mini 2 variants.
+- iPadMini2: All iPad mini 2 variants.
 
 ### `iPadMini3`
 
@@ -241,7 +249,7 @@ case iPadMini2
 case iPadMini3
 ```
 
-> - iPadMini3: All iPad mini 3 variants.
+- iPadMini3: All iPad mini 3 variants.
 
 ### `iPadMini4`
 
@@ -249,7 +257,7 @@ case iPadMini3
 case iPadMini4
 ```
 
-> - iPadMini4: All iPad mini 4 variants.
+- iPadMini4: All iPad mini 4 variants.
 
 ### `iPadMini5`
 
@@ -257,7 +265,7 @@ case iPadMini4
 case iPadMini5
 ```
 
-> - iPadMini5: All iPad mini 5 variants.
+- iPadMini5: All iPad mini 5 variants.
 
 ### `iPadAir`
 
@@ -265,7 +273,7 @@ case iPadMini5
 case iPadAir
 ```
 
-> - iPadAir: The original iPad Air in all variants.
+- iPadAir: The original iPad Air in all variants.
 
 ### `iPadAir2`
 
@@ -273,7 +281,7 @@ case iPadAir
 case iPadAir2
 ```
 
-> - iPadAir2: All iPad Air 2 variants.
+- iPadAir2: All iPad Air 2 variants.
 
 ### `iPadAir3`
 
@@ -281,7 +289,7 @@ case iPadAir2
 case iPadAir3
 ```
 
-> - iPadAir3: All iPad Air 3 variants.
+- iPadAir3: All iPad Air 3 variants.
 
 ### `iPadPro12Inch`
 
@@ -289,7 +297,7 @@ case iPadAir3
 case iPadPro12Inch
 ```
 
-> - iPadPro12Inch: The 1st generation 12.9 inch iPad Pro in all variants.
+- iPadPro12Inch: The 1st generation 12.9 inch iPad Pro in all variants.
 
 ### `iPadPro9Inch`
 
@@ -297,7 +305,7 @@ case iPadPro12Inch
 case iPadPro9Inch
 ```
 
-> - iPadPro9Inch: The 9.7 inch iPad Pro in all variants.
+- iPadPro9Inch: The 9.7 inch iPad Pro in all variants.
 
 ### `iPadPro12Inch2G`
 
@@ -305,7 +313,7 @@ case iPadPro9Inch
 case iPadPro12Inch2G
 ```
 
-> - iPadPro12Inch2G: The 2nd generation 12 inch iPad Pro in all variants.
+- iPadPro12Inch2G: The 2nd generation 12 inch iPad Pro in all variants.
 
 ### `iPadPro10Inch`
 
@@ -313,7 +321,7 @@ case iPadPro12Inch2G
 case iPadPro10Inch
 ```
 
-> - iPadPro10Inch: The 10.5 inch iPad Pro in all variants.
+- iPadPro10Inch: The 10.5 inch iPad Pro in all variants.
 
 ### `iPadPro12Inch3G`
 
@@ -321,7 +329,7 @@ case iPadPro10Inch
 case iPadPro12Inch3G
 ```
 
-> - iPadPro12Inch3G: The 3rd generation 12.9 inch iPad Pro in all variants.
+- iPadPro12Inch3G: The 3rd generation 12.9 inch iPad Pro in all variants.
 
 ### `iPadPro11Inch`
 
@@ -329,7 +337,7 @@ case iPadPro12Inch3G
 case iPadPro11Inch
 ```
 
-> - iPadPro11Inch: The 11 inch iPad Pro in all variants.
+- iPadPro11Inch: The 11 inch iPad Pro in all variants.
 
 ### `iPodTouch5G`
 
@@ -337,7 +345,7 @@ case iPadPro11Inch
 case iPodTouch5G
 ```
 
-> - iPodTouch5G: All iPod touch 5G variants.
+- iPodTouch5G: All iPod touch 5G variants.
 
 ### `iPodTouch6G`
 
@@ -345,7 +353,7 @@ case iPodTouch5G
 case iPodTouch6G
 ```
 
-> - iPodTouch6G: All iPod touch 6G variants.
+- iPodTouch6G: All iPod touch 6G variants.
 
 ### `iPodTouch7G`
 
@@ -353,7 +361,7 @@ case iPodTouch6G
 case iPodTouch7G
 ```
 
-> - iPodTouch7G: All iPod touch 7G variants.
+- iPodTouch7G: All iPod touch 7G variants.
 
 ### `appleTV4`
 
@@ -361,7 +369,7 @@ case iPodTouch7G
 case appleTV4
 ```
 
-> - appleTV4: Apple TV 4.
+- appleTV4: Apple TV 4.
 
 ### `appleTV4K`
 
@@ -369,7 +377,7 @@ case appleTV4
 case appleTV4K
 ```
 
-> - appleTV4K: Apple TV 4K.
+- appleTV4K: Apple TV 4K.
 
 ### `watch(_:)`
 
@@ -377,7 +385,7 @@ case appleTV4K
 case watch(Display.Size)
 ```
 
-> - watch: The original Apple Watch.
+- watch: The original Apple Watch.
 
 ### `watchSeries1(_:)`
 
@@ -385,7 +393,7 @@ case watch(Display.Size)
 case watchSeries1(Display.Size)
 ```
 
-> - watchSeries1: Apple Watch Series 1.
+- watchSeries1: Apple Watch Series 1.
 
 ### `watchSeries2(_:)`
 
@@ -393,7 +401,7 @@ case watchSeries1(Display.Size)
 case watchSeries2(Display.Size)
 ```
 
-> - watchSeries2: Apple Watch Series 2.
+- watchSeries2: Apple Watch Series 2.
 
 ### `watchSeries3(_:)`
 
@@ -401,7 +409,7 @@ case watchSeries2(Display.Size)
 case watchSeries3(Display.Size)
 ```
 
-> - watchSeries3: Apple Watch Series 3.
+- watchSeries3: Apple Watch Series 3.
 
 ### `watchSeries4(_:)`
 
@@ -409,7 +417,7 @@ case watchSeries3(Display.Size)
 case watchSeries4(Display.Size)
 ```
 
-> - watchSeries4: Apple Watch Series 4.
+- watchSeries4: Apple Watch Series 4.
 
 ### `watchSeries5(_:)`
 
@@ -417,7 +425,7 @@ case watchSeries4(Display.Size)
 case watchSeries5(Display.Size)
 ```
 
-> - watchSeries5: Apple Watch Series 5.
+- watchSeries5: Apple Watch Series 5.
 
 ### `simulator(_:)`
 
@@ -425,7 +433,7 @@ case watchSeries5(Display.Size)
 indirect case simulator(Device)
 ```
 
-> - simulator: A simulator for the associated device model.
+- simulator: A simulator for the associated device model.
 
 ### `unknown(_:)`
 
@@ -433,4 +441,4 @@ indirect case simulator(Device)
 case unknown(Family)
 ```
 
-> - unknown: An unknown or a future device within the associated family.
+- unknown: An unknown or a future device within the associated family.

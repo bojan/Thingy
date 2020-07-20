@@ -1,6 +1,9 @@
 **EXTENSION**
 
 # `Display.Size`
+```swift
+extension Display.Size: Comparable
+```
 
 ## Methods
 ### `<(_:_:)`

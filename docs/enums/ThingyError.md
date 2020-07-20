@@ -6,7 +6,7 @@
 public enum ThingyError: Error
 ```
 
-> Errors thrown by Thingy.
+Errors thrown by Thingy.
 
 ## Cases
 ### `incomparableFamilies`
@@ -15,7 +15,7 @@ public enum ThingyError: Error
 case incomparableFamilies
 ```
 
-> - An error thrown when devices of different families get compared.
+- An error thrown when devices of different families get compared.
 
 ### `incomparableProductLines`
 
@@ -23,7 +23,7 @@ case incomparableFamilies
 case incomparableProductLines
 ```
 
-> - An error thrown when devices from different product lines get compared.
+- An error thrown when devices from different product lines get compared.
 
 ### `incomparableUnknownProduct`
 
@@ -31,4 +31,4 @@ case incomparableProductLines
 case incomparableUnknownProduct
 ```
 
-> - An error thrown when an unknown device gets compared.
+- An error thrown when an unknown device gets compared.

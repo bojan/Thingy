@@ -1,6 +1,9 @@
 **EXTENSION**
 
 # `Family`
+```swift
+extension Family: MarketingProtocol
+```
 
 ## Properties
 ### `marketingName`
@@ -9,4 +12,4 @@
 public var marketingName: String
 ```
 
-> The marketing name of the product family, e.g. "iPhone", "Apple TV".
+The marketing name of the product family, e.g. "iPhone", "Apple TV".

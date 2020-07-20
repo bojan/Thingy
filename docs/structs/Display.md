@@ -3,10 +3,10 @@
 # `Display`
 
 ```swift
-public struct Display
+public struct Display: Equatable
 ```
 
-> A struct that provides an extended info on the display.
+A struct that provides an extended info on the display.
 
 ## Properties
 ### `size`
@@ -15,7 +15,7 @@ public struct Display
 public var size: Size
 ```
 
-> Screen size in inches.
+Screen size in inches.
 
 ### `resolution`
 
@@ -23,7 +23,7 @@ public var size: Size
 public var resolution: CGSize
 ```
 
-> Resolution of the device.
+Resolution of the device.
 
 ### `physicalResolution`
 
@@ -31,7 +31,7 @@ public var resolution: CGSize
 public var physicalResolution: CGSize
 ```
 
-> Full physical resolution of the device, without any down-/up-sampling.
+Full physical resolution of the device, without any down-/up-sampling.
 
 ### `renderedResolution`
 
@@ -39,7 +39,7 @@ public var physicalResolution: CGSize
 public var renderedResolution: CGSize
 ```
 
-> Rendered resolution of the device, with down-/up-sampling.
+Rendered resolution of the device, with down-/up-sampling.
 
 ### `scale`
 
@@ -47,7 +47,7 @@ public var renderedResolution: CGSize
 public var scale: Float
 ```
 
-> Screen scale, 1.0 for non-Retina devices.
+Screen scale, 1.0 for non-Retina devices.
 
 ### `density`
 
@@ -55,7 +55,7 @@ public var scale: Float
 public var density: Int
 ```
 
-> Density of the display in PPI (pixels-per-inch).
+Density of the display in PPI (pixels-per-inch).
 
 ### `hasTrueTone`
 
@@ -63,7 +63,7 @@ public var density: Int
 public var hasTrueTone: Bool
 ```
 
-> True Tone display.
+True Tone display.
 
 ### `colorSpace`
 
@@ -71,4 +71,4 @@ public var hasTrueTone: Bool
 public var colorSpace: ColorSpace
 ```
 
-> Color space.
+Color space.

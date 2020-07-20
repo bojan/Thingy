@@ -1,6 +1,9 @@
 **EXTENSION**
 
 # `RawDevice`
+```swift
+extension RawDevice: Comparable
+```
 
 ## Methods
 ### `<(_:_:)`

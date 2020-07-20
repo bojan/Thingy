@@ -6,8 +6,8 @@
 public protocol MarketingProtocol
 ```
 
-> :nodoc:
-> A protocol that describes products (lines and models).
+:nodoc:
+A protocol that describes products (lines and models).
 
 ## Properties
 ### `marketingName`
@@ -16,4 +16,4 @@ public protocol MarketingProtocol
 var marketingName: String
 ```
 
-> The full marketing name of the entity.
+The full marketing name of the entity.

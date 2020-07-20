@@ -6,7 +6,7 @@
 public enum Family: String
 ```
 
-> A type that describes the product family.
+A type that describes the product family.
 
 ## Cases
 ### `phone`
@@ -15,7 +15,7 @@ public enum Family: String
 case phone = "iPhone"
 ```
 
-> - phone: iPhone product family.
+- phone: iPhone product family.
 
 ### `pod`
 
@@ -23,7 +23,7 @@ case phone = "iPhone"
 case pod = "iPod"
 ```
 
-> - pod: iPod touch product family.
+- pod: iPod touch product family.
 
 ### `pad`
 
@@ -31,7 +31,7 @@ case pod = "iPod"
 case pad = "iPad"
 ```
 
-> - pad: iPad product family.
+- pad: iPad product family.
 
 ### `tv`
 
@@ -39,7 +39,7 @@ case pad = "iPad"
 case tv = "AppleTV"
 ```
 
-> - tv: Apple TV product family.
+- tv: Apple TV product family.
 
 ### `watch`
 
@@ -47,4 +47,4 @@ case tv = "AppleTV"
 case watch = "Watch"
 ```
 
-> - watch: Apple Watch product family.
+- watch: Apple Watch product family.
