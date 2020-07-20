@@ -22,7 +22,6 @@
 //
 
 import Foundation
-import UIKit
 
 /// A type that describes the specific device model.
 ///

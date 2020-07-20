@@ -22,7 +22,6 @@
 //
 
 import Foundation
-import UIKit
 
 /// A struct that provides an extended info on the display.
 public struct Display: Equatable {
