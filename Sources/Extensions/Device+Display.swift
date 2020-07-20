@@ -12,7 +12,7 @@ public extension Device {
 
 	/// Returns the display size in inches.
 	var displaySize: Display.Size {
-		return display.size
+		display.size
 	}
 
 	/// Returns an extended info on the display, including all resolutions, scale and density.
@@ -37,7 +37,8 @@ public extension Device {
 		case .iPhone7:
 			return Display(size: .screen4_7Inch, resolution: CGSize(width: 375, height: 667), physicalResolution: CGSize(width: 750, height: 1334), renderedResolution: CGSize(width: 750, height: 1334), scale: 2.0, density: 326, hasTrueTone: false, colorSpace: .p3)
 
-		case .iPhone8:
+		case .iPhone8,
+		     .iPhoneSE2G:
 			return Display(size: .screen4_7Inch, resolution: CGSize(width: 375, height: 667), physicalResolution: CGSize(width: 750, height: 1334), renderedResolution: CGSize(width: 750, height: 1334), scale: 2.0, density: 326, hasTrueTone: true, colorSpace: .p3)
 
 		case .iPhone6Plus,

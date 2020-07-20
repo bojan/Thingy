@@ -22,6 +22,7 @@ public extension Device {
 		     .iPhone6s,
 		     .iPhone6sPlus,
 		     .iPhoneSE,
+		     .iPhoneSE2G,
 		     .iPhone7,
 		     .iPhone7Plus,
 		     .iPhone8,

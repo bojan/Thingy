@@ -35,12 +35,12 @@ public protocol MarketingProtocol {
 
 /// :nodoc:
 func ==(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
-	return lhs.marketingName == rhs.marketingName
+	lhs.marketingName == rhs.marketingName
 }
 
 /// :nodoc:
 func !=(lhs: MarketingProtocol, rhs: MarketingProtocol) -> Bool {
-	return lhs.marketingName != rhs.marketingName
+	lhs.marketingName != rhs.marketingName
 }
 
 /// :nodoc:

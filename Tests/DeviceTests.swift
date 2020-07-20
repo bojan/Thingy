@@ -115,4 +115,11 @@ class DeviceTests: XCTestCase {
 		test(model)
 	}
 
+	func testAllDevices() throws {
+		Device.allCases.forEach { device in
+			XCTAssertNotEqual(device.display, Display(size: .notApplicable, resolution: CGSize.zero, physicalResolution: CGSize.zero, renderedResolution: CGSize.zero, scale: 0, density: 0, hasTrueTone: false, colorSpace: .sRGB))
+			XCTAssertNotEqual(device.numbers, [0.0])
+		}
+	}
+
 }
