@@ -24,8 +24,7 @@
 import Foundation
 
 /// A struct containing all product lines. Currently iPad only.
-
-public struct Lines {
+public enum Lines {
 
 	/// A type that describes the specific iPad line.
 

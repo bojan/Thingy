@@ -12,7 +12,7 @@ public extension Device {
 
 	/// Returns the display size in inches.
 	var displaySize: Display.Size {
-		return display.size
+		display.size
 	}
 
 	/// Returns an extended info on the display, including all resolutions, scale and density.
