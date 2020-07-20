@@ -25,7 +25,7 @@ import Foundation
 import UIKit
 
 /// A struct that provides an extended info on the display.
-public struct Display {
+public struct Display: Equatable {
 
 	/// An enum that describes the display size.
 	public enum Size: Float {
